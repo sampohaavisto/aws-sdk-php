@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ResourceGroupsTaggingAPI\Exception;
+namespace Aws3\ResourceGroupsTaggingAPI\Exception;
 
 use Aws\Exception\AwsException;
 

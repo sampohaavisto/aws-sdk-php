@@ -1,5 +1,5 @@
 <?php
-namespace Aws\WorkDocs;
+namespace Aws3\WorkDocs;
 
 use Aws\AwsClient;
 

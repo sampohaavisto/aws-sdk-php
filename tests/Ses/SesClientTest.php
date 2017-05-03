@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Ses;
+namespace Aws3\Test\Ses;
 
 use Aws\Credentials\Credentials;
 use Aws\Ses\SesClient;

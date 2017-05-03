@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DirectoryService;
+namespace Aws3\DirectoryService;
 
 use Aws\AwsClient;
 

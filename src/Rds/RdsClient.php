@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Rds;
+namespace Aws3\Rds;
 
 use Aws\AwsClient;
 use Aws\Api\Service;

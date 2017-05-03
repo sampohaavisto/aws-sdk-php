@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MarketplaceCommerceAnalytics;
+namespace Aws3\MarketplaceCommerceAnalytics;
 
 use Aws\AwsClient;
 

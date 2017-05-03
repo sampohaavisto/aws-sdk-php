@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodeStar;
+namespace Aws3\CodeStar;
 
 use Aws\AwsClient;
 

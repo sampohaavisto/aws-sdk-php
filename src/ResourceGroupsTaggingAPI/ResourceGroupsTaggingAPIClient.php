@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ResourceGroupsTaggingAPI;
+namespace Aws3\ResourceGroupsTaggingAPI;
 
 use Aws\AwsClient;
 

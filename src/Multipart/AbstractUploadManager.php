@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Multipart;
+namespace Aws3\Multipart;
 
 use Aws\AwsClientInterface as Client;
 use Aws\CommandInterface;

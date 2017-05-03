@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Glacier\Exception;
+namespace Aws3\Glacier\Exception;
 
 use Aws\Exception\AwsException;
 

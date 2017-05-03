@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Firehose\Exception;
+namespace Aws3\Firehose\Exception;
 
 use Aws\Exception\AwsException;
 

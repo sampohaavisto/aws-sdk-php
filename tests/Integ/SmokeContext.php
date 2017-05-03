@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Integ;
+namespace Aws3\Test\Integ;
 
 use Aws;
 use Aws\Exception\AwsException;

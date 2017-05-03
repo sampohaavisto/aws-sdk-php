@@ -1,4 +1,4 @@
 <?php
-namespace Aws\Api\Parser\Exception;
+namespace Aws3\Api\Parser\Exception;
 
 class ParserException extends \RuntimeException {}

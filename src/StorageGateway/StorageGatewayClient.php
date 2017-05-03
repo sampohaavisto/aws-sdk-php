@@ -1,5 +1,5 @@
 <?php
-namespace Aws\StorageGateway;
+namespace Aws3\StorageGateway;
 
 use Aws\AwsClient;
 

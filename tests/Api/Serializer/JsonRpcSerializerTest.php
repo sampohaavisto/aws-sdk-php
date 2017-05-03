@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api\Serializer;
+namespace Aws3\Test\Api\Serializer;
 
 use Aws\Command;
 use Aws\Api\Serializer\JsonRpcSerializer;

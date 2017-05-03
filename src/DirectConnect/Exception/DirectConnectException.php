@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DirectConnect\Exception;
+namespace Aws3\DirectConnect\Exception;
 
 use Aws\Exception\AwsException;
 

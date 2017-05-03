@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudTrail;
+namespace Aws3\CloudTrail;
 
 use Aws\S3\S3Client;
 use Aws\CloudTrail\Exception\CloudTrailException;

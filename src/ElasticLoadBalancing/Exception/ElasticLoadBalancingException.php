@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticLoadBalancing\Exception;
+namespace Aws3\ElasticLoadBalancing\Exception;
 
 use Aws\Exception\AwsException;
 

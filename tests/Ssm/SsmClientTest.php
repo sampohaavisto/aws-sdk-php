@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Ssm;
+namespace Aws3\Test\Ssm;
 
 use Aws\Ssm\SsmClient;
 use Aws\MockHandler;

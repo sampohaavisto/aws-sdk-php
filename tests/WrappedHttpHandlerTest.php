@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws\Api\ErrorParser\JsonRpcErrorParser;
 use Aws\Api\ErrorParser\RestJsonErrorParser;

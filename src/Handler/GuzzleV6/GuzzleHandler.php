@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Handler\GuzzleV6;
+namespace Aws3\Handler\GuzzleV6;
 
 use Aws\Sdk;
 use Exception;

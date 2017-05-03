@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DeviceFarm;
+namespace Aws3\DeviceFarm;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MarketplaceMetering;
+namespace Aws3\MarketplaceMetering;
 
 use Aws\AwsClient;
 

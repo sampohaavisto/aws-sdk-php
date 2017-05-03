@@ -1,5 +1,5 @@
 <?php
-namespace Aws;
+namespace Aws3;
 
 use GuzzleHttp\Psr7\StreamDecoratorTrait;
 use Psr\Http\Message\StreamInterface;

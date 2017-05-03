@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodeCommit\Exception;
+namespace Aws3\CodeCommit\Exception;
 
 use Aws\Exception\AwsException;
 

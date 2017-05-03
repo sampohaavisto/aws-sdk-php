@@ -1,5 +1,5 @@
 <?php
-namespace Aws\S3;
+namespace Aws3\S3;
 
 use Aws;
 use Aws\CommandInterface;

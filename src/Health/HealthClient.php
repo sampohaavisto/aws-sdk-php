@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Health;
+namespace Aws3\Health;
 
 use Aws\AwsClient;
 

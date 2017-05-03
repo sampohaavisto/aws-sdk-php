@@ -1,5 +1,5 @@
 <?php
-namespace Aws\GameLift;
+namespace Aws3\GameLift;
 
 use Aws\AwsClient;
 

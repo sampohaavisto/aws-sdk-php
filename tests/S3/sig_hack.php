@@ -1,5 +1,5 @@
 <?php
-namespace Aws\S3;
+namespace Aws3\S3;
 
 require __DIR__ . '/../Signature/sig_hack.php';
 

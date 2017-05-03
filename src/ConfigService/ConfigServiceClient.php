@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ConfigService;
+namespace Aws3\ConfigService;
 
 use Aws\AwsClient;
 

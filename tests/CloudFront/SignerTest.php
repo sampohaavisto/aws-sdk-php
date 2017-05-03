@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\CloudFront;
+namespace Aws3\Test\CloudFront;
 
 use Aws\CloudFront\Policy;
 use Aws\CloudFront\Signer;

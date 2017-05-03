@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Pinpoint;
+namespace Aws3\Pinpoint;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MachineLearning\Exception;
+namespace Aws3\MachineLearning\Exception;
 
 use Aws\Exception\AwsException;
 

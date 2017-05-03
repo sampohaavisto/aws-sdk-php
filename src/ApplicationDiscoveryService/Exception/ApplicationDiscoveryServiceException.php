@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ApplicationDiscoveryService\Exception;
+namespace Aws3\ApplicationDiscoveryService\Exception;
 
 use Aws\Exception\AwsException;
 

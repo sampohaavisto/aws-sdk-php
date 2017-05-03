@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudDirectory\Exception;
+namespace Aws3\CloudDirectory\Exception;
 
 use Aws\Exception\AwsException;
 

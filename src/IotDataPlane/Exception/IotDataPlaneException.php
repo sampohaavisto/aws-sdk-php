@@ -1,5 +1,5 @@
 <?php
-namespace Aws\IotDataPlane\Exception;
+namespace Aws3\IotDataPlane\Exception;
 
 use Aws\Exception\AwsException;
 

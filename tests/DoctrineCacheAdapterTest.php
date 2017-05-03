@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws\CacheInterface;
 use Aws\DoctrineCacheAdapter;

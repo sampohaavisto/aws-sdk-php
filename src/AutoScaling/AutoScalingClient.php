@@ -1,5 +1,5 @@
 <?php
-namespace Aws\AutoScaling;
+namespace Aws3\AutoScaling;
 
 use Aws\AwsClient;
 

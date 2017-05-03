@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws\Command;
 use Aws\Exception\AwsException;

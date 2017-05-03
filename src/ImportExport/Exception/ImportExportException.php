@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ImportExport\Exception;
+namespace Aws3\ImportExport\Exception;
 
 use Aws\Exception\AwsException;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Credentials;
+namespace Aws3\Credentials;
 
 use Aws\Exception\AwsException;
 use Aws\Exception\CredentialsException;

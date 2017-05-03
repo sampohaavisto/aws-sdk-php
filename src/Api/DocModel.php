@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Api;
+namespace Aws3\Api;
 
 /**
  * Encapsulates the documentation strings for a given service-version and

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\ElasticLoadBalancingV2;
+namespace Aws3\Test\ElasticLoadBalancingV2;
 
 use Aws\ElasticLoadBalancingV2\ElasticLoadBalancingV2Client;
 use Aws\MockHandler;

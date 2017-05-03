@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Polly;
+namespace Aws3\Test\Polly;
 
 use Aws\Credentials\Credentials;
 use Aws\Polly\PollyClient;

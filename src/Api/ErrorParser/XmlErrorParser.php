@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Api\ErrorParser;
+namespace Aws3\Api\ErrorParser;
 
 use Aws\Api\Parser\PayloadParserTrait;
 use Psr\Http\Message\ResponseInterface;

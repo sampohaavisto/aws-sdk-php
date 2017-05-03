@@ -1,5 +1,5 @@
 <?php
-namespace Aws;
+namespace Aws3;
 
 /**
  * Builds a single handler function from zero or more middleware functions and

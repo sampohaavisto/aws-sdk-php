@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\CognitoIdentity;
+namespace Aws3\Test\CognitoIdentity;
 
 use Aws\Api\DateTimeResult;
 use Aws\CognitoIdentity\CognitoIdentityProvider;

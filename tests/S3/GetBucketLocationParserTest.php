@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\S3;
+namespace Aws3\Test\S3;
 
 use Aws\Test\UsesServiceTrait;
 use Aws\S3\GetBucketLocationParser;

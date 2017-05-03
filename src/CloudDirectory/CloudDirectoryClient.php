@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudDirectory;
+namespace Aws3\CloudDirectory;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Polly;
+namespace Aws3\Polly;
 
 use Aws\Api\Serializer\JsonBody;
 use Aws\AwsClient;

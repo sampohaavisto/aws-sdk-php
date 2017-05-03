@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Route53;
+namespace Aws3\Test\Route53;
 
 use Aws\Route53\Route53Client;
 

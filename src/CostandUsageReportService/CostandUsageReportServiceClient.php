@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CostandUsageReportService;
+namespace Aws3\CostandUsageReportService;
 
 use Aws\AwsClient;
 

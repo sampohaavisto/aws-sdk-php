@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api\Parser;
+namespace Aws3\Test\Api\Parser;
 
 use Aws\Api\Operation;
 use Aws\Api\Parser\JsonParser;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws;
 use Aws\Api\ApiProvider;

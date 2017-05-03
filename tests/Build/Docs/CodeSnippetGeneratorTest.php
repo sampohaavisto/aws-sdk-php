@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Build\Docs;
+namespace Aws3\Test\Build\Docs;
 
 
 use Aws\Api\ApiProvider;

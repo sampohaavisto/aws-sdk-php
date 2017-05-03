@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MarketplaceCommerceAnalytics\Exception;
+namespace Aws3\MarketplaceCommerceAnalytics\Exception;
 
 use Aws\Exception\AwsException;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudTrail;
+namespace Aws3\CloudTrail;
 
 use Aws\AwsClient;
 

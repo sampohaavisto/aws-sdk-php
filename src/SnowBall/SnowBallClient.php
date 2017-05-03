@@ -1,5 +1,5 @@
 <?php
-namespace Aws\SnowBall;
+namespace Aws3\SnowBall;
 
 use Aws\AwsClient;
 

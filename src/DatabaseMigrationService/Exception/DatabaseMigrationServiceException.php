@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DatabaseMigrationService\Exception;
+namespace Aws3\DatabaseMigrationService\Exception;
 
 use Aws\Exception\AwsException;
 

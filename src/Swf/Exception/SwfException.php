@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Swf\Exception;
+namespace Aws3\Swf\Exception;
 
 use Aws\Exception\AwsException;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticLoadBalancingV2;
+namespace Aws3\ElasticLoadBalancingV2;
 
 use Aws\AwsClient;
 use Aws\Command;

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\XRay\Exception;
+namespace Aws3\XRay\Exception;
 
 use Aws\Exception\AwsException;
 

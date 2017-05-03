@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Appstream;
+namespace Aws3\Appstream;
 
 use Aws\AwsClient;
 

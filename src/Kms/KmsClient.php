@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Kms;
+namespace Aws3\Kms;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Multipart;
+namespace Aws3\Multipart;
 
 /**
  * Representation of the multipart upload.

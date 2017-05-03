@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api\ErrorParser;
+namespace Aws3\Test\Api\ErrorParser;
 
 use Aws\Api\ErrorParser\JsonRpcErrorParser;
 use GuzzleHttp\Psr7;

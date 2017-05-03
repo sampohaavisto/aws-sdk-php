@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Kms\Exception;
+namespace Aws3\Kms\Exception;
 
 use Aws\Exception\AwsException;
 

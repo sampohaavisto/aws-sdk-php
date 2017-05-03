@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MachineLearning;
+namespace Aws3\MachineLearning;
 
 use Aws\AwsClient;
 use Aws\CommandInterface;

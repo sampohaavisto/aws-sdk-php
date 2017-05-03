@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ApiGateway;
+namespace Aws3\ApiGateway;
 
 use Aws\AwsClient;
 use Aws\CommandInterface;

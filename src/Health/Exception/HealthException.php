@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Health\Exception;
+namespace Aws3\Health\Exception;
 
 use Aws\Exception\AwsException;
 

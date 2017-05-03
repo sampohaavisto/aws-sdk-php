@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Signature;
+namespace Aws3\Signature;
 
 // Hack gmdate() to returned the canned result.
 function gmdate($format, $ts = null)

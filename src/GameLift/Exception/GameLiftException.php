@@ -1,5 +1,5 @@
 <?php
-namespace Aws\GameLift\Exception;
+namespace Aws3\GameLift\Exception;
 
 use Aws\Exception\AwsException;
 

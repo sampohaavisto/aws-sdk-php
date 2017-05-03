@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MTurk\Exception;
+namespace Aws3\MTurk\Exception;
 
 use Aws\Exception\AwsException;
 

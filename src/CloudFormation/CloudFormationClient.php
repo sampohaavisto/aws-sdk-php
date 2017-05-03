@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudFormation;
+namespace Aws3\CloudFormation;
 
 use Aws\AwsClient;
 

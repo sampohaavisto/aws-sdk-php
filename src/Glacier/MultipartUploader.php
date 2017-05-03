@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Glacier;
+namespace Aws3\Glacier;
 
 use Aws\CommandInterface;
 use Aws\HashingStream;

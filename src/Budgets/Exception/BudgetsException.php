@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Budgets\Exception;
+namespace Aws3\Budgets\Exception;
 
 use Aws\Exception\AwsException;
 

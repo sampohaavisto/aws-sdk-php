@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws\Endpoint\EndpointProvider;
 use Aws\Endpoint\Partition;

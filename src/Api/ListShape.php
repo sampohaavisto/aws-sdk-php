@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Api;
+namespace Aws3\Api;
 
 /**
  * Represents a list shape.

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DirectoryService\Exception;
+namespace Aws3\DirectoryService\Exception;
 
 use Aws\Exception\AwsException;
 

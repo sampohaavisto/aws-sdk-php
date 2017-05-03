@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Sts;
+namespace Aws3\Sts;
 
 use Aws\AwsClient;
 use Aws\Result;

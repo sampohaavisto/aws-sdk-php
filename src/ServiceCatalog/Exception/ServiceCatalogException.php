@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ServiceCatalog\Exception;
+namespace Aws3\ServiceCatalog\Exception;
 
 use Aws\Exception\AwsException;
 

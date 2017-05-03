@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\CloudSearchDomain;
+namespace Aws3\Test\CloudSearchDomain;
 
 use Aws\CloudSearchDomain\CloudSearchDomainClient;
 use GuzzleHttp\Psr7\Request;

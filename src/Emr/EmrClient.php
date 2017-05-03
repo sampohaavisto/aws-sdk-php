@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Emr;
+namespace Aws3\Emr;
 
 use Aws\AwsClient;
 

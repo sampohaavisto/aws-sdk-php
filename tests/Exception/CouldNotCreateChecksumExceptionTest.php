@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Exception;
+namespace Aws3\Test\Exception;
 
 use Aws\Exception\CouldNotCreateChecksumException;
 

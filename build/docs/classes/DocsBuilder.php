@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Build\Docs;
+namespace Aws3\Build\Docs;
 
 use Aws\Api\AbstractModel;
 use Aws\Api\ApiProvider;

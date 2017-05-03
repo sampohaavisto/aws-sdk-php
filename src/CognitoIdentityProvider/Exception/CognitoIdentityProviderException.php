@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CognitoIdentityProvider\Exception;
+namespace Aws3\CognitoIdentityProvider\Exception;
 
 use Aws\Exception\AwsException;
 

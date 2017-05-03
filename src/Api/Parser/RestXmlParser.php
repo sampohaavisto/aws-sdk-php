@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Api\Parser;
+namespace Aws3\Api\Parser;
 
 use Aws\Api\StructureShape;
 use Aws\Api\Service;

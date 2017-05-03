@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Pinpoint\Exception;
+namespace Aws3\Pinpoint\Exception;
 
 use Aws\Exception\AwsException;
 

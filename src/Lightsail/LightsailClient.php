@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Lightsail;
+namespace Aws3\Lightsail;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DatabaseMigrationService;
+namespace Aws3\DatabaseMigrationService;
 
 use Aws\AwsClient;
 

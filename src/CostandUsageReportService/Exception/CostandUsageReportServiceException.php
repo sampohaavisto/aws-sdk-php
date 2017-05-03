@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CostandUsageReportService\Exception;
+namespace Aws3\CostandUsageReportService\Exception;
 
 use Aws\Exception\AwsException;
 

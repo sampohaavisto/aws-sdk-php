@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Rekognition;
+namespace Aws3\Rekognition;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodePipeline;
+namespace Aws3\CodePipeline;
 
 use Aws\AwsClient;
 

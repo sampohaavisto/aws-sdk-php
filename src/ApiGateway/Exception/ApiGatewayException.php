@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ApiGateway\Exception;
+namespace Aws3\ApiGateway\Exception;
 
 use Aws\Exception\AwsException;
 

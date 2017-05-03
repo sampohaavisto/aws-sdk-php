@@ -1,6 +1,6 @@
 <?php
 
-namespace Aws\Test\Integ;
+namespace Aws3\Test\Integ;
 
 use Aws\AwsClient;
 use Aws\DynamoDb\Exception\DynamoDbException;

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Credentials;
+namespace Aws3\Test\Credentials;
 
 use Aws\Credentials\AssumeRoleCredentialProvider;
 use Aws\Credentials\CredentialProvider;

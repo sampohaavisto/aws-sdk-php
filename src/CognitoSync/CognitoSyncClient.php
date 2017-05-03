@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CognitoSync;
+namespace Aws3\CognitoSync;
 
 use Aws\AwsClient;
 

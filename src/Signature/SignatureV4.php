@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Signature;
+namespace Aws3\Signature;
 
 use Aws\Credentials\CredentialsInterface;
 use Aws\Exception\CouldNotCreateChecksumException;

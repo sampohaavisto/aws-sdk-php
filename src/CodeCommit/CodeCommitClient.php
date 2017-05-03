@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodeCommit;
+namespace Aws3\CodeCommit;
 
 use Aws\AwsClient;
 

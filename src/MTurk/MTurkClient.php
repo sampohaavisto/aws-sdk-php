@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MTurk;
+namespace Aws3\MTurk;
 
 use Aws\AwsClient;
 

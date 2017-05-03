@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Exception;
+namespace Aws3\Exception;
 
 use Aws\Multipart\UploadState;
 

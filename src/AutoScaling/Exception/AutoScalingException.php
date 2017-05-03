@@ -1,5 +1,5 @@
 <?php
-namespace Aws\AutoScaling\Exception;
+namespace Aws3\AutoScaling\Exception;
 
 use Aws\Exception\AwsException;
 

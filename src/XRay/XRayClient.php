@@ -1,5 +1,5 @@
 <?php
-namespace Aws\XRay;
+namespace Aws3\XRay;
 
 use Aws\AwsClient;
 

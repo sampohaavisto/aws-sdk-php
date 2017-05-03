@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticsearchService;
+namespace Aws3\ElasticsearchService;
 
 use Aws\AwsClient;
 

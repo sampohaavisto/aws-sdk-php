@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Ec2;
+namespace Aws3\Ec2;
 
 use Aws\AwsClient;
 use Aws\Api\Service;

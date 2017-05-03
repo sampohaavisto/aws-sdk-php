@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ServiceCatalog;
+namespace Aws3\ServiceCatalog;
 
 use Aws\AwsClient;
 

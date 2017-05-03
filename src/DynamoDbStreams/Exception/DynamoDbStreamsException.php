@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDbStreams\Exception;
+namespace Aws3\DynamoDbStreams\Exception;
 
 use Aws\Exception\AwsException;
 

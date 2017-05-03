@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodeDeploy;
+namespace Aws3\CodeDeploy;
 
 use Aws\AwsClient;
 

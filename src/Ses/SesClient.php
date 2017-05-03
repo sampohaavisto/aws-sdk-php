@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Ses;
+namespace Aws3\Ses;
 
 use Aws\Credentials\CredentialsInterface;
 

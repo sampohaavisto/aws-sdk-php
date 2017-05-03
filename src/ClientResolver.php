@@ -1,5 +1,5 @@
 <?php
-namespace Aws;
+namespace Aws3;
 
 use Aws\Api\Validator;
 use Aws\Api\ApiProvider;

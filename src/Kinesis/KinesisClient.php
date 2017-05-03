@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Kinesis;
+namespace Aws3\Kinesis;
 
 use Aws\AwsClient;
 

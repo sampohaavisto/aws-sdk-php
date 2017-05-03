@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Redshift\Exception;
+namespace Aws3\Redshift\Exception;
 
 use Aws\Exception\AwsException;
 

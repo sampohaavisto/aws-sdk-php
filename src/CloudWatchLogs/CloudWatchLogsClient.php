@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudWatchLogs;
+namespace Aws3\CloudWatchLogs;
 
 use Aws\AwsClient;
 

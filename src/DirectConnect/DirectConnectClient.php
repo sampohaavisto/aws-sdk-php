@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DirectConnect;
+namespace Aws3\DirectConnect;
 
 use Aws\AwsClient;
 

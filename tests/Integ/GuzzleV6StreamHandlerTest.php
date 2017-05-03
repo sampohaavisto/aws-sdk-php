@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Integ;
+namespace Aws3\Test\Integ;
 
 use GuzzleHttp\Handler\StreamHandler;
 

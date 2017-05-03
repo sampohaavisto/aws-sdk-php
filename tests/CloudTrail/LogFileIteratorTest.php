@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\CloudTrail;
+namespace Aws3\Test\CloudTrail;
 
 use Aws\Api\Parser\RestXmlParser;
 use Aws\CloudTrail\CloudTrailClient;

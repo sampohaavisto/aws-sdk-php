@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudTrail\Exception;
+namespace Aws3\CloudTrail\Exception;
 
 use Aws\Exception\AwsException;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Ec2\Exception;
+namespace Aws3\Ec2\Exception;
 
 use Aws\Exception\AwsException;
 

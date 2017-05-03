@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDb;
+namespace Aws3\DynamoDb;
 
 use Aws\DynamoDb\Exception\DynamoDbException;
 

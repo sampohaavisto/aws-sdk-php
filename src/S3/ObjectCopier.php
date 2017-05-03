@@ -1,5 +1,5 @@
 <?php
-namespace Aws\S3;
+namespace Aws3\S3;
 
 use Aws\Exception\MultipartUploadException;
 use Aws\Result;

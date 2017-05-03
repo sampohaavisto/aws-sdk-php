@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Firehose;
+namespace Aws3\Firehose;
 
 use Aws\AwsClient;
 

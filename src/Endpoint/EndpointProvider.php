@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Endpoint;
+namespace Aws3\Endpoint;
 
 use Aws\Exception\UnresolvedEndpointException;
 

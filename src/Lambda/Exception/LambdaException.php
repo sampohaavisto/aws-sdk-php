@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Lambda\Exception;
+namespace Aws3\Lambda\Exception;
 
 use Aws\Exception\AwsException;
 

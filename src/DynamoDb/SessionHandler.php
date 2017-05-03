@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDb;
+namespace Aws3\DynamoDb;
 
 /**
  * Provides an interface for using Amazon DynamoDB as a session store by hooking

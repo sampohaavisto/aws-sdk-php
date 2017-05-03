@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Endpoint;
+namespace Aws3\Endpoint;
 
 class PartitionEndpointProvider
 {

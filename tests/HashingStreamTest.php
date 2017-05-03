@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use GuzzleHttp\Psr7;
 use Aws\PhpHash;

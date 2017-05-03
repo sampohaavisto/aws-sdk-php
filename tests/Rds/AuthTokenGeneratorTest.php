@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Rds;
+namespace Aws3\Test\Rds;
 
 use Aws\Credentials\Credentials;
 use Aws\Rds\AuthTokenGenerator;

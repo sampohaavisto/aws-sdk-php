@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Iot;
+namespace Aws3\Iot;
 
 use Aws\AwsClient;
 

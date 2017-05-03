@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Sms;
+namespace Aws3\Sms;
 
 use Aws\AwsClient;
 

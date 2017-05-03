@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Route53\Exception;
+namespace Aws3\Route53\Exception;
 
 use Aws\Exception\AwsException;
 

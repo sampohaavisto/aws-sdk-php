@@ -53,7 +53,7 @@ class ServiceBuilder
     {
         return <<<EOPHP
 <?php
-namespace Aws\\{$this->namespace};
+namespace Aws3\\{$this->namespace};
 
 use Aws\\AwsClient;
 
@@ -69,7 +69,7 @@ EOPHP;
     {
         return <<<EOPHP
 <?php
-namespace Aws\\{$this->namespace}\\Exception;
+namespace Aws3\\{$this->namespace}\\Exception;
 
 use Aws\\Exception\\AwsException;
 

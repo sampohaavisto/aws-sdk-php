@@ -1,5 +1,5 @@
 <?php
-namespace Aws\KinesisAnalytics\Exception;
+namespace Aws3\KinesisAnalytics\Exception;
 
 use Aws\Exception\AwsException;
 

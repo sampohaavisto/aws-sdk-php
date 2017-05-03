@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudWatchEvents\Exception;
+namespace Aws3\CloudWatchEvents\Exception;
 
 use Aws\Exception\AwsException;
 

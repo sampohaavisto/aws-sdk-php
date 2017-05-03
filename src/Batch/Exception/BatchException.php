@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Batch\Exception;
+namespace Aws3\Batch\Exception;
 
 use Aws\Exception\AwsException;
 

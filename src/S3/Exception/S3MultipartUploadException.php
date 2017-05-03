@@ -1,5 +1,5 @@
 <?php
-namespace Aws\S3\Exception;
+namespace Aws3\S3\Exception;
 
 use Aws\CommandInterface;
 use Aws\Exception\AwsException;

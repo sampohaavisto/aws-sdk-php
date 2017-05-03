@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Api\Serializer;
+namespace Aws3\Api\Serializer;
 
 use Aws\Api\Service;
 use Aws\Api\Shape;

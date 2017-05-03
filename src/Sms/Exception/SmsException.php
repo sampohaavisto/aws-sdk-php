@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Sms\Exception;
+namespace Aws3\Sms\Exception;
 
 use Aws\Exception\AwsException;
 

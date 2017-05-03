@@ -1,5 +1,5 @@
 <?php
-namespace Aws\WafRegional\Exception;
+namespace Aws3\WafRegional\Exception;
 
 use Aws\Exception\AwsException;
 

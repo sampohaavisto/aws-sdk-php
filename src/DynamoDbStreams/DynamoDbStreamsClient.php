@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDbStreams;
+namespace Aws3\DynamoDbStreams;
 
 use Aws\AwsClient;
 use Aws\DynamoDb\DynamoDbClient;

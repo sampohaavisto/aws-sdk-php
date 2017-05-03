@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Swf;
+namespace Aws3\Swf;
 
 use Aws\AwsClient;
 

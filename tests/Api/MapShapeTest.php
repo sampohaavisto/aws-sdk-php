@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api;
+namespace Aws3\Test\Api;
 
 use Aws\Api\ShapeMap;
 use Aws\Api\MapShape;

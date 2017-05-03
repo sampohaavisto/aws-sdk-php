@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Sts;
+namespace Aws3\Test\Sts;
 
 use Aws\Api\DateTimeResult;
 use Aws\Result;

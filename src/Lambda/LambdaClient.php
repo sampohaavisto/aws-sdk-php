@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Lambda;
+namespace Aws3\Lambda;
 
 use Aws\AwsClient;
 

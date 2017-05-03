@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Route53Domains;
+namespace Aws3\Route53Domains;
 
 use Aws\AwsClient;
 

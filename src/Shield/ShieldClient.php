@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Shield;
+namespace Aws3\Shield;
 
 use Aws\AwsClient;
 

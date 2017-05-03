@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticTranscoder\Exception;
+namespace Aws3\ElasticTranscoder\Exception;
 
 use Aws\Exception\AwsException;
 

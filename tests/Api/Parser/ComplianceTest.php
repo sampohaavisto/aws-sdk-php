@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api\Parser;
+namespace Aws3\Test\Api\Parser;
 
 use Aws\Command;
 use Aws\Api\Service;

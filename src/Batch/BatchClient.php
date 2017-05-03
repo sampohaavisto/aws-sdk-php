@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Batch;
+namespace Aws3\Batch;
 
 use Aws\AwsClient;
 

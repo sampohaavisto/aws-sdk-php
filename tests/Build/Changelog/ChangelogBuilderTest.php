@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Build\Changelog;
+namespace Aws3\Test\Build\Changelog;
 
 use Aws\Build\Changelog\ChangelogBuilder;
 

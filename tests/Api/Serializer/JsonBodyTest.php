@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api\Serializer;
+namespace Aws3\Test\Api\Serializer;
 
 use Aws\Api\Serializer\JsonBody;
 use Aws\Api\Service;

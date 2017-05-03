@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Exception;
+namespace Aws3\Exception;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;

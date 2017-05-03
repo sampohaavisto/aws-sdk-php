@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws\CommandInterface;
 use Aws\Ec2\Ec2Client;

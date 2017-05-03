@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Multipart;
+namespace Aws3\Test\Multipart;
 
 use Aws\Multipart\UploadState;
 

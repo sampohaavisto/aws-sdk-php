@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\CognitoSync;
+namespace Aws3\Test\CognitoSync;
 
 use Aws\Test\UsesServiceTrait;
 use GuzzleHttp\Promise\FulfilledPromise;

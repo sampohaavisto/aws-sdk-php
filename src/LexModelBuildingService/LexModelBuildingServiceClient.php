@@ -1,5 +1,5 @@
 <?php
-namespace Aws\LexModelBuildingService;
+namespace Aws3\LexModelBuildingService;
 
 use Aws\AwsClient;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudHsm\Exception;
+namespace Aws3\CloudHsm\Exception;
 
 use Aws\Exception\AwsException;
 

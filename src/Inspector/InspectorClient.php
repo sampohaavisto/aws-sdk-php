@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Inspector;
+namespace Aws3\Inspector;
 
 use Aws\AwsClient;
 

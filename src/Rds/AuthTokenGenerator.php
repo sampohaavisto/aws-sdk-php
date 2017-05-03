@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Rds;
+namespace Aws3\Rds;
 
 use Aws\Credentials\CredentialsInterface;
 use Aws\Credentials\Credentials;

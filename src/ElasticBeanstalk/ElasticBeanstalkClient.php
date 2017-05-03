@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticBeanstalk;
+namespace Aws3\ElasticBeanstalk;
 
 use Aws\AwsClient;
 

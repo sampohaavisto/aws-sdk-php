@@ -1,5 +1,5 @@
 <?php
-namespace Aws\IotDataPlane;
+namespace Aws3\IotDataPlane;
 
 use Aws\AwsClient;
 

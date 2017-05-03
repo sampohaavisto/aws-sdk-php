@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Credentials;
+namespace Aws3\Credentials;
 
 /**
  * Basic implementation of the AWS Credentials interface that allows callers to

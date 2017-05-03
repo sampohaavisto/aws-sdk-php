@@ -1,5 +1,5 @@
 <?php
-namespace Aws\OpsWorks\Exception;
+namespace Aws3\OpsWorks\Exception;
 
 use Aws\Exception\AwsException;
 

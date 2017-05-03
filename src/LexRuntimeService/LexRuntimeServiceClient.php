@@ -1,5 +1,5 @@
 <?php
-namespace Aws\LexRuntimeService;
+namespace Aws3\LexRuntimeService;
 
 use Aws\AwsClient;
 

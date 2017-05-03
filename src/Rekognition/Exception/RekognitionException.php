@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Rekognition\Exception;
+namespace Aws3\Rekognition\Exception;
 
 use Aws\Exception\AwsException;
 

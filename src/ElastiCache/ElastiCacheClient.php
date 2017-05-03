@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElastiCache;
+namespace Aws3\ElastiCache;
 
 use Aws\AwsClient;
 

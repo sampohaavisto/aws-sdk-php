@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Build\Changelog;
+namespace Aws3\Build\Changelog;
 
 /**
  * @internal

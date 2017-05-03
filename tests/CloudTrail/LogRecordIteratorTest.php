@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\CloudTrail;
+namespace Aws3\Test\CloudTrail;
 
 use Aws\Result;
 use Aws\S3\S3Client;

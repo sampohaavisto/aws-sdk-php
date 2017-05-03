@@ -1,5 +1,5 @@
 <?php
-namespace Aws\MarketplaceMetering\Exception;
+namespace Aws3\MarketplaceMetering\Exception;
 
 use Aws\Exception\AwsException;
 

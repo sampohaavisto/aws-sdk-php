@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Api;
+namespace Aws3\Test\Api;
 
 use Aws\Api\Service;
 use Aws\Test\UsesServiceTrait;

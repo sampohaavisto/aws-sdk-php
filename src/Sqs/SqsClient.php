@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Sqs;
+namespace Aws3\Sqs;
 
 use Aws\AwsClient;
 use Aws\CommandInterface;

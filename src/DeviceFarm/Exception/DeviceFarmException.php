@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DeviceFarm\Exception;
+namespace Aws3\DeviceFarm\Exception;
 
 use Aws\Exception\AwsException;
 

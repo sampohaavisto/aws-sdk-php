@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Signature;
+namespace Aws3\Test\Signature;
 
 use Aws\Credentials\Credentials;
 use Aws\Signature\AnonymousSignature;

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\MachineLearning;
+namespace Aws3\Test\MachineLearning;
 
 use Aws\Middleware;
 use Aws\MachineLearning\MachineLearningClient;

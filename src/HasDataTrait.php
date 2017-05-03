@@ -1,5 +1,5 @@
 <?php
-namespace Aws;
+namespace Aws3;
 
 /**
  * Trait implementing ToArrayInterface, \ArrayAccess, \Countable, and

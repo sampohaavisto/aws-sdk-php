@@ -1,20 +1,7 @@
 {
-    "name": "aws/aws-sdk-php",
-    "homepage": "http://aws.amazon.com/sdkforphp",
-    "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
-    "keywords": ["aws","amazon","sdk","s3","ec2","dynamodb","cloud","glacier"],
-    "type": "library",
+    "name": "sampohaavisto/aws-sdk-php-forked-v3",
+    "description": "AWS SDK v3 for PHP - forked to dodge a namespace issue. Use at your own risk. Or in fact, don't use at all.",
     "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Amazon Web Services",
-            "homepage": "http://aws.amazon.com"
-        }
-    ],
-    "support": {
-        "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
-        "issues": "https://github.com/aws/aws-sdk-php/issues"
-    },
     "require": {
         "php": ">=5.5",
         "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
@@ -45,13 +32,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Aws\\": "src/"
+            "Aws3\\": "src/"
         },
         "files": ["src/functions.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "Aws\\Test\\": "tests/"
+            "Aws3\\Test\\": "tests/"
         },
         "classmap": ["build/"]
     },

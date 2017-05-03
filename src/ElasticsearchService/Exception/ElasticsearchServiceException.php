@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticsearchService\Exception;
+namespace Aws3\ElasticsearchService\Exception;
 
 use Aws\Exception\AwsException;
 

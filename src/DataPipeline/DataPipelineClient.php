@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DataPipeline;
+namespace Aws3\DataPipeline;
 
 use Aws\AwsClient;
 

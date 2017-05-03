@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodePipeline\Exception;
+namespace Aws3\CodePipeline\Exception;
 
 use Aws\Exception\AwsException;
 

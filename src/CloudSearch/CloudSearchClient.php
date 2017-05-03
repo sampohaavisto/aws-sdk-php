@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudSearch;
+namespace Aws3\CloudSearch;
 
 use Aws\AwsClient;
 

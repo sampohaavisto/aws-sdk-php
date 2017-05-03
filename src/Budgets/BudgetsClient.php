@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Budgets;
+namespace Aws3\Budgets;
 
 use Aws\AwsClient;
 

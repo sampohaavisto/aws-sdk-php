@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudSearch\Exception;
+namespace Aws3\CloudSearch\Exception;
 
 use Aws\Exception\AwsException;
 

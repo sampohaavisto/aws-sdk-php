@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticTranscoder;
+namespace Aws3\ElasticTranscoder;
 
 use Aws\AwsClient;
 

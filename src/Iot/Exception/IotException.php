@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Iot\Exception;
+namespace Aws3\Iot\Exception;
 
 use Aws\Exception\AwsException;
 

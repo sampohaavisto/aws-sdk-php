@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ApplicationDiscoveryService;
+namespace Aws3\ApplicationDiscoveryService;
 
 use Aws\AwsClient;
 

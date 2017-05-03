@@ -1,5 +1,5 @@
 <?php
-namespace Aws\StorageGateway\Exception;
+namespace Aws3\StorageGateway\Exception;
 
 use Aws\Exception\AwsException;
 

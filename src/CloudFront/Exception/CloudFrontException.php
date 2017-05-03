@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudFront\Exception;
+namespace Aws3\CloudFront\Exception;
 
 use Aws\Exception\AwsException;
 

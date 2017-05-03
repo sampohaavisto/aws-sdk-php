@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test;
+namespace Aws3\Test;
 
 use Aws\Api\ApiProvider;
 use Aws\CommandInterface;

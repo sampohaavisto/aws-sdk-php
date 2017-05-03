@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Redshift;
+namespace Aws3\Redshift;
 
 use Aws\AwsClient;
 

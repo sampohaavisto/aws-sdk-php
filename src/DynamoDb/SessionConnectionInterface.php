@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDb;
+namespace Aws3\DynamoDb;
 
 /**
  * The session connection provides the underlying logic for interacting with

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDb;
+namespace Aws3\DynamoDb;
 
 /**
  * Special object to represent a DynamoDB set (SS/NS/BS) value.

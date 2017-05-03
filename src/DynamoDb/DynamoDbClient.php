@@ -1,5 +1,5 @@
 <?php
-namespace Aws\DynamoDb;
+namespace Aws3\DynamoDb;
 
 use Aws\Api\Parser\Crc32ValidatingParser;
 use Aws\AwsClient;

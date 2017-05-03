@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CognitoSync\Exception;
+namespace Aws3\CognitoSync\Exception;
 
 use Aws\Exception\AwsException;
 

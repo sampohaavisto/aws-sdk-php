@@ -1,6 +1,6 @@
 <?php
 
-namespace Aws\Test\Integ;
+namespace Aws3\Test\Integ;
 
 use Aws\S3\S3Client;
 use Behat\Behat\Hook\Scope\AfterFeatureScope;

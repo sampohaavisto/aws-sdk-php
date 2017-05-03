@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Organizations;
+namespace Aws3\Organizations;
 
 use Aws\AwsClient;
 

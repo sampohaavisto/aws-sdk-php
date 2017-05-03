@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CodeStar\Exception;
+namespace Aws3\CodeStar\Exception;
 
 use Aws\Exception\AwsException;
 

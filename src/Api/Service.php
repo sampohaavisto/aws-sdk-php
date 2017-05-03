@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Api;
+namespace Aws3\Api;
 
 use Aws\Api\Serializer\QuerySerializer;
 use Aws\Api\Serializer\Ec2ParamBuilder;

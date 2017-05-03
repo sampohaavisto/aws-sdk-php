@@ -1,5 +1,5 @@
 <?php
-namespace Aws\LexModelBuildingService\Exception;
+namespace Aws3\LexModelBuildingService\Exception;
 
 use Aws\Exception\AwsException;
 

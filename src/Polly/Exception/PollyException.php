@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Polly\Exception;
+namespace Aws3\Polly\Exception;
 
 use Aws\Exception\AwsException;
 

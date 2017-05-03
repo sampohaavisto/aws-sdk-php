@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElasticBeanstalk\Exception;
+namespace Aws3\ElasticBeanstalk\Exception;
 
 use Aws\Exception\AwsException;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Glacier;
+namespace Aws3\Test\Glacier;
 
 use Aws\Glacier\MultipartUploader;
 use Aws\Result;

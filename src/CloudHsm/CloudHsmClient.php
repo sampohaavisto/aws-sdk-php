@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CloudHsm;
+namespace Aws3\CloudHsm;
 
 use Aws\Api\ApiProvider;
 use Aws\Api\DocModel;

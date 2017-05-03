@@ -1,5 +1,5 @@
 <?php
-namespace Aws\SnowBall\Exception;
+namespace Aws3\SnowBall\Exception;
 
 use Aws\Exception\AwsException;
 

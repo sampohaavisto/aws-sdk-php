@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ImportExport;
+namespace Aws3\ImportExport;
 
 use Aws\AwsClient;
 

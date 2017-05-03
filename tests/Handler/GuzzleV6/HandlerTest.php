@@ -1,5 +1,5 @@
 <?php
-namespace Aws\Test\Handler\GuzzleV6;
+namespace Aws3\Test\Handler\GuzzleV6;
 
 use Aws\Handler\GuzzleV6\GuzzleHandler;
 use GuzzleHttp\Client;

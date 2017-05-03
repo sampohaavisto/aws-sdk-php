@@ -1,5 +1,5 @@
 <?php
-namespace Aws\ElastiCache\Exception;
+namespace Aws3\ElastiCache\Exception;
 
 use Aws\Exception\AwsException;
 

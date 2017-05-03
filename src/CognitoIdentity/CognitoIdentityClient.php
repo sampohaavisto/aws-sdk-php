@@ -1,5 +1,5 @@
 <?php
-namespace Aws\CognitoIdentity;
+namespace Aws3\CognitoIdentity;
 
 use Aws\AwsClient;
 
