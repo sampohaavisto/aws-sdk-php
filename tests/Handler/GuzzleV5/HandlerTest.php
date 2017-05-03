@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Test\Handler\GuzzleV5;
 
-use Aws\Handler\GuzzleV5\GuzzleHandler;
+use Aws3\Handler\GuzzleV5\GuzzleHandler;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Message\FutureResponse;
@@ -18,7 +18,7 @@ use GuzzleHttp\Tests\Ring\Client\MockHandlerTest;
 use React\Promise\Deferred;
 
 /**
- * @covers Aws\Handler\GuzzleV5\GuzzleHandler
+ * @covers Aws3\Handler\GuzzleV5\GuzzleHandler
  */
 class HandlerTest extends \PHPUnit_Framework_TestCase
 {

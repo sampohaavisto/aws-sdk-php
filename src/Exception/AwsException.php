@@ -3,8 +3,8 @@ namespace Aws3\Exception;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\RequestInterface;
-use Aws\CommandInterface;
-use Aws\ResultInterface;
+use Aws3\CommandInterface;
+use Aws3\ResultInterface;
 
 /**
  * Represents an AWS exception that is thrown when a command fails.

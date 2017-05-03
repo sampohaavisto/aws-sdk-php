@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\CloudFront;
 
-use Aws\CloudFront\CloudFrontClient;
-use Aws\CloudFront\UrlSigner;
+use Aws3\CloudFront\CloudFrontClient;
+use Aws3\CloudFront\UrlSigner;
 use GuzzleHttp\Psr7\Uri;
 
 /**
- * @covers Aws\CloudFront\UrlSigner
+ * @covers Aws3\CloudFront\UrlSigner
  */
 class UrlSignerTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,7 @@ class UrlSignerTest extends \PHPUnit_Framework_TestCase
 
     public function testCreatesUrlSignersForHttp()
     {
-        /** @var $client \Aws\CloudFront\CloudFrontClient */
+        /** @var $client \Aws3\CloudFront\CloudFrontClient */
         $client = CloudFrontClient::factory([
             'region'  => 'us-west-2',
             'version' => 'latest'
@@ -55,7 +55,7 @@ class UrlSignerTest extends \PHPUnit_Framework_TestCase
 
     public function testCreatesUrlSignersWithSpecialCharacters()
     {
-        /** @var $client \Aws\CloudFront\CloudFrontClient */
+        /** @var $client \Aws3\CloudFront\CloudFrontClient */
         $client = CloudFrontClient::factory([
             'region'  => 'us-west-2',
             'version' => 'latest'
@@ -85,7 +85,7 @@ class UrlSignerTest extends \PHPUnit_Framework_TestCase
 
     public function testCreatesUrlSignersWithCustomPolicy()
     {
-        /** @var $client \Aws\CloudFront\CloudFrontClient */
+        /** @var $client \Aws3\CloudFront\CloudFrontClient */
         $client = CloudFrontClient::factory([
             'region'  => 'us-west-2',
             'version' => 'latest'
@@ -102,7 +102,7 @@ class UrlSignerTest extends \PHPUnit_Framework_TestCase
 
     public function testCreatesUrlSignersForRtmp()
     {
-        /** @var $client \Aws\CloudFront\CloudFrontClient */
+        /** @var $client \Aws3\CloudFront\CloudFrontClient */
         $client = CloudFrontClient::factory([
             'region'  => 'us-west-2',
             'version' => 'latest'

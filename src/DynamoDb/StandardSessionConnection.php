@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\DynamoDb;
 
-use Aws\DynamoDb\Exception\DynamoDbException;
+use Aws3\DynamoDb\Exception\DynamoDbException;
 
 /**
  * The standard connection performs the read and write operations to DynamoDB.

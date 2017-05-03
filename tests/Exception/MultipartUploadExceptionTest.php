@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Exception;
 
-use Aws\Command;
-use Aws\Exception\AwsException;
-use Aws\Exception\MultipartUploadException;
-use Aws\Multipart\UploadState;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
+use Aws3\Exception\MultipartUploadException;
+use Aws3\Multipart\UploadState;
 
 /**
- * @covers Aws\Exception\MultipartUploadException
+ * @covers Aws3\Exception\MultipartUploadException
  */
 class MultipartUploadExceptionTest extends \PHPUnit_Framework_TestCase
 {

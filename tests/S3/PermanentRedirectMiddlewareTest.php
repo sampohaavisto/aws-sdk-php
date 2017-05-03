@@ -1,17 +1,17 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Test\UsesServiceTrait;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\S3\PermanentRedirectMiddleware
+ * @covers Aws3\S3\PermanentRedirectMiddleware
  */
 class PermanentRedirectTest extends \PHPUnit_Framework_TestCase
 {
     use UsesServiceTrait;
 
     /**
-     * @expectedException \Aws\S3\Exception\PermanentRedirectException
+     * @expectedException \Aws3\S3\Exception\PermanentRedirectException
      * @expectedExceptionMessage Encountered a permanent redirect while requesting
      */
     public function testThrowsSpecificException()

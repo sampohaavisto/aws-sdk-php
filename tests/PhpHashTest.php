@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\PhpHash;
+use Aws3\PhpHash;
 
 /**
- * @covers Aws\PhpHash
+ * @covers Aws3\PhpHash
  */
 class PhpHashTest extends \PHPUnit_Framework_TestCase
 {

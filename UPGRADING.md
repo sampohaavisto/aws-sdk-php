@@ -30,7 +30,7 @@ If you would like to continue using the old 2014-11-11 previewAPI, you can
 configure this when you instantiate the `LambdaClient`:
 
 ```php
-use Aws\Lambda\LambdaClient;
+use Aws3\Lambda\LambdaClient;
 
 $client = LambdaClient::factory(array(
     'version' => '2014-11-11',
@@ -51,7 +51,7 @@ In preparation for Version 3 of the AWS SDK for PHP:
   Instead, use the literal value to which the enum corresponds.
 * We advise against the use of any granular service classes, since these will be
   removed. Instead, catch the top-level service exception (e.g.,
-  `Aws\S3\Exception\S3Exception`) and use the `getAwsErrorCode()` method if you
+  `Aws3\S3\Exception\S3Exception`) and use the `getAwsErrorCode()` method if you
   need to know the granular error code.
 
 Upgrade from 2.6 to 2.7
@@ -85,7 +85,7 @@ If you would like to continue using the older 2011-02-01 API, you can configure 
 `CloudSearchClient`:
 
 ```php
-use Aws\CloudSearch\CloudSearchClient;
+use Aws3\CloudSearch\CloudSearchClient;
 
 $client = CloudSearchClient::factory(array(
     'key'     => '<aws access key>',
@@ -241,7 +241,7 @@ easily fixed by switching back to the 2011-12-05 API by using the new `version` 
 the DynamoDB client.
 
 ```php
-use Aws\DynamoDb\DynamoDbClient;
+use Aws3\DynamoDb\DynamoDbClient;
 
 $client = DynamoDbClient::factory(array(
     'key'     => '<aws access key>',
@@ -251,7 +251,7 @@ $client = DynamoDbClient::factory(array(
 ));
 ```
 
-If you are using a config file with `Aws\Common\Aws`, then you can modify your file like the following.
+If you are using a config file with `Aws3\Common\Aws`, then you can modify your file like the following.
 
 ```json
 {

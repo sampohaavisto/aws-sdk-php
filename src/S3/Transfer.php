@@ -2,7 +2,7 @@
 namespace Aws3\S3;
 
 use Aws;
-use Aws\CommandInterface;
+use Aws3\CommandInterface;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Promise\PromisorInterface;
@@ -47,7 +47,7 @@ class Transfer implements PromisorInterface
      *   ignored.
      * - before: (callable) A callback to invoke before each transfer. The
      *   callback accepts the following positional arguments: string $source,
-     *   string $dest, Aws\CommandInterface $command. The provided command will
+     *   string $dest, Aws3\CommandInterface $command. The provided command will
      *   be either a GetObject, PutObject, InitiateMultipartUpload, or
      *   UploadPart command.
      * - mup_threshold: (int) Size in bytes in which a multipart upload should
@@ -240,7 +240,7 @@ class Transfer implements PromisorInterface
         }
 
         // Create a GetObject command pool and return the promise.
-        return (new Aws\CommandPool($this->client, $commands, [
+        return (new Aws3\CommandPool($this->client, $commands, [
             'concurrency' => $this->concurrency,
             'before'      => $this->before,
             'rejected'    => function ($reason, $idx, Promise\PromiseInterface $p) {
@@ -252,7 +252,7 @@ class Transfer implements PromisorInterface
     private function createUploadPromise()
     {
         // Map each file into a promise that performs the actual transfer.
-        $files = \Aws\map($this->getUploadsIterator(), function ($file) {
+        $files = \Aws3\map($this->getUploadsIterator(), function ($file) {
             return (filesize($file) >= $this->mupThreshold)
                 ? $this->uploadMultipart($file)
                 : $this->upload($file);
@@ -267,8 +267,8 @@ class Transfer implements PromisorInterface
     private function getUploadsIterator()
     {
         if (is_string($this->source)) {
-            return Aws\filter(
-                Aws\recursive_dir_iterator($this->sourceMetadata['path']),
+            return Aws3\filter(
+                Aws3\recursive_dir_iterator($this->sourceMetadata['path']),
                 function ($file) { return !is_dir($file); }
             );
         }
@@ -289,10 +289,10 @@ class Transfer implements PromisorInterface
             $files = $this->client
                 ->getPaginator('ListObjects', $listArgs)
                 ->search('Contents[].Key');
-            $files = Aws\map($files, function ($key) use ($listArgs) {
+            $files = Aws3\map($files, function ($key) use ($listArgs) {
                 return "s3://{$listArgs['Bucket']}/$key";
             });
-            return Aws\filter($files, function ($key) {
+            return Aws3\filter($files, function ($key) {
                 return substr($key, -1, 1) !== '/';
             });
         }

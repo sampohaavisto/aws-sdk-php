@@ -2,25 +2,25 @@ default:
     suites:
         smoke:
             paths: [ %paths.base%/features/smoke ]
-            contexts: [ Aws\Test\Integ\SmokeContext ]
+            contexts: [ Aws3\Test\Integ\SmokeContext ]
         performance:
             paths: [ %paths.base%/features/performance ]
-            contexts: [ Aws\Test\PerformanceContext ]
+            contexts: [ Aws3\Test\PerformanceContext ]
         multipart:
             paths: [ %paths.base%/features/multipart ]
-            contexts: [ Aws\Test\Integ\MultipartContext ]
+            contexts: [ Aws3\Test\Integ\MultipartContext ]
         batching:
             paths: [ %paths.base%/features/batching ]
-            contexts: [ Aws\Test\Integ\BatchingContext ]
+            contexts: [ Aws3\Test\Integ\BatchingContext ]
         blocking:
             paths: [ %paths.base%/features/blocking ]
-            contexts: [ Aws\Test\Integ\BlockingContext ]
+            contexts: [ Aws3\Test\Integ\BlockingContext ]
         concurrency:
             paths: [ %paths.base%/features/concurrency ]
-            contexts: [ Aws\Test\Integ\ConcurrencyContext ]
+            contexts: [ Aws3\Test\Integ\ConcurrencyContext ]
         streams:
             paths: [ %paths.base%/features/streams ]
-            contexts: [ Aws\Test\Integ\NativeStreamContext ]
+            contexts: [ Aws3\Test\Integ\NativeStreamContext ]
         s3:
             paths: [ %paths.base%/features/s3 ]
-            contexts: [ Aws\Test\Integ\S3Context ]
+            contexts: [ Aws3\Test\Integ\S3Context ]

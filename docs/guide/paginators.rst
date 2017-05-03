@@ -18,7 +18,7 @@ is essentially an iterator of results. They are created via the
 ``getPaginator()`` method of the client. When you call ``getPaginator()``, you
 must provide the name of the operation and the operation's arguments (in the
 same way as when you execute an operation). You can iterate over a Paginator
-object using ``foreach`` to get individual ``Aws\Result`` objects.
+object using ``foreach`` to get individual ``Aws3\Result`` objects.
 
 .. code-block:: php
 
@@ -37,7 +37,7 @@ Paginator Objects
 -----------------
 
 The object returned by ``getPaginator()`` method is an instance of the
-``Aws\ResultPaginator`` class. This class implements PHP's native ``Iterator``
+``Aws3\ResultPaginator`` class. This class implements PHP's native ``Iterator``
 interface, which is why it works with ``foreach``. It can also be used with
 iterator functions, like ``iterator_to_array``, and integrates well with
 `SPL iterators <http://www.php.net/manual/en/spl.iterators.php>`_ like the
@@ -99,7 +99,7 @@ Asynchronous Pagination
 -----------------------
 
 You can iterate over the results of a paginator asynchronously by providing a
-callback the the ``each()`` method of an ``Aws\ResultPaginator``. The callback
+callback the the ``each()`` method of an ``Aws3\ResultPaginator``. The callback
 is invoked for each value that is yielded by the paginator.
 
 .. code-block:: php

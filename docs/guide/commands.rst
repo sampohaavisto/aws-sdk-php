@@ -16,11 +16,11 @@ API operations do not actually exist. They are implemented using the
 encapsulate the SDK's use of command objects.
 
 You do not typically need to interact with command objects directly. When you
-call methods like ``Aws\S3\S3Client::putObject()``, the SDK actually creates an
-``Aws\CommandInterface`` object based on the provided parameters, executes the
-command, and returns a populated ``Aws\ResultInterface`` object (or throws an
+call methods like ``Aws3\S3\S3Client::putObject()``, the SDK actually creates an
+``Aws3\CommandInterface`` object based on the provided parameters, executes the
+command, and returns a populated ``Aws3\ResultInterface`` object (or throws an
 exception on error). A similar flow occurs when calling any of the ``Async``
-methods of a client (e.g., ``Aws\S3\S3Client::putObjectAsync()``): the client
+methods of a client (e.g., ``Aws3\S3\S3Client::putObjectAsync()``): the client
 creates a command based on the provided parameters, serializes an HTTP request,
 initiates the request, and returns a promise.
 
@@ -28,7 +28,7 @@ The following examples are functionally equivalent:
 
 .. code-block:: php
 
-    $s3Client = new Aws\S3\S3Client([
+    $s3Client = new Aws3\S3\S3Client([
         'version' => '2006-03-01',
         'region'  => 'us-standard'
     ]);
@@ -112,19 +112,19 @@ Command HandlerList
 -------------------
 
 When a command is created from a client, it is given a clone of the client's
-``Aws\HandlerList`` object. The command is a given of a **clone** of the
+``Aws3\HandlerList`` object. The command is a given of a **clone** of the
 client's handler list to allow a command to utilize custom middlewares and
 handlers that do not affect other commands executed by the client.
 
 What this means is that you can use a different HTTP client per/command
-(e.g., ``Aws\MockHandler``) and add custom behavior per/command through
+(e.g., ``Aws3\MockHandler``) and add custom behavior per/command through
 middleware. The following example uses a ``MockHandler`` to create mock results
 instead of sending actual HTTP requests.
 
 .. code-block:: php
 
-    use Aws\Result;
-    use Aws\MockHandler;
+    use Aws3\Result;
+    use Aws3\MockHandler;
 
     // Create a mock handler.
     $mock = new MockHandler();
@@ -146,8 +146,8 @@ middleware, which functions as an observer in the handler list.
 
 .. code-block:: php
 
-    use Aws\CommandInterface;
-    use Aws\Middleware;
+    use Aws3\CommandInterface;
+    use Aws3\Middleware;
     use Psr\Http\Message\RequestInterface;
 
     $command = $s3Client->getCommand('ListObjects');
@@ -175,8 +175,8 @@ middleware, which functions as an observer in the handler list.
 CommandPool
 -----------
 
-The ``Aws\CommandPool`` allows you to execute commands concurrently using a
-iterator that yields ``Aws\CommandInterface`` objects. The ``CommandPool``
+The ``Aws3\CommandPool`` allows you to execute commands concurrently using a
+iterator that yields ``Aws3\CommandInterface`` objects. The ``CommandPool``
 ensures that a constant number of commands are executed concurrently while
 iterating over the commands in the pool (as commands complete, more are
 executed to ensure a constant pool size).
@@ -186,8 +186,8 @@ Here's a very simple example of just sending a few commands using a
 
 .. code-block:: php
 
-    use Aws\S3\S3Client;
-    use Aws\CommandPool;
+    use Aws3\S3\S3Client;
+    use Aws3\CommandPool;
 
     // Create the client.
     $client = new S3Client([
@@ -214,20 +214,20 @@ That example is pretty underpowered for the ``CommandPool``. Let's try a more
 complex example. Let's say you want to upload files on disk to an Amazon S3
 bucket. To get a list of files from disk, we can use PHP's
 ``DirectoryIterator``. This iterator yields ``SplFileInfo`` objects. The
-``CommandPool`` accepts an iterator that yields ``Aws\CommandInterface``
+``CommandPool`` accepts an iterator that yields ``Aws3\CommandInterface``
 objects, so we will need to map over the ``SplFileInfo`` objects to return
-``Aws\CommandInterface`` objects.
+``Aws3\CommandInterface`` objects.
 
 .. code-block:: php
 
     <?php
     require 'vendor/autoload.php';
 
-    use Aws\Exception\AwsException;
-    use Aws\S3\S3Client;
-    use Aws\CommandPool;
-    use Aws\CommandInterface;
-    use Aws\ResultInterface;
+    use Aws3\Exception\AwsException;
+    use Aws3\S3\S3Client;
+    use Aws3\CommandPool;
+    use Aws3\CommandInterface;
+    use Aws3\ResultInterface;
     use GuzzleHttp\Promise\PromiseInterface;
 
     // Create the client.
@@ -243,7 +243,7 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
     $files = new DirectoryIterator($fromDir);
 
     // Create a generator that converts the SplFileInfo objects into
-    // Aws\CommandInterface objects. This generator accepts the iterator that
+    // Aws3\CommandInterface objects. This generator accepts the iterator that
     // yields files and the name of the bucket to upload the files to.
     $commandGenerator = function (\Iterator $files, $bucket) use ($client) {
         foreach ($files as $file) {
@@ -304,7 +304,7 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
 CommandPool configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Aws\CommandPool`` constructor accepts various configuration options.
+The ``Aws3\CommandPool`` constructor accepts various configuration options.
 
 concurrency
     (callable|int) Maximum number of commands to execute concurrently.

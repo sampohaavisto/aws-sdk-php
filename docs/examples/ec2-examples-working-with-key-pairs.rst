@@ -23,7 +23,7 @@ Create a Key Pair
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -46,7 +46,7 @@ Delete a Key Pair
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -65,7 +65,7 @@ Describe Key Pairs
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',

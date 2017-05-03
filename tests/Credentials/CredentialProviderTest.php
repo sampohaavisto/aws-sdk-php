@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Credentials;
 
-use Aws\Credentials\CredentialProvider;
-use Aws\Credentials\Credentials;
-use Aws\LruArrayCache;
-use Aws\Sts\StsClient;
+use Aws3\Credentials\CredentialProvider;
+use Aws3\Credentials\Credentials;
+use Aws3\LruArrayCache;
+use Aws3\Sts\StsClient;
 use GuzzleHttp\Promise;
 /**
- * @covers \Aws\Credentials\CredentialProvider
+ * @covers \Aws3\Credentials\CredentialProvider
  */
 class CredentialProviderTest extends \PHPUnit_Framework_TestCase
 {
@@ -196,7 +196,7 @@ EOT;
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      * @expectedExceptionMessage Invalid credentials file:
      */
     public function testEnsuresIniFileIsValid()
@@ -214,7 +214,7 @@ EOT;
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      */
     public function testEnsuresIniFileExists()
     {
@@ -224,7 +224,7 @@ EOT;
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      */
     public function testEnsuresProfileIsNotEmpty()
     {
@@ -243,7 +243,7 @@ EOT;
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      * @expectedExceptionMessage 'foo' not found in
      */
     public function testEnsuresFileIsNotEmpty()
@@ -263,13 +263,13 @@ EOT;
     public function testCreatesFromInstanceProfileProvider()
     {
         $p = CredentialProvider::instanceProfile();
-        $this->assertInstanceOf('Aws\Credentials\InstanceProfileProvider', $p);
+        $this->assertInstanceOf('Aws3\Credentials\InstanceProfileProvider', $p);
     }
 
     public function testCreatesFromEcsCredentialProvider()
     {
         $p = CredentialProvider::ecsCredentials();
-        $this->assertInstanceOf('Aws\Credentials\EcsCredentialProvider', $p);
+        $this->assertInstanceOf('Aws3\Credentials\EcsCredentialProvider', $p);
     }
 
     public function testCreatesFromAssumeRoleCredentialProvider()
@@ -279,7 +279,7 @@ EOT;
             'assume_role_params' => [ 'foo' => 'bar' ]
         ];
         $p = CredentialProvider::assumeRole($config);
-        $this->assertInstanceOf('Aws\Credentials\AssumeRoleCredentialProvider', $p);
+        $this->assertInstanceOf('Aws3\Credentials\AssumeRoleCredentialProvider', $p);
     }
 
     public function testGetsHomeDirectoryForWindowsUsers()
@@ -287,7 +287,7 @@ EOT;
         putenv('HOME=');
         putenv('HOMEDRIVE=C:');
         putenv('HOMEPATH=\\Michael\\Home');
-        $ref = new \ReflectionClass('Aws\Credentials\CredentialProvider');
+        $ref = new \ReflectionClass('Aws3\Credentials\CredentialProvider');
         $meth = $ref->getMethod('getHomeDir');
         $meth->setAccessible(true);
         $this->assertEquals('C:\\Michael\\Home', $meth->invoke(null));

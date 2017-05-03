@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\AwsClientInterface;
-use Aws\Exception\AwsException;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\Sdk;
-use Aws\Api\Service;
+use Aws3\AwsClientInterface;
+use Aws3\Exception\AwsException;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\Sdk;
+use Aws3\Api\Service;
 
 /**
  * @internal
@@ -101,9 +101,9 @@ trait UsesServiceTrait
         $message = null
     ) {
         $code = $code ?: 'ERROR';
-        $type = $type ?: 'Aws\Exception\AwsException';
+        $type = $type ?: 'Aws3\Exception\AwsException';
 
-        $client = $this->getMockBuilder('Aws\AwsClientInterface')
+        $client = $this->getMockBuilder('Aws3\AwsClientInterface')
             ->setMethods(['getApi'])
             ->getMockForAbstractClass();
 
@@ -122,7 +122,7 @@ trait UsesServiceTrait
 
         return new $type(
             $message ?: 'Test error',
-            $this->getMockBuilder('Aws\CommandInterface')->getMock(),
+            $this->getMockBuilder('Aws3\CommandInterface')->getMock(),
             [
                 'message' => $message ?: 'Test error',
                 'code'    => $code

@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Route53;
 
-use Aws\Route53\Route53Client;
+use Aws3\Route53\Route53Client;
 
 /**
- * @covers Aws\Route53\Route53Client
+ * @covers Aws3\Route53\Route53Client
  */
 class Route53ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,7 +31,7 @@ class Route53ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ]);
 
-        $request = \Aws\serialize($command);
+        $request = \Aws3\serialize($command);
         $requestUri = (string) $request->getUri();
         $this->assertContains('/hostedzone/foo/rrset/', $requestUri);
         $this->assertNotContains('/hostedzone/hostedzone', $requestUri);
@@ -40,7 +40,7 @@ class Route53ClientTest extends \PHPUnit_Framework_TestCase
             'Id' => '/delegationset/foo',
         ]);
 
-        $request = \Aws\serialize($command);
+        $request = \Aws3\serialize($command);
         $requestUri = (string) $request->getUri();
         $this->assertContains('/delegationset/foo', $requestUri);
         $this->assertNotContains('/delegationset/delegationset', $requestUri);
@@ -51,7 +51,7 @@ class Route53ClientTest extends \PHPUnit_Framework_TestCase
             'DelegationSetId' => '/delegationset/bar',
         ]);
 
-        $request = \Aws\serialize($command);
+        $request = \Aws3\serialize($command);
         $this->assertContains(
             '<DelegationSetId>bar</DelegationSetId>',
             $request->getBody()->getContents()

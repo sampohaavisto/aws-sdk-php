@@ -25,8 +25,8 @@ Create an IAM User
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -50,8 +50,8 @@ List IAM Users
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -72,8 +72,8 @@ Update an IAM User
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -98,8 +98,8 @@ Get Info about an IAM User
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -122,8 +122,8 @@ Delete an IAM User
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',

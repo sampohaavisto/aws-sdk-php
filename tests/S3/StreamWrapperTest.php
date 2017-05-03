@@ -1,19 +1,19 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\CommandInterface;
-use Aws\History;
-use Aws\LruArrayCache;
-use Aws\Middleware;
-use Aws\Result;
-use Aws\S3\Exception\S3Exception;
-use Aws\S3\S3Client;
-use Aws\S3\StreamWrapper;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CommandInterface;
+use Aws3\History;
+use Aws3\LruArrayCache;
+use Aws3\Middleware;
+use Aws3\Result;
+use Aws3\S3\Exception\S3Exception;
+use Aws3\S3\S3Client;
+use Aws3\S3\StreamWrapper;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\S3\StreamWrapper
+ * @covers Aws3\S3\StreamWrapper
  */
 class StreamWrapperTest extends \PHPUnit_Framework_TestCase
 {

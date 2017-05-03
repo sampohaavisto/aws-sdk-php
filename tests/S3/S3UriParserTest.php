@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\S3\S3UriParser;
+use Aws3\S3\S3UriParser;
 
 /**
- * @covers Aws\S3\S3UriParser
+ * @covers Aws3\S3\S3UriParser
  */
 class S3UriParserTest extends \PHPUnit_Framework_TestCase
 {

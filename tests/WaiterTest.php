@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Api\ApiProvider;
-use Aws\CommandInterface;
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\Exception\AwsException;
-use Aws\Result;
-use Aws\S3\S3Client;
+use Aws3\Api\ApiProvider;
+use Aws3\CommandInterface;
+use Aws3\DynamoDb\DynamoDbClient;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
+use Aws3\S3\S3Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\FulfilledPromise;
@@ -17,7 +17,7 @@ use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\Waiter
+ * @covers Aws3\Waiter
  */
 class WaiterTest extends \PHPUnit_Framework_TestCase
 {
@@ -260,7 +260,7 @@ class WaiterTest extends \PHPUnit_Framework_TestCase
      */
     public function testMatchers($matcher, $result, $acceptor, $expected)
     {
-        $waiter = new \ReflectionClass('Aws\Waiter');
+        $waiter = new \ReflectionClass('Aws3\Waiter');
         $matcher = $waiter->getMethod($matcher);
         $matcher->setAccessible(true);
         $waiter = $waiter->newInstanceWithoutConstructor();
@@ -390,7 +390,7 @@ class WaiterTest extends \PHPUnit_Framework_TestCase
     {
         if (is_string($data)) {
             return new AwsException('ERROR',
-                $this->getMockBuilder('Aws\CommandInterface')->getMock(),
+                $this->getMockBuilder('Aws3\CommandInterface')->getMock(),
                 [
                     'code'   => $data,
                     'result' => new Result(['@metadata' => ['statusCode' => 200]])

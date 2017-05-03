@@ -1,17 +1,17 @@
 <?php
 namespace Aws3\Test\DynamoDb;
 
-use Aws\Command;
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\DynamoDb\Exception\DynamoDbException;
-use Aws\HandlerList;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Command;
+use Aws3\DynamoDb\DynamoDbClient;
+use Aws3\DynamoDb\Exception\DynamoDbException;
+use Aws3\HandlerList;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Promise\RejectedPromise;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Stream;
 
 /**
- * @covers \Aws\DynamoDb\DynamoDbClient
+ * @covers \Aws3\DynamoDb\DynamoDbClient
  */
 class DynamoDbClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,7 @@ class DynamoDbClientTest extends \PHPUnit_Framework_TestCase
         $client = $this->getTestSdk()->createDynamoDb();
         $sh = $client->registerSessionHandler(['locking' => true]);
         $this->assertInstanceOf(
-            'Aws\DynamoDb\LockingSessionConnection',
+            'Aws3\DynamoDb\LockingSessionConnection',
             $this->readAttribute($sh, 'connection')
         );
     }

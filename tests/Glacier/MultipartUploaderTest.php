@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\Glacier;
 
-use Aws\Glacier\MultipartUploader;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Glacier\MultipartUploader;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * @covers Aws\Glacier\MultipartUploader
+ * @covers Aws3\Glacier\MultipartUploader
  */
 class MultipartUploaderTest extends \PHPUnit_Framework_TestCase
 {

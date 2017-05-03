@@ -20,7 +20,7 @@ function generateDocblock(array $args)
         }
 
         if (isset($value['default']) && !is_callable($value['default'])) {
-            $modifiers[] = 'default=' . \Aws\describe_type($value['default']);
+            $modifiers[] = 'default=' . \Aws3\describe_type($value['default']);
         }
 
         if ($modifiers) {
@@ -32,7 +32,7 @@ function generateDocblock(array $args)
     }
 }
 
-$clientName = isset($argv[1]) ? $argv[1] : 'Aws\AwsClient';
+$clientName = isset($argv[1]) ? $argv[1] : 'Aws3\AwsClient';
 $args = call_user_func([$clientName, 'getArguments']);
 ksort($args);
 

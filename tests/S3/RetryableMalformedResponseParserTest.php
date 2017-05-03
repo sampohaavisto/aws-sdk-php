@@ -2,16 +2,16 @@
 namespace Aws3\Test\S3;
 
 
-use Aws\Api\Parser\Exception\ParserException;
-use Aws\CommandInterface;
-use Aws\S3\Exception\S3Exception;
-use Aws\S3\RetryableMalformedResponseParser;
+use Aws3\Api\Parser\Exception\ParserException;
+use Aws3\CommandInterface;
+use Aws3\S3\Exception\S3Exception;
+use Aws3\S3\RetryableMalformedResponseParser;
 use Psr\Http\Message\ResponseInterface;
 
 class RetryableMalformedResponseParserTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Aws\S3\Exception\S3Exception
+     * @expectedException \Aws3\S3\Exception\S3Exception
      * @expectedExceptionMessage Sorry!
      */
     public function testConvertsParserExceptionsToRetryableExceptions()

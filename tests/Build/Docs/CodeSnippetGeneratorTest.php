@@ -2,9 +2,9 @@
 namespace Aws3\Test\Build\Docs;
 
 
-use Aws\Api\ApiProvider;
-use Aws\Api\Service;
-use Aws\Build\Docs\CodeSnippetGenerator;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\Service;
+use Aws3\Build\Docs\CodeSnippetGenerator;
 
 class CodeSnippetGeneratorTest extends \PHPUnit_Framework_TestCase
 {

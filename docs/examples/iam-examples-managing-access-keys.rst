@@ -25,8 +25,8 @@ Create an Access Key
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -49,8 +49,8 @@ List Access Keys
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -71,8 +71,8 @@ Get Info about Access Key's Last Usage
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -95,8 +95,8 @@ Update an Access Key
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -121,8 +121,8 @@ Delete an Access Key
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',

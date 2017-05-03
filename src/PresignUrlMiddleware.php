@@ -1,10 +1,10 @@
 <?php
 namespace Aws3;
 
-use Aws\AwsClientInterface;
-use Aws\Signature\SignatureV4;
-use Aws\Endpoint\EndpointProvider;
-use Aws\CommandInterface;
+use Aws3\AwsClientInterface;
+use Aws3\Signature\SignatureV4;
+use Aws3\Endpoint\EndpointProvider;
+use Aws3\CommandInterface;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
 
@@ -71,7 +71,7 @@ class PresignUrlMiddleware
         $newCmd->{'__skip' . $cmdName} = true;
 
         // Serialize a request for the operation.
-        $request = \Aws\serialize($newCmd);
+        $request = \Aws3\serialize($newCmd);
         // Create the new endpoint for the target endpoint.
         $endpoint = EndpointProvider::resolve($this->endpointProvider, [
             'region'  => $cmd['SourceRegion'],

@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Test\UsesServiceTrait;
-use Aws\S3\GetBucketLocationParser;
-use Aws\Command;
-use Aws\Result;
+use Aws3\Test\UsesServiceTrait;
+use Aws3\S3\GetBucketLocationParser;
+use Aws3\Command;
+use Aws3\Result;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * @covers Aws\S3\GetBucketLocationParser
+ * @covers Aws3\S3\GetBucketLocationParser
  */
 class GetBucketLocationParserTest extends \PHPUnit_Framework_TestCase
 {

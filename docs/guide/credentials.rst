@@ -72,7 +72,7 @@ been configured with an IAM role.
     service. Please check if the service you are using supports temporary
     credentials by reading `AWS Services that Support AWS STS <http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html>`_.
 
-    To Avoid hitting metadata service every time, an instance of ``Aws\CacheInterface``
+    To Avoid hitting metadata service every time, an instance of ``Aws3\CacheInterface``
     can be passed in as the ``'credentials'`` option to a client constructor. This lets SDK
     use cached instance profile credentials instead. For more information, see ``'credentials'`` `option <http://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/configuration.html#credentials>`_.
 
@@ -108,7 +108,7 @@ For more information, see `IAM Roles for Amazon EC2 Container Service Tasks <htt
 Using Assume Role Credentials
 -----------------------------
 
-Using ``Aws\Credentials\AssumeRoleCredentialProvider`` to create credentials by assuming a role,
+Using ``Aws3\Credentials\AssumeRoleCredentialProvider`` to create credentials by assuming a role,
 you would need to provide ``'client'`` information with a ``StsClient`` object and
 ``'assume_role_params'`` details.
 
@@ -170,7 +170,7 @@ file, or when you are instantiating a client, using the ``profile`` option:
 
     <?php
 
-    use Aws\DynamoDb\DynamoDbClient;
+    use Aws3\DynamoDb\DynamoDbClient;
 
     // Instantiate a client with the credentials from the project1 profile
     $client = new DynamoDbClient([
@@ -220,8 +220,8 @@ Using a credential provider
 ---------------------------
 
 A credential provider is a function that returns a ``GuzzleHttp\Promise\PromiseInterface``
-that is fulfilled with an ``Aws\Credentials\CredentialsInterface`` instance or
-rejected with an ``Aws\Exception\CredentialsException``. You can use credential
+that is fulfilled with an ``Aws3\Credentials\CredentialsInterface`` instance or
+rejected with an ``Aws3\Exception\CredentialsException``. You can use credential
 providers to implement your own custom logic for creating credentials or to
 optimize credential loading.
 
@@ -231,12 +231,12 @@ evaluated each time an API operation is invoked. As such, passing in a
 credential provider function to an SDK client constructor will not immediately
 validate the credentials. If the credential provider does not return a
 credentials object, an API operation will be rejected with an
-``Aws\Exception\CredentialsException``.
+``Aws3\Exception\CredentialsException``.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\S3\S3Client;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\S3\S3Client;
 
     // Use the default credential provider
     $provider = CredentialProvider::defaultProvider();
@@ -257,20 +257,20 @@ along with any custom providers.
     If loading credentials is an expensive task (e.g., loading from disk or a
     network resource) or if credentials are not cached by your provider, then
     you should consider wrapping your credential provider in an
-    ``Aws\Credentials\CredentialProvider::memoize`` function. The default
+    ``Aws3\Credentials\CredentialProvider::memoize`` function. The default
     credential provider used by the SDK is automatically memoized.
 
 
 env provider
 ~~~~~~~~~~~~
 
-``Aws\Credentials\CredentialProvider::env`` attempts to load credentials from
+``Aws3\Credentials\CredentialProvider::env`` attempts to load credentials from
 environment variables.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\S3\S3Client;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\S3\S3Client;
 
     $client = new S3Client([
         'region'      => 'us-west-2',
@@ -282,15 +282,15 @@ environment variables.
 ini provider
 ~~~~~~~~~~~~
 
-``Aws\Credentials\CredentialProvider::ini`` attempts to load credentials from
+``Aws3\Credentials\CredentialProvider::ini`` attempts to load credentials from
 an :ref:`ini credential file <credential_profiles>`. The SDK will by default
 attempt to load the "default" profile from a file located at
 ``~/.aws/credentials``.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\S3\S3Client;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\S3\S3Client;
 
     $provider = CredentialProvider::ini();
     // Cache the results in a memoize function to avoid loading and parsing
@@ -324,13 +324,13 @@ the function that creates the provider.
 instanceProfile provider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-``Aws\Credentials\CredentialProvider::instanceProfile`` attempts to load
+``Aws3\Credentials\CredentialProvider::instanceProfile`` attempts to load
 credentials from Amazon EC2 instance profiles.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\S3\S3Client;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\S3\S3Client;
 
     $provider = CredentialProvider::instanceProfile();
     // Be sure to memoize the credentials
@@ -346,14 +346,14 @@ credentials from Amazon EC2 instance profiles.
 ecsCredentials provider
 ~~~~~~~~~~~~~~~~~~~~~~
 
-``Aws\Credentials\CredentialProvider::ecsCredentials`` attempts to load
+``Aws3\Credentials\CredentialProvider::ecsCredentials`` attempts to load
 credentials by a ``GET`` request, whose uri is specified by environment variable
 ``AWS_CONTAINER_CREDENTIALS_RELATIVE_URI`` in the container.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\S3\S3Client;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\S3\S3Client;
 
     $provider = CredentialProvider::ecsCredentials();
     // Be sure to memoize the credentials
@@ -368,7 +368,7 @@ credentials by a ``GET`` request, whose uri is specified by environment variable
 defaultProvider provider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-``Aws\Credentials\CredentialProvider::defaultProvider`` is the default
+``Aws3\Credentials\CredentialProvider::defaultProvider`` is the default
 credential provider. This provider is used if you omit a ``credentials`` option
 when creating a client. It first attempts to load credentials from environment
 variables, then from an ini file (``.aws/credentials`` file first, followed by ``.aws/config`` file),
@@ -381,7 +381,7 @@ then from an instance profile (``EcsCredentials`` first, followed by ``Ec2`` met
 assumeRole provider
 ~~~~~~~~~~~~~~~~~~~
 
-``Aws\Credentials\CredentialProvider::assumeRole`` is a credential provider
+``Aws3\Credentials\CredentialProvider::assumeRole`` is a credential provider
 that creates credentials using assume role parameters and ``StsClient`` information.
 
 .. note::
@@ -392,11 +392,11 @@ See details with following example code.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\S3\S3Client;
-    use Aws\Sts\StsClient;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\S3\S3Client;
+    use Aws3\Sts\StsClient;
 
-    // Passing Aws\Credentials\AssumeRoleCredentialProvider options directly
+    // Passing Aws3\Credentials\AssumeRoleCredentialProvider options directly
     $provider = CredentialProvider::assumeRole([
         'client' => new StsClient(['region' => 'us-west-2', 'version' => 'latest']),
         'assume_role_params' => [
@@ -420,8 +420,8 @@ Creating a custom provider
 
 Credential providers are simply functions that when invoked return a promise
 (``GuzzleHttp\Promise\PromiseInterface``) that is fulfilled with an
-``Aws\Credentials\CredentialsInterface`` object or rejected with an
-``Aws\Exception\CredentialsException``.
+``Aws3\Credentials\CredentialsInterface`` object or rejected with an
+``Aws3\Exception\CredentialsException``.
 
 A best practice for creating providers is to create a function that is invoked
 to create the actual credential provider. As an example, here's the source of
@@ -460,14 +460,14 @@ Memoizing Credentials
 
 It is sometimes necessary to create a credential provider that remembers the
 previous return value. This can be useful for performance when loading
-credentials is an expensive operation or when using the ``Aws\Sdk`` class to
+credentials is an expensive operation or when using the ``Aws3\Sdk`` class to
 share a credential provider across multiple clients. You can add memoization to
 a credential provider by wrapping the credential provider function in a
 ``memoize`` function:
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
+    use Aws3\Credentials\CredentialProvider;
 
     $provider = CredentialProvider::instanceProfile();
     // Wrap the actual provider in a memoize function.
@@ -477,7 +477,7 @@ a credential provider by wrapping the credential provider function in a
     // across multiple clients. Each time a new client is constructed,
     // it will use the previously returned credentials as long as
     // they have not yet expired.
-    $sdk = new Aws\Sdk(['credentials' => $provider]);
+    $sdk = new Aws3\Sdk(['credentials' => $provider]);
 
     $s3 = $sdk->getS3(['region' => 'us-west-2', 'version' => 'latest']);
     $ec2 = $sdk->getEc2(['region' => 'us-west-2', 'version' => 'latest']);
@@ -492,7 +492,7 @@ Chaining providers
 ~~~~~~~~~~~~~~~~~~
 
 Credential providers can be chained using the
-``Aws\Credentials\CredentialProvider::chain()`` function. This function accepts
+``Aws3\Credentials\CredentialProvider::chain()`` function. This function accepts
 a variadic number of arguments, each of which are credential provider
 functions. This function then returns a new function that is the composition of
 the provided functions such that they are invoked one after the other until one
@@ -545,7 +545,7 @@ Getting temporary credentials
 
 AWS STS has several operations that return temporary credentials, but the
 ``GetSessionToken`` operation is the simplest for demonstration purposes.
-Assuming you have an instance of ``Aws\Sts\StsClient`` stored in the
+Assuming you have an instance of ``Aws3\Sts\StsClient`` stored in the
 ``$stsClient`` variable, this is how you call it:
 
 .. code-block:: php
@@ -580,7 +580,7 @@ the client and passing in the values received from AWS STS directly.
 
 .. code-block:: php
 
-    use Aws\S3\S3Client;
+    use Aws3\S3\S3Client;
 
     $result = $stsClient->getSessionToken();
 
@@ -594,13 +594,13 @@ the client and passing in the values received from AWS STS directly.
         ]
     ]);
 
-You can also construct a ``Aws\Credentials\Credentials`` object and use that
+You can also construct a ``Aws3\Credentials\Credentials`` object and use that
 when instantiating the client.
 
 .. code-block:: php
 
-    use Aws\Credentials\Credentials;
-    use Aws\S3\S3Client;
+    use Aws3\Credentials\Credentials;
+    use Aws3\S3\S3Client;
 
     $result = $stsClient->getSessionToken();
 

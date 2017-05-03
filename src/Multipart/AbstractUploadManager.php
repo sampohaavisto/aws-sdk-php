@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Multipart;
 
-use Aws\AwsClientInterface as Client;
-use Aws\CommandInterface;
-use Aws\CommandPool;
-use Aws\Exception\AwsException;
-use Aws\Exception\MultipartUploadException;
-use Aws\Result;
-use Aws\ResultInterface;
+use Aws3\AwsClientInterface as Client;
+use Aws3\CommandInterface;
+use Aws3\CommandPool;
+use Aws3\Exception\AwsException;
+use Aws3\Exception\MultipartUploadException;
+use Aws3\Result;
+use Aws3\ResultInterface;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7;
@@ -31,7 +31,7 @@ abstract class AbstractUploadManager implements Promise\PromisorInterface
         'before_initiate' => null,
         'before_upload'   => null,
         'before_complete' => null,
-        'exception_class' => 'Aws\Exception\MultipartUploadException',
+        'exception_class' => 'Aws3\Exception\MultipartUploadException',
     ];
 
     /** @var Client Client used for the upload. */

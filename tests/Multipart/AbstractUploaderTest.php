@@ -1,16 +1,16 @@
 <?php
 namespace Aws3\Test\Multipart;
 
-use Aws\Command;
-use Aws\Exception\AwsException;
-use Aws\Exception\MultipartUploadException;
-use Aws\Multipart\UploadState;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
+use Aws3\Exception\MultipartUploadException;
+use Aws3\Multipart\UploadState;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\Multipart\AbstractUploader
+ * @covers Aws3\Multipart\AbstractUploader
  */
 class AbstractUploaderTest extends \PHPUnit_Framework_TestCase
 {
@@ -44,7 +44,7 @@ class AbstractUploaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\S3\Exception\S3MultipartUploadException
+     * @expectedException \Aws3\S3\Exception\S3MultipartUploadException
      */
     public function testThrowsExceptionOnBadInitiateRequest()
     {
@@ -78,7 +78,7 @@ class AbstractUploaderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\S3\Exception\S3MultipartUploadException
+     * @expectedException \Aws3\S3\Exception\S3MultipartUploadException
      */
     public function testThrowsExceptionOnBadCompleteRequest()
     {
@@ -154,7 +154,7 @@ class AbstractUploaderTest extends \PHPUnit_Framework_TestCase
 
         $promise = $uploader->promise();
         $this->assertSame($promise, $uploader->promise());
-        $this->assertInstanceOf('Aws\Result', $promise->wait());
+        $this->assertInstanceOf('Aws3\Result', $promise->wait());
         $this->assertEquals(5, $called);
     }
 

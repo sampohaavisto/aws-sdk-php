@@ -2,13 +2,13 @@
 namespace Aws3\Test;
 
 use Aws;
-use Aws\Command;
-use Aws\History;
-use Aws\Exception\AwsException;
+use Aws3\Command;
+use Aws3\History;
+use Aws3\Exception\AwsException;
 use GuzzleHttp\Psr7\Request;
 
 /**
- * @covers Aws\History
+ * @covers Aws3\History
  */
 class HistoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -45,7 +45,7 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
         $h = new History();
         $ticket = $h->start(new Command('foo'), new Request('GET', 'http://foo.com'));
         $this->assertNotNull($ticket);
-        $res = new Aws\Result();
+        $res = new Aws3\Result();
         $h->finish($ticket, $res);
         $this->assertCount(1, $h);
         $this->assertSame($res, $h->getLastReturn());
@@ -89,8 +89,8 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
     {
         $h = new History();
         $t = $h->start(new Command('foo'), new Request('GET', 'http://foo.com'));
-        $h->finish($t, new Aws\Result());
-        $h->finish($t, new Aws\Result());
+        $h->finish($t, new Aws3\Result());
+        $h->finish($t, new Aws3\Result());
     }
 
     /**
@@ -99,7 +99,7 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
     public function testThrowsWhenTicketIsNotFound()
     {
         $h = new History();
-        $h->finish('foo', new Aws\Result());
+        $h->finish('foo', new Aws3\Result());
     }
 
     public function testPrunesUnderLimit()
@@ -107,7 +107,7 @@ class HistoryTest extends \PHPUnit_Framework_TestCase
         $h = new History(5);
         $c = new Command('foo');
         $r = new Request('GET', 'http://foo.com');
-        $res = new Aws\Result();
+        $res = new Aws3\Result();
         for ($i = 0; $i < 50; $i++) {
             $t = $h->start($c, $r);
             $h->finish($t, $res);

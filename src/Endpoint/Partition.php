@@ -2,7 +2,7 @@
 namespace Aws3\Endpoint;
 
 use ArrayAccess;
-use Aws\HasDataTrait;
+use Aws3\HasDataTrait;
 use InvalidArgumentException as Iae;
 
 /**

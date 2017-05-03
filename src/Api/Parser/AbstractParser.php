@@ -1,9 +1,9 @@
 <?php
 namespace Aws3\Api\Parser;
 
-use Aws\Api\Service;
-use Aws\CommandInterface;
-use Aws\ResultInterface;
+use Aws3\Api\Service;
+use Aws3\CommandInterface;
+use Aws3\ResultInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -11,7 +11,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 abstract class AbstractParser
 {
-    /** @var \Aws\Api\Service Representation of the service API*/
+    /** @var \Aws3\Api\Service Representation of the service API*/
     protected $api;
 
     /**

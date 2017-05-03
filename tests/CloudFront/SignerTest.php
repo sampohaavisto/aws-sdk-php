@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Test\CloudFront;
 
-use Aws\CloudFront\Policy;
-use Aws\CloudFront\Signer;
+use Aws3\CloudFront\Policy;
+use Aws3\CloudFront\Signer;
 
 class SignerTest extends \PHPUnit_Framework_TestCase
 {

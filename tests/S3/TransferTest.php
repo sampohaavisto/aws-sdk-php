@@ -1,16 +1,16 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\CommandInterface;
-use Aws\Result;
-use Aws\S3\S3Client;
-use Aws\S3\Transfer;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CommandInterface;
+use Aws3\Result;
+use Aws3\S3\S3Client;
+use Aws3\S3\Transfer;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Promise;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\S3\Transfer
+ * @covers Aws3\S3\Transfer
  */
 class TransferTest extends \PHPUnit_Framework_TestCase
 {
@@ -98,7 +98,7 @@ class TransferTest extends \PHPUnit_Framework_TestCase
         );
 
         $c = [];
-        $i = \Aws\recursive_dir_iterator(__DIR__);
+        $i = \Aws3\recursive_dir_iterator(__DIR__);
         $t = new Transfer($s3, $i, 's3://foo/bar', [
             'before' => function ($command) use (&$c) {
                 $c[] = $command;
@@ -192,7 +192,7 @@ class TransferTest extends \PHPUnit_Framework_TestCase
     {
         $s3 = $this->getMockS3Client();
         $filesInDirectory = array_filter(
-            iterator_to_array(\Aws\recursive_dir_iterator(__DIR__)),
+            iterator_to_array(\Aws3\recursive_dir_iterator(__DIR__)),
             function ($path) { return !is_dir($path); }
         );
 
@@ -206,7 +206,7 @@ class TransferTest extends \PHPUnit_Framework_TestCase
                         && __DIR__ . '/' . $args['Key'] === $args['SourceFile'];
                 })
             )
-            ->willReturn($this->getMockBuilder('Aws\CommandInterface')->getMock());
+            ->willReturn($this->getMockBuilder('Aws3\CommandInterface')->getMock());
 
         (new Transfer($s3, __DIR__, 's3://bare-bucket'))
             ->transfer();
@@ -216,7 +216,7 @@ class TransferTest extends \PHPUnit_Framework_TestCase
     {
         $s3 = $this->getMockS3Client();
         $justThisFile = array_filter(
-            iterator_to_array(\Aws\recursive_dir_iterator(__DIR__)),
+            iterator_to_array(\Aws3\recursive_dir_iterator(__DIR__)),
             function ($path) { return $path === __FILE__; }
         );
 
@@ -230,7 +230,7 @@ class TransferTest extends \PHPUnit_Framework_TestCase
                     && __DIR__ . '/' . $args['Key'] === $args['SourceFile'];
                 })
             )
-            ->willReturn($this->getMockBuilder('Aws\CommandInterface')->getMock());
+            ->willReturn($this->getMockBuilder('Aws3\CommandInterface')->getMock());
 
         $uploader = new Transfer($s3, new \ArrayIterator($justThisFile), 's3://bucket', [
             'base_dir' => __DIR__,
@@ -253,7 +253,7 @@ class TransferTest extends \PHPUnit_Framework_TestCase
                     && $args['Key'] === 'path/to/key';
                 })
             )
-            ->willReturn($this->getMockBuilder('Aws\CommandInterface')->getMock());
+            ->willReturn($this->getMockBuilder('Aws3\CommandInterface')->getMock());
 
         $downloader = new Transfer($s3, $justOneFile, sys_get_temp_dir() . '/downloads', [
             'base_dir' => 's3://bucket/path',

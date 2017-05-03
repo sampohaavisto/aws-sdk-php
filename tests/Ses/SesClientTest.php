@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Test\Ses;
 
-use Aws\Credentials\Credentials;
-use Aws\Ses\SesClient;
+use Aws3\Credentials\Credentials;
+use Aws3\Ses\SesClient;
 
 class SesClientTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,17 +1,17 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\IdempotencyTokenMiddleware;
-use Aws\Result;
+use Aws3\IdempotencyTokenMiddleware;
+use Aws3\Result;
 use GuzzleHttp\Promise;
-use Aws\HandlerList;
-use Aws\Api\ApiProvider;
-use Aws\Api\Service;
-use Aws\Command;
+use Aws3\HandlerList;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\Service;
+use Aws3\Command;
 use GuzzleHttp\Psr7\Request;
 
 /**
- * @covers Aws\IdempotencyTokenMiddleware
+ * @covers Aws3\IdempotencyTokenMiddleware
  */
 class IdempotencyTokenMiddlewareTest extends \PHPUnit_Framework_TestCase
 {

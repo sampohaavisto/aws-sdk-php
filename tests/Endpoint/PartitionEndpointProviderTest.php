@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Endpoint\EndpointProvider;
-use Aws\Endpoint\Partition;
-use Aws\Endpoint\PartitionEndpointProvider;
+use Aws3\Endpoint\EndpointProvider;
+use Aws3\Endpoint\Partition;
+use Aws3\Endpoint\PartitionEndpointProvider;
 
 /**
- * @covers \Aws\Endpoint\PartitionEndpointProvider
+ * @covers \Aws3\Endpoint\PartitionEndpointProvider
  */
 class PartitionEndpointProviderTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Result;
-use Aws\ResultInterface;
-use Aws\S3\MultipartCopy;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Result;
+use Aws3\ResultInterface;
+use Aws3\S3\MultipartCopy;
+use Aws3\Test\UsesServiceTrait;
 
 class MultipartCopyTest extends \PHPUnit_Framework_TestCase
 {

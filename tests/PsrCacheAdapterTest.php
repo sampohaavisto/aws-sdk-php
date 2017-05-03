@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\PsrCacheAdapter;
+use Aws3\PsrCacheAdapter;
 use Psr\Cache\CacheItemInterface;
 use Psr\Cache\CacheItemPoolInterface;
 

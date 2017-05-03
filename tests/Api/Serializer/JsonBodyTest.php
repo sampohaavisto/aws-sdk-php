@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\Api\Serializer;
 
-use Aws\Api\Serializer\JsonBody;
-use Aws\Api\Service;
-use Aws\Api\Shape;
-use Aws\Api\ShapeMap;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Api\Serializer\JsonBody;
+use Aws3\Api\Service;
+use Aws3\Api\Shape;
+use Aws3\Api\ShapeMap;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\Api\Serializer\JsonBody
+ * @covers Aws3\Api\Serializer\JsonBody
  */
 class JsonBodyTest extends \PHPUnit_Framework_TestCase
 {

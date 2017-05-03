@@ -1,20 +1,20 @@
 <?php
 namespace Aws3\Test\Api\Serializer;
 
-use Aws\Api\Service;
-use Aws\AwsClient;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Api\Service;
+use Aws3\AwsClient;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers \Aws\Api\Serializer\QuerySerializer
- * @covers \Aws\Api\Serializer\JsonRpcSerializer
- * @covers \Aws\Api\Serializer\RestSerializer
- * @covers \Aws\Api\Serializer\RestJsonSerializer
- * @covers \Aws\Api\Serializer\RestXmlSerializer
- * @covers \Aws\Api\Serializer\JsonBody
- * @covers \Aws\Api\Serializer\XmlBody
- * @covers \Aws\Api\Serializer\Ec2ParamBuilder
- * @covers \Aws\Api\Serializer\QueryParamBuilder
+ * @covers \Aws3\Api\Serializer\QuerySerializer
+ * @covers \Aws3\Api\Serializer\JsonRpcSerializer
+ * @covers \Aws3\Api\Serializer\RestSerializer
+ * @covers \Aws3\Api\Serializer\RestJsonSerializer
+ * @covers \Aws3\Api\Serializer\RestXmlSerializer
+ * @covers \Aws3\Api\Serializer\JsonBody
+ * @covers \Aws3\Api\Serializer\XmlBody
+ * @covers \Aws3\Api\Serializer\Ec2ParamBuilder
+ * @covers \Aws3\Api\Serializer\QueryParamBuilder
  */
 class ComplianceTest extends \PHPUnit_Framework_TestCase
 {
@@ -72,7 +72,7 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase
                 return $service->toArray();
             },
             'credentials'  => false,
-            'signature'    => $this->getMockBuilder('Aws\Signature\SignatureInterface')->getMock(),
+            'signature'    => $this->getMockBuilder('Aws3\Signature\SignatureInterface')->getMock(),
             'region'       => 'us-west-2',
             'endpoint'     => $ep,
             'error_parser' => Service::createErrorParser($service->getProtocol()),
@@ -85,7 +85,7 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $command = $client->getCommand($name, $args);
-        $request = \Aws\serialize($command);
+        $request = \Aws3\serialize($command);
         $this->assertEquals($serialized['uri'], $request->getRequestTarget());
 
         $body = (string) $request->getBody();

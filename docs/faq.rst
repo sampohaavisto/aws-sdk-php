@@ -57,7 +57,7 @@ http://docs.aws.amazon.com/general/latest/gr/rande.html
 .. code-block:: php
 
     // Set the region to the EU (Frankfurt) region.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'region'  => 'eu-central-1',
         'version' => '2006-03-01'
     ]);
@@ -89,7 +89,7 @@ This includes the data that is sent and received over the wire.
 
 .. code-block:: php
 
-    $s3Client = new Aws\S3\S3Client([
+    $s3Client = new Aws3\S3\S3Client([
         'region'  => 'us-standard',
         'version' => '2006-03-01',
         'debug'   => true
@@ -100,10 +100,10 @@ How can I set arbitrary headers on a request?
 ---------------------------------------------
 
 You can add any arbitrary headers to a service operation by adding a custom
-middleware to the ``Aws\HandlerList`` of an ``Aws\CommandInterface`` or
-``Aws\ClientInterface``. The following example shows how to add an
+middleware to the ``Aws3\HandlerList`` of an ``Aws3\CommandInterface`` or
+``Aws3\ClientInterface``. The following example shows how to add an
 ``X-Foo-Baz`` header to a specific Amazon S3 PutObject operation using the
-``Aws\Middleware::mapRequest`` helper method.
+``Aws3\Middleware::mapRequest`` helper method.
 
 See :ref:`map-request` for more information.
 
@@ -123,10 +123,10 @@ How can I modify a command before sending it?
 ---------------------------------------------
 
 You can modify a command before sending it by adding a custom
-middleware to the ``Aws\HandlerList`` of an ``Aws\CommandInterface`` or
-``Aws\ClientInterface``. The following example shows how to add custom command
+middleware to the ``Aws3\HandlerList`` of an ``Aws3\CommandInterface`` or
+``Aws3\ClientInterface``. The following example shows how to add custom command
 parameters to a command before it is sent, essentially adding default options.
-This example uses the ``Aws\Middleware::mapCommand`` helper method.
+This example uses the ``Aws3\Middleware::mapCommand`` helper method.
 
 See :ref:`map-command` for more information.
 
@@ -134,7 +134,7 @@ See :ref:`map-command` for more information.
 What is a CredentialsException?
 -------------------------------
 
-If you are seeing a ``Aws\Exception\CredentialsException`` while while using
+If you are seeing a ``Aws3\Exception\CredentialsException`` while while using
 the SDK, then this means that the SDK was not provided with any credentials and
 was unable to find credentials in the environment.
 
@@ -143,7 +143,7 @@ perform a service operation, the SDK will attempt to find credentials. It first
 checks in some specific environment variables, then it looks for instance
 profile credentials, which are only available on configured Amazon EC2
 instances. If absolutely no credentials are provided or found, an
-``Aws\Exception\CredentialsException`` is thrown.
+``Aws3\Exception\CredentialsException`` is thrown.
 
 If you are seeing this error and you are intending to use instance profile
 credentials, then you need to make sure that the Amazon EC2 instance that the
@@ -174,7 +174,7 @@ for a list of regions, endpoints, and the supported schemes.
 
 .. code-block:: php
 
-    $client = new Aws\DynamoDb\DynamoDbClient([
+    $client = new Aws3\DynamoDb\DynamoDbClient([
         'version' => '2012-08-10',
         'region'  => 'us-west-2',
         'scheme'  => 'http'
@@ -218,12 +218,12 @@ How do I disable body signing in S3?
 ------------------------------------
 
 You can disable body signing by setting the ``ContentSHA256`` parameter in
-command object to ``Aws\Signature\S3SignatureV4::UNSIGNED_PAYLOAD``. Then PHP SDK will use it as
+command object to ``Aws3\Signature\S3SignatureV4::UNSIGNED_PAYLOAD``. Then PHP SDK will use it as
 the 'x-amz-content-sha-256' header and the body checksum in the canonical request.
 
 .. code-block:: php
 
-    $s3Client = new Aws\S3\S3Client([
+    $s3Client = new Aws3\S3\S3Client([
         'version' => '2006-03-01',
         'region'  => 'us-standard'
     ]);
@@ -231,7 +231,7 @@ the 'x-amz-content-sha-256' header and the body checksum in the canonical reques
     $params = [
         'Bucket' => 'foo',
         'Key'    => 'baz',
-        'ContentSHA256' => Aws\Signature\S3SignatureV4::UNSIGNED_PAYLOAD
+        'ContentSHA256' => Aws3\Signature\S3SignatureV4::UNSIGNED_PAYLOAD
     ];
 
     // Using operation methods creates command implicitly.
@@ -258,16 +258,16 @@ How to handle exception with Error code?
 ----------------------------------------
 
 Besides SDK customized Exception classes, each Aws Service Client has its own exception class that
-inherits from `Aws\Exception\AwsException <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Exception.AwsException.html>`_.
+inherits from `Aws3\Exception\AwsException <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Exception.AwsException.html>`_.
 You can determine more specific error types to catch with the API specific errors listed under the
 ``Errors`` section of each method.
 
 Error Code information is available with `getAwsErrorCode() <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Exception.AwsException.html#_getAwsErrorCode>`_
-from ``Aws\Exception\AwsException``.
+from ``Aws3\Exception\AwsException``.
 
 .. code-block:: php
 
-    $sns = new \Aws\Sns\SnsClient([
+    $sns = new \Aws3\Sns\SnsClient([
         'region' => 'us-west-2',
         'version' => 'latest',
     ]);

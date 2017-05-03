@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Api\Serializer;
 
-use Aws\Command;
-use Aws\Api\Serializer\JsonRpcSerializer;
-use Aws\Api\Service;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Command;
+use Aws3\Api\Serializer\JsonRpcSerializer;
+use Aws3\Api\Service;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\Api\Serializer\JsonRpcSerializer
+ * @covers Aws3\Api\Serializer\JsonRpcSerializer
  */
 class JsonRpcSerializerTest extends \PHPUnit_Framework_TestCase
 {

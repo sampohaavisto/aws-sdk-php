@@ -3,10 +3,10 @@
 namespace Aws3\Test;
 
 use Aws;
-use Aws\Api\ApiProvider;
-use Aws\Api\Service;
-use Aws\Result;
-use Aws\S3\S3Client;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\Service;
+use Aws3\Result;
+use Aws3\S3\S3Client;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Hook\Scope\AfterScenarioScope;
@@ -79,7 +79,7 @@ class PerformanceContext implements Context, SnippetAcceptingContext
      */
     public function iHaveAListOfServices()
     {
-        $this->serviceList = array_keys(Aws\manifest());
+        $this->serviceList = array_keys(Aws3\manifest());
     }
 
     /**

@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Multipart;
 
-use Aws\CommandInterface;
-use Aws\Multipart\UploadState;
-use Aws\Multipart\AbstractUploader;
-use Aws\ResultInterface;
+use Aws3\CommandInterface;
+use Aws3\Multipart\UploadState;
+use Aws3\Multipart\AbstractUploader;
+use Aws3\ResultInterface;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7;
-use Aws\S3\Exception\S3MultipartUploadException;
+use Aws3\S3\Exception\S3MultipartUploadException;
 
 /**
  * Concrete UploadBuilder for the purposes of the following test.

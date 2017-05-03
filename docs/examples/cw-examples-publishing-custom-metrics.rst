@@ -22,8 +22,8 @@ Publish Metric Data
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
 
     $client = new CloudWatchClient([
         'profile' => 'default',
@@ -55,8 +55,8 @@ Create an Alarm
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
     
     $client = new CloudWatchClient([
         'profile' => 'default',

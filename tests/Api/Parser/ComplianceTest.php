@@ -1,21 +1,21 @@
 <?php
 namespace Aws3\Test\Api\Parser;
 
-use Aws\Command;
-use Aws\Api\Service;
-use Aws\Api\Shape;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Command;
+use Aws3\Api\Service;
+use Aws3\Api\Shape;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\Api\Parser\AbstractParser
- * @covers Aws\Api\Parser\AbstractRestParser
- * @covers Aws\Api\Parser\JsonRpcParser
- * @covers Aws\Api\Parser\JsonParser
- * @covers Aws\Api\Parser\RestJsonParser
- * @covers Aws\Api\Parser\RestXmlParser
- * @covers Aws\Api\Parser\QueryParser
- * @covers Aws\Api\Parser\XmlParser
+ * @covers Aws3\Api\Parser\AbstractParser
+ * @covers Aws3\Api\Parser\AbstractRestParser
+ * @covers Aws3\Api\Parser\JsonRpcParser
+ * @covers Aws3\Api\Parser\JsonParser
+ * @covers Aws3\Api\Parser\RestJsonParser
+ * @covers Aws3\Api\Parser\RestXmlParser
+ * @covers Aws3\Api\Parser\QueryParser
+ * @covers Aws3\Api\Parser\XmlParser
  */
 class ComplianceTest extends \PHPUnit_Framework_TestCase
 {
@@ -81,7 +81,7 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase
     private function fixTimestamps(&$data, Shape $shape)
     {
         switch (get_class($shape)) {
-            case 'Aws\Api\StructureShape':
+            case 'Aws3\Api\StructureShape':
                 if ($data) {
                     foreach ($data as $key => &$value) {
                         if ($shape->hasMember($key)) {
@@ -90,17 +90,17 @@ class ComplianceTest extends \PHPUnit_Framework_TestCase
                     }
                 }
                 break;
-            case 'Aws\Api\ListShape':
+            case 'Aws3\Api\ListShape':
                 foreach ($data as &$value) {
                     $this->fixTimestamps($value, $shape->getMember());
                 }
                 break;
-            case 'Aws\Api\MapShape':
+            case 'Aws3\Api\MapShape':
                 foreach ($data as &$value) {
                     $this->fixTimestamps($value, $shape->getValue());
                 }
                 break;
-            case 'Aws\Api\TimestampShape':
+            case 'Aws3\Api\TimestampShape':
                 // Format the DateTimeResult as a Unix timestamp.
                 $data = $data->format('U');
                 break;

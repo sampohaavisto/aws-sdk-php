@@ -60,7 +60,7 @@ class GuzzleV6StreamHandlerTest extends \PHPUnit_Framework_TestCase
                     'Bucket' => $bucket,
                 ]);
             });
-        /** @var \Aws\Result $result */
+        /** @var \Aws3\Result $result */
         $result = $promise->wait();
         $this->assertEquals(204, $result['@metadata']['statusCode']);
     }

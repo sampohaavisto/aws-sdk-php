@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Sts;
 
-use Aws\Api\DateTimeResult;
-use Aws\Result;
-use Aws\Sts\StsClient;
+use Aws3\Api\DateTimeResult;
+use Aws3\Result;
+use Aws3\Sts\StsClient;
 
 /**
- * @covers Aws\Sts\StsClient
+ * @covers Aws3\Sts\StsClient
  */
 class StsClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,7 +24,7 @@ class StsClientTest extends \PHPUnit_Framework_TestCase
         $client = new StsClient(['region' => 'us-east-1', 'version' => 'latest']);
         $credentials = $client->createCredentials($result);
         $this->assertInstanceOf(
-            'Aws\Credentials\CredentialsInterface',
+            'Aws3\Credentials\CredentialsInterface',
             $credentials
         );
         $this->assertEquals('foo', $credentials->getAccessKeyId());

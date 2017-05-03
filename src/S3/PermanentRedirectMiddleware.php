@@ -1,9 +1,9 @@
 <?php
 namespace Aws3\S3;
 
-use Aws\CommandInterface;
-use Aws\ResultInterface;
-use Aws\S3\Exception\PermanentRedirectException;
+use Aws3\CommandInterface;
+use Aws3\ResultInterface;
+use Aws3\S3\Exception\PermanentRedirectException;
 use Psr\Http\Message\RequestInterface;
 
 /**

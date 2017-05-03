@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\DynamoDb;
 
-use Aws\CommandInterface;
-use Aws\DynamoDb\StandardSessionConnection;
-use Aws\Middleware;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CommandInterface;
+use Aws3\DynamoDb\StandardSessionConnection;
+use Aws3\Middleware;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\DynamoDb\StandardSessionConnection
+ * @covers Aws3\DynamoDb\StandardSessionConnection
  */
 class StandardSessionConnectionTest extends \PHPUnit_Framework_TestCase
 {
@@ -44,7 +44,7 @@ class StandardSessionConnectionTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->getTestSdk()->createDynamoDb();
         $this->addMockResults($client, [
-            $this->createMockAwsException('ERROR', 'Aws\DynamoDb\Exception\DynamoDbException')
+            $this->createMockAwsException('ERROR', 'Aws3\DynamoDb\Exception\DynamoDbException')
         ]);
         $connection = new StandardSessionConnection($client);
         $data = $connection->read('session1');
@@ -71,7 +71,7 @@ class StandardSessionConnectionTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->getTestSdk()->createDynamoDb();
         $this->addMockResults($client, [
-            $this->createMockAwsException('ERROR', 'Aws\DynamoDb\Exception\DynamoDbException')
+            $this->createMockAwsException('ERROR', 'Aws3\DynamoDb\Exception\DynamoDbException')
         ]);
         $client->getHandlerList()->appendBuild(Middleware::tap(function ($command) {
             $this->assertEquals(
@@ -92,7 +92,7 @@ class StandardSessionConnectionTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->getTestSdk()->createDynamoDb();
         $this->addMockResults($client, [
-            $this->createMockAwsException('ERROR', 'Aws\DynamoDb\Exception\DynamoDbException')
+            $this->createMockAwsException('ERROR', 'Aws3\DynamoDb\Exception\DynamoDbException')
         ]);
         $client->getHandlerList()->appendBuild(Middleware::tap(function ($command) {
             $this->assertEquals(
@@ -109,7 +109,7 @@ class StandardSessionConnectionTest extends \PHPUnit_Framework_TestCase
         $client = $this->getTestSdk()->createDynamoDb();
         $this->addMockResults($client, [
              new Result([]),
-             $this->createMockAwsException('ERROR', 'Aws\DynamoDb\Exception\DynamoDbException')
+             $this->createMockAwsException('ERROR', 'Aws3\DynamoDb\Exception\DynamoDbException')
         ]);
 
         $connection = new StandardSessionConnection($client);
@@ -129,7 +129,7 @@ class StandardSessionConnectionTest extends \PHPUnit_Framework_TestCase
         $client = $this->getTestSdk()->createDynamoDb();
         $this->addMockResults($client, [
             new Result([]),
-            $this->createMockAwsException('ERROR', 'Aws\DynamoDb\Exception\DynamoDbException')
+            $this->createMockAwsException('ERROR', 'Aws3\DynamoDb\Exception\DynamoDbException')
         ]);
 
         $connection = new StandardSessionConnection($client);

@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Test\UsesServiceTrait;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\S3\PutObjectUrlMiddleware
+ * @covers Aws3\S3\PutObjectUrlMiddleware
  */
 class PutObjectUrlTest extends \PHPUnit_Framework_TestCase
 {

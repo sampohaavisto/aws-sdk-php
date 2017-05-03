@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Credentials;
 
-use Aws\Credentials\EcsCredentialProvider;
+use Aws3\Credentials\EcsCredentialProvider;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * @covers Aws\Credentials\EcsCredentialProvider
+ * @covers Aws3\Credentials\EcsCredentialProvider
  */
 class EcsCredentialProviderTest extends \PHPUnit_Framework_TestCase
 {
@@ -29,7 +29,7 @@ class EcsCredentialProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      * @expectedExceptionMessage Error retrieving credential from ECS
      */
     public function testRejectsIfUriPathIsNotAvailable()
@@ -44,7 +44,7 @@ class EcsCredentialProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      * @expectedExceptionMessage Unexpected ECS credential value
      */
     public function testThrowsExceptionOnInvalidEcsCredential()

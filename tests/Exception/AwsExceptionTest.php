@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\Exception\AwsException;
-use Aws\Result;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * @covers Aws\Exception\AwsException
+ * @covers Aws3\Exception\AwsException
  */
 class AwsExceptionTest extends \PHPUnit_Framework_TestCase
 {
@@ -90,8 +90,8 @@ class AwsExceptionTest extends \PHPUnit_Framework_TestCase
         $e = new AwsException('Foo', $command);
 
         $exceptionString = version_compare(PHP_VERSION, '7', '>=') ?
-            'Aws\\Exception\\AwsException: Foo'
-            : "exception 'Aws\\Exception\\AwsException' with message 'Foo' in ";
+            'Aws3\\Exception\\AwsException: Foo'
+            : "exception 'Aws3\\Exception\\AwsException' with message 'Foo' in ";
 
         $this->assertStringStartsWith($exceptionString, $e->__toString());
     }
@@ -102,7 +102,7 @@ class AwsExceptionTest extends \PHPUnit_Framework_TestCase
         $command = new Command('foo');
         $e = new AwsException('Foo', $command, [], $prev);
         $this->assertStringStartsWith(
-            "exception 'Aws\\Exception\\AwsException' with message 'Foo'",
+            "exception 'Aws3\\Exception\\AwsException' with message 'Foo'",
             $e->__toString()
         );
     }

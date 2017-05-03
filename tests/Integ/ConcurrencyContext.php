@@ -2,11 +2,11 @@
 
 namespace Aws3\Test\Integ;
 
-use Aws\CommandInterface;
-use Aws\CommandPool;
-use Aws\Exception\AwsException;
-use Aws\Result;
-use Aws\S3\S3Client;
+use Aws3\CommandInterface;
+use Aws3\CommandPool;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
+use Aws3\S3\S3Client;
 use Behat\Behat\Hook\Scope\AfterFeatureScope;
 use Behat\Behat\Hook\Scope\BeforeFeatureScope;
 use Behat\Behat\Tester\Exception\PendingException;

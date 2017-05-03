@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Build\Changelog;
 
-use Aws\Build\Changelog\ChangelogBuilder;
+use Aws3\Build\Changelog\ChangelogBuilder;
 
 /**
- * @covers Aws\Build\Changelog\ChangelogBuilder
+ * @covers Aws3\Build\Changelog\ChangelogBuilder
  */
 class ChangelogBuilderTest extends \PHPUnit_Framework_TestCase
 {
@@ -63,10 +63,10 @@ class ChangelogBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($obj->isNewService());
         $lines = file($tempDir . 'CHANGELOG.md');
         $this->assertEquals("## next release\n", $lines[2]);
-        $this->assertEquals("* `Aws\Ec2` - Added Support to Tag Instance\n", $lines[4]);
-        $this->assertEquals("* `Aws\Ecs` - Test string placeholder for new docs\n", $lines[5]);
-        $this->assertEquals("* `Aws\s3` - Test string placeholder for new service\n", $lines[6]);
-        $this->assertEquals("* `Aws\util` - Parse ini files containing comments using #\n", $lines[7]);
+        $this->assertEquals("* `Aws3\Ec2` - Added Support to Tag Instance\n", $lines[4]);
+        $this->assertEquals("* `Aws3\Ecs` - Test string placeholder for new docs\n", $lines[5]);
+        $this->assertEquals("* `Aws3\s3` - Test string placeholder for new service\n", $lines[6]);
+        $this->assertEquals("* `Aws3\util` - Parse ini files containing comments using #\n", $lines[7]);
         unlink($tempDir . '/CHANGELOG.md');
         $this->assertEquals(
             json_decode(file_get_contents($this->RESOURCE_DIR . "/release-json-valid"), true),

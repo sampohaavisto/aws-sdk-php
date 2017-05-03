@@ -92,7 +92,7 @@ The GitHub issues are intended for bug reports and feature requests. For help an
 // Require the Composer autoloader.
 require 'vendor/autoload.php';
 
-use Aws\S3\S3Client;
+use Aws3\S3\S3Client;
 
 // Instantiate an Amazon S3 client.
 $s3 = new S3Client([
@@ -113,7 +113,7 @@ try {
         'Body'   => fopen('/path/to/file', 'r'),
         'ACL'    => 'public-read',
     ]);
-} catch (Aws\S3\Exception\S3Exception $e) {
+} catch (Aws3\S3\Exception\S3Exception $e) {
     echo "There was an error uploading the file.\n";
 }
 ```

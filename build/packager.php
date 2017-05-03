@@ -42,7 +42,7 @@ $burgomaster->createPhar(
     __DIR__ . "/artifacts/aws.phar",
     null,
     $autoloaderFilename,
-    'aws-' . \Aws\Sdk::VERSION . '.phar'
+    'aws-' . \Aws3\Sdk::VERSION . '.phar'
 );
 
 $burgomaster->startSection('test-phar');

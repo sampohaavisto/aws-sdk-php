@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\DynamoDb;
 
-use Aws\DynamoDb\SessionHandler;
-use Aws\Test\UsesServiceTrait;
+use Aws3\DynamoDb\SessionHandler;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\DynamoDb\SessionHandler
+ * @covers Aws3\DynamoDb\SessionHandler
  */
 class SessionHandlerTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,11 +18,11 @@ class SessionHandlerTest extends \PHPUnit_Framework_TestCase
         $sh2 = SessionHandler::fromClient($client, ['locking' => true]);
 
         $this->assertInstanceOf(
-            'Aws\DynamoDb\StandardSessionConnection',
+            'Aws3\DynamoDb\StandardSessionConnection',
             $this->readAttribute($sh1, 'connection')
         );
         $this->assertInstanceOf(
-            'Aws\DynamoDb\LockingSessionConnection',
+            'Aws3\DynamoDb\LockingSessionConnection',
             $this->readAttribute($sh2, 'connection')
         );
     }
@@ -31,7 +31,7 @@ class SessionHandlerTest extends \PHPUnit_Framework_TestCase
     {
         $data = ['fizz' => 'buzz'];
         $connection = $this->getMockForAbstractClass(
-            'Aws\DynamoDb\SessionConnectionInterface'
+            'Aws3\DynamoDb\SessionConnectionInterface'
         );
         $connection->expects($this->any())
             ->method('read')
@@ -57,7 +57,7 @@ class SessionHandlerTest extends \PHPUnit_Framework_TestCase
     public function testHandlerWhenNothingWritten()
     {
         $connection = $this->getMockForAbstractClass(
-            'Aws\DynamoDb\SessionConnectionInterface'
+            'Aws3\DynamoDb\SessionConnectionInterface'
         );
         $connection->expects($this->once())
             ->method('write')
@@ -74,7 +74,7 @@ class SessionHandlerTest extends \PHPUnit_Framework_TestCase
     {
         $data = 'serializedData';
         $connection = $this->getMockForAbstractClass(
-            'Aws\DynamoDb\SessionConnectionInterface'
+            'Aws3\DynamoDb\SessionConnectionInterface'
         );
         $connection->expects($this->once())
             ->method('read')

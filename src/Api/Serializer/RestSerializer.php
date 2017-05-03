@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Api\Serializer;
 
-use Aws\Api\MapShape;
-use Aws\Api\Service;
-use Aws\Api\Operation;
-use Aws\Api\Shape;
-use Aws\Api\StructureShape;
-use Aws\Api\TimestampShape;
-use Aws\CommandInterface;
+use Aws3\Api\MapShape;
+use Aws3\Api\Service;
+use Aws3\Api\Operation;
+use Aws3\Api\Shape;
+use Aws3\Api\StructureShape;
+use Aws3\Api\TimestampShape;
+use Aws3\CommandInterface;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Psr7\UriResolver;

@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Test\Signature;
 
-use Aws\Credentials\Credentials;
-use Aws\Signature\SignatureV4;
+use Aws3\Credentials\Credentials;
+use Aws3\Signature\SignatureV4;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\NoSeekStream;
@@ -10,7 +10,7 @@ use GuzzleHttp\Psr7\NoSeekStream;
 require_once __DIR__ . '/sig_hack.php';
 
 /**
- * @covers Aws\Signature\SignatureV4
+ * @covers Aws3\Signature\SignatureV4
  */
 class SignatureV4Test extends \PHPUnit_Framework_TestCase
 {
@@ -244,7 +244,7 @@ class SignatureV4Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\CouldNotCreateChecksumException
+     * @expectedException \Aws3\Exception\CouldNotCreateChecksumException
      */
     public function testEnsuresContentSha256CanBeCalculated()
     {
@@ -254,7 +254,7 @@ class SignatureV4Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\CouldNotCreateChecksumException
+     * @expectedException \Aws3\Exception\CouldNotCreateChecksumException
      */
     public function testEnsuresContentSha256CanBeCalculatedWhenSeekFails()
     {

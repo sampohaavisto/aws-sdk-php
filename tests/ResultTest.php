@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Result;
+use Aws3\Result;
 
 /**
- * @covers Aws\Result
+ * @covers Aws3\Result
  */
 class ResultTest extends \PHPUnit_Framework_TestCase
 {

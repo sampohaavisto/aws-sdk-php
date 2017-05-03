@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Api\Serializer;
 
-use Aws\Api\Serializer\QuerySerializer;
-use Aws\Api\Service;
-use Aws\Command;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Api\Serializer\QuerySerializer;
+use Aws3\Api\Service;
+use Aws3\Command;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\Api\Serializer\QuerySerializer
+ * @covers Aws3\Api\Serializer\QuerySerializer
  */
 class QuerySerializerTest extends \PHPUnit_Framework_TestCase
 {

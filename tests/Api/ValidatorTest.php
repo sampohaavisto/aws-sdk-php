@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\Shape;
-use Aws\Api\ShapeMap;
-use Aws\Api\Validator;
+use Aws3\Api\Shape;
+use Aws3\Api\ShapeMap;
+use Aws3\Api\Validator;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\Api\Validator
+ * @covers Aws3\Api\Validator
  */
 class ValidatorTest extends \PHPUnit_Framework_TestCase
 {

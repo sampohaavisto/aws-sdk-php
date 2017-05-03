@@ -24,7 +24,7 @@ Describe Instances
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -40,7 +40,7 @@ Enable and Disable Monitoring
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -66,7 +66,7 @@ Start and Stop an Instance
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -92,7 +92,7 @@ Reboot an Instances
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',

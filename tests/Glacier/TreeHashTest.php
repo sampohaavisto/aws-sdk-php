@@ -1,15 +1,15 @@
 <?php
 namespace Aws3\Test\Glacier;
 
-use Aws\Glacier\TreeHash;
+use Aws3\Glacier\TreeHash;
 
 class TreeHashTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Aws\Glacier\TreeHash::__construct
-     * @covers Aws\Glacier\TreeHash::update
-     * @covers Aws\Glacier\TreeHash::addChecksum
-     * @covers Aws\Glacier\TreeHash::complete
+     * @covers Aws3\Glacier\TreeHash::__construct
+     * @covers Aws3\Glacier\TreeHash::update
+     * @covers Aws3\Glacier\TreeHash::addChecksum
+     * @covers Aws3\Glacier\TreeHash::complete
      */
     public function testHashingIsHappeningCorrectly()
     {
@@ -38,7 +38,7 @@ class TreeHashTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \LogicException
-     * @covers Aws\Glacier\TreeHash::update
+     * @covers Aws3\Glacier\TreeHash::update
      */
     public function testCannotUpdateAfterHashCalculation()
     {
@@ -51,7 +51,7 @@ class TreeHashTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \LogicException
-     * @covers Aws\Glacier\TreeHash::addChecksum
+     * @covers Aws3\Glacier\TreeHash::addChecksum
      */
     public function testCannotAddChecksumsAfterHashCalculation()
     {
@@ -63,7 +63,7 @@ class TreeHashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Aws\Glacier\TreeHash::reset
+     * @covers Aws3\Glacier\TreeHash::reset
      */
     public function testCanResetHash()
     {
@@ -76,7 +76,7 @@ class TreeHashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Aws\Glacier\TreeHash::complete
+     * @covers Aws3\Glacier\TreeHash::complete
      */
     public function testCanCalculateEmptyHash()
     {
@@ -86,7 +86,7 @@ class TreeHashTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Aws\Glacier\TreeHash::complete
+     * @covers Aws3\Glacier\TreeHash::complete
      */
     public function testCanCalculateHashForSingleZero()
     {

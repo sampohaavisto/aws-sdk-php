@@ -1,15 +1,15 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\CommandInterface;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\S3\BatchDelete;
-use Aws\S3\Exception\DeleteMultipleObjectsException;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CommandInterface;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\S3\BatchDelete;
+use Aws3\S3\Exception\DeleteMultipleObjectsException;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\S3\BatchDelete
+ * @covers Aws3\S3\BatchDelete
  */
 class BatchDeleteTest extends \PHPUnit_Framework_TestCase
 {

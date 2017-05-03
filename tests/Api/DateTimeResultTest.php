@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\DateTimeResult;
+use Aws3\Api\DateTimeResult;
 
 /**
- * @covers \Aws\Api\DateTimeResult
+ * @covers \Aws3\Api\DateTimeResult
  */
 class DateTimeResultTest extends \PHPUnit_Framework_TestCase
 {

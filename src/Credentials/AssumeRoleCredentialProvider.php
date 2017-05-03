@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Credentials;
 
-use Aws\Exception\AwsException;
-use Aws\Exception\CredentialsException;
-use Aws\Result;
-use Aws\Sts\StsClient;
+use Aws3\Exception\AwsException;
+use Aws3\Exception\CredentialsException;
+use Aws3\Result;
+use Aws3\Sts\StsClient;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Promise\PromiseInterface;

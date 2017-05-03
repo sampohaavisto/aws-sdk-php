@@ -4,17 +4,17 @@ Amazon S3 Presigned POSTs
 
 Much like pre-signed URLs, pre-signed POSTs allow you to give write access to a
 user without giving them AWS credentials. Presigned POST forms can be created
-with the help of an instance of `Aws\S3\PostObjectV4 <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.S3.PostObjectV4.html>`_.
+with the help of an instance of `Aws3\S3\PostObjectV4 <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.S3.PostObjectV4.html>`_.
 
 To create an instance of ``PostObjectV4``, you must provide an instance of
-``Aws\S3\S3Client``, a bucket, an associative array of form input fields,
+``Aws3\S3\S3Client``, a bucket, an associative array of form input fields,
 an array of policy conditions referred in `POST policy document
 <http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTForms.html#HTTPPOSTConstructPolicy>`_
 and expiration time string for the policy(optional, 1 hour by default):
 
 .. code-block:: php
 
-    $client = new \Aws\S3\S3Client([
+    $client = new \Aws3\S3\S3Client([
         'version' => 'latest',
         'region' => 'us-west-2',
     ]);
@@ -33,7 +33,7 @@ and expiration time string for the policy(optional, 1 hour by default):
     // Optional: configure expiration time string
     $expires = '+2 hours';
 
-    $postObject = new \Aws\S3\PostObjectV4(
+    $postObject = new \Aws3\S3\PostObjectV4(
         $client,
         $bucket,
         $formInputs,

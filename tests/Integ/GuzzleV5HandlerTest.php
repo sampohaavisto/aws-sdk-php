@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Test\Integ;
 
-use Aws\Handler\GuzzleV5\GuzzleHandler;
+use Aws3\Handler\GuzzleV5\GuzzleHandler;
 use GuzzleHttp\Promise\RejectionException;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;

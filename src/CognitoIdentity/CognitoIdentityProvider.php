@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\CognitoIdentity;
 
-use Aws\Credentials\Credentials;
+use Aws3\Credentials\Credentials;
 use GuzzleHttp\Promise;
 
 class CognitoIdentityProvider

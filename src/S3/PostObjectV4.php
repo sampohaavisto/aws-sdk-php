@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\S3;
 
-use Aws\Credentials\CredentialsInterface;
+use Aws3\Credentials\CredentialsInterface;
 use GuzzleHttp\Psr7\Uri;
-use Aws\Signature\SignatureTrait;
-use Aws\Signature\SignatureV4 as SignatureV4;
-use Aws\Api\TimestampShape as TimestampShape;
+use Aws3\Signature\SignatureTrait;
+use Aws3\Signature\SignatureV4 as SignatureV4;
+use Aws3\Api\TimestampShape as TimestampShape;
 
 /**
  * Encapsulates the logic for getting the data for an S3 object POST upload form

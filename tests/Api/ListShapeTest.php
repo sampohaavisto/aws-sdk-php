@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ShapeMap;
-use Aws\Api\ListShape;
+use Aws3\Api\ShapeMap;
+use Aws3\Api\ListShape;
 
 /**
- * @covers \Aws\Api\ListShape
+ * @covers \Aws3\Api\ListShape
  */
 class ListShapeTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,7 +17,7 @@ class ListShapeTest extends \PHPUnit_Framework_TestCase
         );
 
         $m = $s->getMember();
-        $this->assertInstanceOf('Aws\Api\Shape', $m);
+        $this->assertInstanceOf('Aws3\Api\Shape', $m);
         $this->assertSame($m, $s->getMember());
         $this->assertEquals('string', $m->getType());
     }

@@ -13,7 +13,7 @@ You need to register the Amazon S3 stream wrapper in order to use it:
 
 .. code-block:: php
 
-    $client = new Aws\S3\S3Client([/** options **/]);
+    $client = new Aws3\S3\S3Client([/** options **/]);
 
     // Register the stream wrapper from an S3Client object
     $client->registerStreamWrapper();
@@ -211,7 +211,7 @@ rename()        Rename an object by copying the object then deleting the
 
     While ``copy`` will generally work with the S3 stream wrapper, some errors
     may not be properly reported due to the internals of the ``copy`` function
-    in PHP. It is recommended that you use an instance of `Aws\S3\ObjectCopier
+    in PHP. It is recommended that you use an instance of `Aws3\S3\ObjectCopier
     <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.S3.ObjectCopier.html>`_
     instead.
 
@@ -289,7 +289,7 @@ You can recursively list each object and prefix in a bucket using PHP's
     }
 
 Another way to list the contents of a bucket recursively that incurs fewer
-HTTP requests, is to use the ``Aws\recursive_dir_iterator($path, $context = null)``
+HTTP requests, is to use the ``Aws3\recursive_dir_iterator($path, $context = null)``
 function.
 
 .. code-block:: php
@@ -297,7 +297,7 @@ function.
     <?php
     require 'vendor/autoload.php';
 
-    $iter = Aws\recursive_dir_iterator('s3://bucket/key');
+    $iter = Aws3\recursive_dir_iterator('s3://bucket/key');
     foreach ($iter as $filename) {
         echo $filename . "\n";
     }
@@ -314,8 +314,8 @@ The stream wrapper supports the following stream context options on every
 operation:
 
 ``client``
-    The ``Aws\AwsClientInterface`` object to use to execute commands.
+    The ``Aws3\AwsClientInterface`` object to use to execute commands.
 
 ``cache``
-    An instance of ``Aws\CacheInterface`` to use to cache previously obtained
+    An instance of ``Aws3\CacheInterface`` to use to cache previously obtained
     file stats. The stream wrapper will use an in-memory LRU cache by default.

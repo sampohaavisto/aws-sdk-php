@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\CacheInterface;
-use Aws\DoctrineCacheAdapter;
+use Aws3\CacheInterface;
+use Aws3\DoctrineCacheAdapter;
 use Doctrine\Common\Cache\Cache;
 
 class DoctrineCacheAdapterTest extends \PHPUnit_Framework_TestCase

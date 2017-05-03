@@ -23,8 +23,8 @@ Set Attributes on a Queue to Enable Long Polling
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
 
     $queueUrl = "QUEUE_URL";
     $client = new SqsClient([
@@ -51,8 +51,8 @@ Retrieve Messages with Long Polling
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
 
     $queueUrl = "QUEUE_URL";
     $client = new SqsClient([
@@ -80,8 +80,8 @@ Create a Queue with Long Polling
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
     
     $queueName = "QUEUE_NAME";
     $client = new SqsClient([

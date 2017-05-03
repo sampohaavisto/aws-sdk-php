@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\CacheInterface;
-use Aws\CommandInterface;
-use Aws\Endpoint\Partition;
-use Aws\LruArrayCache;
-use Aws\ResultInterface;
-use Aws\S3\S3ClientInterface;
-use Aws\S3\S3MultiRegionClient;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CacheInterface;
+use Aws3\CommandInterface;
+use Aws3\Endpoint\Partition;
+use Aws3\LruArrayCache;
+use Aws3\ResultInterface;
+use Aws3\S3\S3ClientInterface;
+use Aws3\S3\S3MultiRegionClient;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Promise;

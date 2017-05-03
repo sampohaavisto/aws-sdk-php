@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\S3;
 
-use Aws\CommandInterface;
-use Aws\ResultInterface;
+use Aws3\CommandInterface;
+use Aws3\ResultInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**

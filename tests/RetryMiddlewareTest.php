@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\Exception\AwsException;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\RetryMiddleware;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\Exception\AwsException;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\RetryMiddleware;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\RejectedPromise;
 use GuzzleHttp\Psr7\Request;
@@ -14,7 +14,7 @@ use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\RetryMiddleware
+ * @covers Aws3\RetryMiddleware
  */
 class RetryMiddlewareTest extends \PHPUnit_Framework_TestCase
 {
@@ -218,10 +218,10 @@ class RetryMiddlewareTest extends \PHPUnit_Framework_TestCase
         );
 
         $result = $wrapped($command, $request)->wait();
-        $this->assertInstanceOf('Aws\ResultInterface', $result);
+        $this->assertInstanceOf('Aws3\ResultInterface', $result);
         $this->assertCount(2, $called);
-        $this->assertInstanceOf('Aws\Exception\AwsException', $called[0][0]);
-        $this->assertInstanceOf('Aws\ResultInterface', $called[1][0]);
+        $this->assertInstanceOf('Aws3\Exception\AwsException', $called[0][0]);
+        $this->assertInstanceOf('Aws3\ResultInterface', $called[1][0]);
     }
 
     public function testForwardRejectionWhenExceptionDoesNotMatch()

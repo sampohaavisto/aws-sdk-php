@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Exception;
 
-use Aws\Exception\CouldNotCreateChecksumException;
+use Aws3\Exception\CouldNotCreateChecksumException;
 
 /**
- * @covers Aws\Exception\CouldNotCreateChecksumException
+ * @covers Aws3\Exception\CouldNotCreateChecksumException
  */
 class CouldNotCreateChecksumExceptionTest extends \PHPUnit_Framework_TestCase
 {

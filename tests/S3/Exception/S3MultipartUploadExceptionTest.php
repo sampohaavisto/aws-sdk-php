@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\S3\Exception;
 
-use Aws\Command;
-use Aws\Exception\AwsException;
-use Aws\S3\Exception\S3MultipartUploadException;
-use Aws\Multipart\UploadState;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
+use Aws3\S3\Exception\S3MultipartUploadException;
+use Aws3\Multipart\UploadState;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\S3\Exception\S3MultipartUploadException
+ * @covers Aws3\S3\Exception\S3MultipartUploadException
  */
 class S3MultipartUploadExceptionTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Ec2;
 
-use Aws\Ec2\Ec2Client;
-use Aws\MockHandler;
-use Aws\Result;
+use Aws3\Ec2\Ec2Client;
+use Aws3\MockHandler;
+use Aws3\Result;
 
 /**
- * @covers Aws\Ec2\Ec2Client
+ * @covers Aws3\Ec2\Ec2Client
  */
 class Ec2ClientTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Build\Docs;
 
-use Aws\Api\AbstractModel;
-use Aws\Api\ApiProvider;
-use Aws\Api\ListShape;
-use Aws\Api\MapShape;
-use Aws\Api\Operation;
-use Aws\Api\Service as Api;
-use Aws\Api\StructureShape;
-use Aws\Api\DocModel;
+use Aws3\Api\AbstractModel;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\ListShape;
+use Aws3\Api\MapShape;
+use Aws3\Api\Operation;
+use Aws3\Api\Service as Api;
+use Aws3\Api\StructureShape;
+use Aws3\Api\DocModel;
 use TokenReflection\Broker;
 use TokenReflection\ReflectionBase;
 use TokenReflection\ReflectionClass;
@@ -73,7 +73,7 @@ class DocsBuilder
             $ns = $data['namespace'];
             foreach ($data['versions'] as $alias => $version) {
                 list($api, $docModel) = call_user_func(
-                    "Aws\\{$ns}\\{$ns}Client::applyDocFilters",
+                    "Aws3\\{$ns}\\{$ns}Client::applyDocFilters",
                     ApiProvider::resolve($this->apiProvider, 'api', $name, $version),
                     ApiProvider::resolve($this->apiProvider, 'docs', $name, $version)
                 );
@@ -302,7 +302,7 @@ EOT;
     {
         $path = __DIR__ . "/../../../src/data/{$name}/{$version}/examples-1.json";
         try {
-            return \Aws\load_compiled_json($path)['examples'];
+            return \Aws3\load_compiled_json($path)['examples'];
         } catch (\InvalidArgumentException $e) {
             return [];
         }

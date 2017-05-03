@@ -2,12 +2,12 @@
 
 namespace Aws3\Test\Integ;
 
-use Aws\Exception\MultipartUploadException;
-use Aws\Glacier\MultipartUploader as GlacierMultipartUploader;
-use Aws\ResultInterface;
-use Aws\S3\MultipartUploader as S3MultipartUploader;
+use Aws3\Exception\MultipartUploadException;
+use Aws3\Glacier\MultipartUploader as GlacierMultipartUploader;
+use Aws3\ResultInterface;
+use Aws3\S3\MultipartUploader as S3MultipartUploader;
 use Behat\Behat\Tester\Exception\PendingException;
-use Aws\S3\BatchDelete;
+use Aws3\S3\BatchDelete;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;

@@ -44,7 +44,7 @@ operation.
 
 .. code-block:: php
 
-    $client = new Aws\DynamoDb\DynamoDbClient([
+    $client = new Aws3\DynamoDb\DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
     ]);
@@ -56,11 +56,11 @@ Notice that you can call either ``describeTable`` or ``describeTableAsync``.
 These methods are magic ``__call`` methods on a client that are powered by the
 API model and ``version`` number associated with the client. By calling methods
 like ``describeTable`` without the ``Async`` suffix, the client will block
-while it sends an HTTP request and either return an ``Aws\ResultInterface``
-object or throw an ``Aws\Exception\AwsException``. By suffixing the operation
+while it sends an HTTP request and either return an ``Aws3\ResultInterface``
+object or throw an ``Aws3\Exception\AwsException``. By suffixing the operation
 name with ``Async`` (i.e., ``describeTableAsync``) the client will create a
-promise that is eventually fulfilled with and an ``Aws\ResultInterface``
-object or rejected with an ``Aws\Exception\AwsException``.
+promise that is eventually fulfilled with and an ``Aws3\ResultInterface``
+object or rejected with an ``Aws3\Exception\AwsException``.
 
 .. important::
 
@@ -98,7 +98,7 @@ concurrently.
 
     use GuzzleHttp\Promise;
 
-    $sdk = new Aws\Sdk([
+    $sdk = new Aws3\Sdk([
         'version' => 'latest',
         'region'  => 'us-west-2'
     ]);
@@ -197,7 +197,7 @@ the promise is rejected with the exception and the exception is thrown.
 
 .. code-block:: php
 
-    use Aws\Exception\AwsException;
+    use Aws3\Exception\AwsException;
 
     $promise = $client->listTablesAsync();
 
@@ -225,7 +225,7 @@ can be obtained by calling the ``getReason`` method of the exception.
 .. note::
 
     API operation calls in the SDK are rejected with subclasses of the
-    ``Aws\Exception\AwsException`` class. However, it is possible that the
+    ``Aws3\Exception\AwsException`` class. However, it is possible that the
     reason delivered to a ``then`` method is different due to the addition of
     a custom middleware that alters a rejection reason.
 
@@ -255,7 +255,7 @@ each and each_limit
 ~~~~~~~~~~~~~~~~~~~
 
 Use the :ref:`CommandPool <command_pool>` when you have a task queue of
-``Aws\CommandInterface`` commands to perform concurrently with a fixed pool
+``Aws3\CommandInterface`` commands to perform concurrently with a fixed pool
 size (the commands can be in memory or yielded by a lazy iterator). The
 CommandPool will ensure that a fixed number of commands are sent concurrently
 until the supplied iterator is exhausted.
@@ -268,7 +268,7 @@ commands of different clients concurrently using a fixed pool size.
 
     use GuzzleHttp\Promise;
 
-    $sdk = new Aws\Sdk([
+    $sdk = new Aws3\Sdk([
         'version' => 'latest',
         'region'  => 'us-west-2'
     ]);

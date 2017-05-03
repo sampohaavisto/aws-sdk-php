@@ -24,7 +24,7 @@ Describe Security Groups
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -40,7 +40,7 @@ Add an Ingress Rule
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -59,7 +59,7 @@ Create a Security Group
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',
@@ -81,7 +81,7 @@ Delete a Security Group
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+    use Aws3\Ec2\Ec2Client;
 
     $ec2Client = new Ec2Client([
         'region' => 'us-west-2',

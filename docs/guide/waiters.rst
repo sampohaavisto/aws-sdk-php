@@ -66,14 +66,14 @@ initDelay
 
 before
     (callable) A PHP callable function that is invoked before each attempt. The
-    callable is invoked with the ``Aws\CommandInterface`` command that is about
+    callable is invoked with the ``Aws3\CommandInterface`` command that is about
     to be executed and the number of attempts that have been executed so far.
     Uses of the ``before`` callable might be to modify commands before they are
     executed or provide progress information.
 
     .. code-block:: php
 
-        use Aws\CommandInterface;
+        use Aws3\CommandInterface;
 
         $s3Client->waitUntil('BucketExists', [
             'Bucket'  => 'my-bucket',
@@ -101,12 +101,12 @@ at once.
 You can access a waiter promise by retrieving a waiter from a client using the
 client's ``getWaiter($name, array $args = [])`` method. Use the ``promise()``
 method of a waiter to initiate the waiter. A waiter promise is fulfilled with
-the last ``Aws\CommandInterface`` that was executed in the waiter, and rejected
+the last ``Aws3\CommandInterface`` that was executed in the waiter, and rejected
 with a ``RuntimeException`` on error.
 
 .. code-block:: php
 
-    use Aws\CommandInterface;
+    use Aws3\CommandInterface;
 
     $waiterName = 'BucketExists';
     $waiterOptions = ['Bucket' => 'my-bucket'];
@@ -136,7 +136,7 @@ resources, and do something with the first waiter that successfully resolved?
 
 .. code-block:: php
 
-    use Aws\CommandInterface;
+    use Aws3\CommandInterface;
 
     // Create an array of waiter promises.
     $promises = [

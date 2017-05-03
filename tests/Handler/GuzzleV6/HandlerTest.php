@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Test\Handler\GuzzleV6;
 
-use Aws\Handler\GuzzleV6\GuzzleHandler;
+use Aws3\Handler\GuzzleV6\GuzzleHandler;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
@@ -13,7 +13,7 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\TransferStats;
 
 /**
- * @covers Aws\Handler\GuzzleV6\GuzzleHandler
+ * @covers Aws3\Handler\GuzzleV6\GuzzleHandler
  */
 class HandlerTest extends \PHPUnit_Framework_TestCase
 {

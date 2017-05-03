@@ -1,8 +1,8 @@
 <?php
 namespace Aws3;
 
-use Aws\Endpoint\PartitionEndpointProvider;
-use Aws\Endpoint\PartitionInterface;
+use Aws3\Endpoint\PartitionEndpointProvider;
+use Aws3\Endpoint\PartitionInterface;
 use GuzzleHttp\Promise\FulfilledPromise;
 use Psr\Http\Message\RequestInterface;
 
@@ -42,7 +42,7 @@ class MultiRegionClient implements AwsClientInterface
                 'internal' => true,
                 'default' => function (array $args) {
                     $namespace = manifest($args['service'])['namespace'];
-                    $klass = "Aws\\{$namespace}\\{$namespace}Client";
+                    $klass = "Aws3\\{$namespace}\\{$namespace}Client";
                     $region = isset($args['region']) ? $args['region'] : null;
 
                     return function (array $args) use ($klass, $region) {
@@ -91,7 +91,7 @@ class MultiRegionClient implements AwsClientInterface
      *
      * - client_factory: (callable) An optional callable that takes an array of
      *   client configuration arguments and returns a regionalized client.
-     * - partition: (Aws\Endpoint\Partition|string) AWS partition to connect to.
+     * - partition: (Aws3\Endpoint\Partition|string) AWS partition to connect to.
      *   Valid partitions include "aws," "aws-cn," and "aws-us-gov." Used to
      *   restrict the scope of the mapRegions method.
      * - region: (string) Region to connect to when no override is provided.

@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\MachineLearning;
 
-use Aws\Middleware;
-use Aws\MachineLearning\MachineLearningClient;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Middleware;
+use Aws3\MachineLearning\MachineLearningClient;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Uri;
 
 /**
- * @covers Aws\MachineLearning\MachineLearningClient
+ * @covers Aws3\MachineLearning\MachineLearningClient
  */
 class MachineLearningClientTest extends \PHPUnit_Framework_TestCase
 {

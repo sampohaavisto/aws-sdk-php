@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\S3\Exception;
 
-use Aws\CommandInterface;
-use Aws\Exception\AwsException;
-use Aws\Multipart\UploadState;
+use Aws3\CommandInterface;
+use Aws3\Exception\AwsException;
+use Aws3\Multipart\UploadState;
 
-class S3MultipartUploadException extends \Aws\Exception\MultipartUploadException
+class S3MultipartUploadException extends \Aws3\Exception\MultipartUploadException
 {
     /** @var string Bucket of the transfer object */
     private $bucket;

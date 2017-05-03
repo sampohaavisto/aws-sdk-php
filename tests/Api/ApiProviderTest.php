@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ApiProvider;
-use Aws\Exception\UnresolvedApiException;
+use Aws3\Api\ApiProvider;
+use Aws3\Exception\UnresolvedApiException;
 
 /**
- * @covers Aws\Api\ApiProvider
+ * @covers Aws3\Api\ApiProvider
  */
 class ApiProviderTest extends \PHPUnit_Framework_TestCase
 {

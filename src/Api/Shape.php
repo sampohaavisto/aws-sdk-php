@@ -18,19 +18,19 @@ class Shape extends AbstractModel
     public static function create(array $definition, ShapeMap $shapeMap)
     {
         static $map = [
-            'structure' => 'Aws\Api\StructureShape',
-            'map'       => 'Aws\Api\MapShape',
-            'list'      => 'Aws\Api\ListShape',
-            'timestamp' => 'Aws\Api\TimestampShape',
-            'integer'   => 'Aws\Api\Shape',
-            'double'    => 'Aws\Api\Shape',
-            'float'     => 'Aws\Api\Shape',
-            'long'      => 'Aws\Api\Shape',
-            'string'    => 'Aws\Api\Shape',
-            'byte'      => 'Aws\Api\Shape',
-            'character' => 'Aws\Api\Shape',
-            'blob'      => 'Aws\Api\Shape',
-            'boolean'   => 'Aws\Api\Shape'
+            'structure' => 'Aws3\Api\StructureShape',
+            'map'       => 'Aws3\Api\MapShape',
+            'list'      => 'Aws3\Api\ListShape',
+            'timestamp' => 'Aws3\Api\TimestampShape',
+            'integer'   => 'Aws3\Api\Shape',
+            'double'    => 'Aws3\Api\Shape',
+            'float'     => 'Aws3\Api\Shape',
+            'long'      => 'Aws3\Api\Shape',
+            'string'    => 'Aws3\Api\Shape',
+            'byte'      => 'Aws3\Api\Shape',
+            'character' => 'Aws3\Api\Shape',
+            'blob'      => 'Aws3\Api\Shape',
+            'boolean'   => 'Aws3\Api\Shape'
         ];
 
         if (isset($definition['shape'])) {

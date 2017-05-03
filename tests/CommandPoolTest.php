@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\CommandPool;
-use Aws\Exception\AwsException;
-use Aws\Result;
+use Aws3\Command;
+use Aws3\CommandPool;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
 
 /**
- * @covers Aws\CommandPool
+ * @covers Aws3\CommandPool
  */
 class CommandPoolTest extends \PHPUnit_Framework_TestCase
 {
@@ -15,7 +15,7 @@ class CommandPoolTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Each value yielded by the iterator must be an Aws\CommandInterface
+     * @expectedExceptionMessage Each value yielded by the iterator must be an Aws3\CommandInterface
      */
     public function testEnsuresEachIsCommand()
     {

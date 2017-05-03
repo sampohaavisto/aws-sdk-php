@@ -1,24 +1,24 @@
 <?php
 namespace Aws3\Test\Credentials;
 
-use Aws\Credentials\AssumeRoleCredentialProvider;
-use Aws\Credentials\CredentialProvider;
-use Aws\Credentials\Credentials;
-use Aws\Exception\AwsException;
-use Aws\Exception\CredentialsException;
-use Aws\Result;
-use Aws\Sts\StsClient;
-use Aws\Api\DateTimeResult;
+use Aws3\Credentials\AssumeRoleCredentialProvider;
+use Aws3\Credentials\CredentialProvider;
+use Aws3\Credentials\Credentials;
+use Aws3\Exception\AwsException;
+use Aws3\Exception\CredentialsException;
+use Aws3\Result;
+use Aws3\Sts\StsClient;
+use Aws3\Api\DateTimeResult;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\FulfilledPromise;
 use GuzzleHttp\Promise\RejectedPromise;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers \Aws\Credentials\AssumeRoleCredentialProvider
+ * @covers \Aws3\Credentials\AssumeRoleCredentialProvider
  */
 class AssumeRoleCredentialProviderTest extends \PHPUnit_Framework_TestCase
 {
@@ -100,7 +100,7 @@ class AssumeRoleCredentialProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\CredentialsException
+     * @expectedException \Aws3\Exception\CredentialsException
      * @expectedExceptionMessage Error in retrieving assume role credentials.
      */
     public function testThrowsExceptionWhenRetrievingAssumeRoleCredentialFails()

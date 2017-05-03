@@ -1,9 +1,9 @@
 <?php
 namespace Aws3\Rds;
 
-use Aws\Credentials\CredentialsInterface;
-use Aws\Credentials\Credentials;
-use Aws\Signature\SignatureV4;
+use Aws3\Credentials\CredentialsInterface;
+use Aws3\Credentials\Credentials;
+use Aws3\Signature\SignatureV4;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Promise;
@@ -26,7 +26,7 @@ class AuthTokenGenerator
     {
         if ($creds instanceof CredentialsInterface) {
             $promise = new Promise\FulfilledPromise($creds);
-            $this->credentialProvider = Aws\constantly($promise);
+            $this->credentialProvider = Aws3\constantly($promise);
         } else {
             $this->credentialProvider = $creds;
         }

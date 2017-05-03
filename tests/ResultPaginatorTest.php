@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Api\ApiProvider;
-use Aws\CommandInterface;
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\Result;
+use Aws3\Api\ApiProvider;
+use Aws3\CommandInterface;
+use Aws3\DynamoDb\DynamoDbClient;
+use Aws3\Result;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\ResultPaginator
+ * @covers Aws3\ResultPaginator
  */
 class ResultPaginatorTest extends \PHPUnit_Framework_TestCase
 {
@@ -64,7 +64,7 @@ class ResultPaginatorTest extends \PHPUnit_Framework_TestCase
         }
 
         // Make sure the paginator yields the expected results
-        $this->assertInstanceOf('Aws\\Result', $result);
+        $this->assertInstanceOf('Aws3\\Result', $result);
         $this->assertEquals($expectedRequestCount, $requestCount);
         $this->assertEquals($expectedRequestCount - 1, $lastKey);
         $this->assertEquals($expectedTableNames, $tableNames);
@@ -89,7 +89,7 @@ class ResultPaginatorTest extends \PHPUnit_Framework_TestCase
         })->wait();
 
         // Make sure the paginator yields the expected results
-        $this->assertInstanceOf('Aws\\Result', $lastResult);
+        $this->assertInstanceOf('Aws3\\Result', $lastResult);
         $this->assertEquals($expectedTableNames, $tables);
     }
 

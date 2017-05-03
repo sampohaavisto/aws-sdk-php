@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\CognitoIdentity;
 
-use Aws\Api\DateTimeResult;
-use Aws\CognitoIdentity\CognitoIdentityProvider;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Api\DateTimeResult;
+use Aws3\CognitoIdentity\CognitoIdentityProvider;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 
 class CognitoIdentityProviderTest extends \PHPUnit_Framework_TestCase
 {

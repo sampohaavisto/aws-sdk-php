@@ -1,16 +1,16 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ApiProvider;
-use Aws\Api\Parser\Crc32ValidatingParser;
-use Aws\Api\Parser\JsonRpcParser;
-use Aws\Api\Service;
-use Aws\Command;
-use Aws\Exception\AwsException;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\Parser\Crc32ValidatingParser;
+use Aws3\Api\Parser\JsonRpcParser;
+use Aws3\Api\Service;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * @covers Aws\Api\Parser\Crc32ValidatingParser
+ * @covers Aws3\Api\Parser\Crc32ValidatingParser
  */
 class Crc32ValidatingParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,7 +27,7 @@ class Crc32ValidatingParserTest extends \PHPUnit_Framework_TestCase
         $wrapped = $this->getWrapped();
         $command = new Command('GetItem');
         $response = new Response(200, [], '{"foo": "bar"}');
-        $this->assertInstanceOf('Aws\ResultInterface', $wrapped($command, $response));
+        $this->assertInstanceOf('Aws3\ResultInterface', $wrapped($command, $response));
     }
 
     public function testThrowsWhenMismatch()
@@ -49,6 +49,6 @@ class Crc32ValidatingParserTest extends \PHPUnit_Framework_TestCase
         $wrapped = $this->getWrapped();
         $command = new Command('GetItem');
         $response = new Response(200, ['x-amz-crc32' => '11124959'], '{"foo": "bar"}');
-        $this->assertInstanceOf('Aws\ResultInterface', $wrapped($command, $response));
+        $this->assertInstanceOf('Aws3\ResultInterface', $wrapped($command, $response));
     }
 }

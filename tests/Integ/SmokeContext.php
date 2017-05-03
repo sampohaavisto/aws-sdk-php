@@ -2,10 +2,10 @@
 namespace Aws3\Test\Integ;
 
 use Aws;
-use Aws\Exception\AwsException;
-use Aws\JsonCompiler;
-use Aws\Result;
-use Aws\Sdk;
+use Aws3\Exception\AwsException;
+use Aws3\JsonCompiler;
+use Aws3\Result;
+use Aws3\Sdk;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Hook\Scope\AfterFeatureScope;
@@ -34,7 +34,7 @@ class SmokeContext extends PHPUnit_Framework_Assert implements
     protected $serviceName;
 
     /**
-     * @var \Aws\AwsClientInterface
+     * @var \Aws3\AwsClientInterface
      */
     protected $client;
 
@@ -83,7 +83,7 @@ class SmokeContext extends PHPUnit_Framework_Assert implements
      */
     public static function setUpCloudFront(BeforeFeatureScope $scope)
     {
-        /** @var \Aws\Result $result */
+        /** @var \Aws3\Result $result */
         $result = self::getSdk(self::$configOverrides)
             ->createCloudFront()
             ->createCloudFrontOriginAccessIdentity([
@@ -260,7 +260,7 @@ class SmokeContext extends PHPUnit_Framework_Assert implements
     {
         foreach ($scope->getFeature()->getTags() as $tag) {
             try{
-                $this->serviceName = Aws\manifest($tag)['namespace'];
+                $this->serviceName = Aws3\manifest($tag)['namespace'];
                 break;
             } catch (\Exception $e) {
                 // just in case an additional tag managed to sneak into the smoke tests

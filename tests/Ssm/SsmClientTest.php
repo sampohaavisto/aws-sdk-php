@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Ssm;
 
-use Aws\Ssm\SsmClient;
-use Aws\MockHandler;
-use Aws\Result;
+use Aws3\Ssm\SsmClient;
+use Aws3\MockHandler;
+use Aws3\Result;
 
 /**
- * @covers Aws\Ssm\SsmClient
+ * @covers Aws3\Ssm\SsmClient
  */
 class SsmClientTest extends \PHPUnit_Framework_TestCase
 {

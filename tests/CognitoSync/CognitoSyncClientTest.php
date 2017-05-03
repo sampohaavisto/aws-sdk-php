@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Test\CognitoSync;
 
-use Aws\Test\UsesServiceTrait;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Promise\FulfilledPromise;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;

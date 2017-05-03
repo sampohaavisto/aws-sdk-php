@@ -1,15 +1,15 @@
 <?php
 namespace Aws3\Test\DynamoDb;
 
-use Aws\CommandInterface;
-use Aws\Exception\AwsException;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\DynamoDb\WriteRequestBatch;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CommandInterface;
+use Aws3\Exception\AwsException;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\DynamoDb\WriteRequestBatch;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\DynamoDb\WriteRequestBatch
+ * @covers Aws3\DynamoDb\WriteRequestBatch
  */
 class WriteRequestBatchTest extends \PHPUnit_Framework_TestCase
 {
@@ -74,7 +74,7 @@ class WriteRequestBatchTest extends \PHPUnit_Framework_TestCase
         $commandCount = [];
 
         $client = $this->getTestClient('DynamoDb');
-        $client->getHandlerList()->appendSign(\Aws\Middleware::tap(
+        $client->getHandlerList()->appendSign(\Aws3\Middleware::tap(
             function (CommandInterface $command) use (&$commandCount) {
                 if ($command->getName() == 'BatchWriteItem') {
                     $commandCount[] = count($command['RequestItems']);

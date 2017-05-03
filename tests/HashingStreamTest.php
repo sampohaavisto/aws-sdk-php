@@ -2,11 +2,11 @@
 namespace Aws3\Test;
 
 use GuzzleHttp\Psr7;
-use Aws\PhpHash;
-use Aws\HashingStream;
+use Aws3\PhpHash;
+use Aws3\HashingStream;
 
 /**
- * @covers Aws\HashingStream
+ * @covers Aws3\HashingStream
  */
 class HashingStreamTest extends \PHPUnit_Framework_TestCase
 {

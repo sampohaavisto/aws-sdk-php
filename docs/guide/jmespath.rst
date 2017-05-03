@@ -6,8 +6,8 @@ JMESPath Expressions in the SDK
 extract elements from a JSON document. The AWS SDK for PHP has a dependency on
 `jmespath.php <https://github.com/jmespath/jmespath.php>`_ to power some of the
 high level abstractions like :doc:`paginators` and :doc:`waiters`, but also
-exposes JMESPath searching on ``Aws\ResultInterface`` and
-``Aws\ResultPaginator``.
+exposes JMESPath searching on ``Aws3\ResultInterface`` and
+``Aws3\ResultPaginator``.
 
 You can play around with JMESPath in your browser by trying the online
 `JMESPath examples <http://jmespath.org/examples.html>`_. You can learn more
@@ -22,7 +22,7 @@ written for the AWS SDK for PHP.
 Extracting data from results
 ----------------------------
 
-The ``Aws\ResultInterface`` interface has a ``search($expression)`` method that
+The ``Aws3\ResultInterface`` interface has a ``search($expression)`` method that
 extracts data from a result model based on a JMESPath expression. Using
 JMESPath expressions to query the data from a result object can help to remove
 boilerplate conditional code and more concisely express the data that is being
@@ -238,9 +238,9 @@ filter projection.
 Extracting data from paginators
 -------------------------------
 
-As you know from the :doc:`paginators` guide, ``Aws\ResultPaginator`` objects
+As you know from the :doc:`paginators` guide, ``Aws3\ResultPaginator`` objects
 are used to yield results from a pageable API operation. The SDK allows you to
-extract and iterate over filtered data from ``Aws\ResultPaginator`` objects
+extract and iterate over filtered data from ``Aws3\ResultPaginator`` objects
 essentially implementing a `flat-map <http://martinfowler.com/articles/collection-pipeline/flat-map.html>`_
 over the iterator in which the result of a JMESPath expression is the map
 function.

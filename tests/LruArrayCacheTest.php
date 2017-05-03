@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\LruArrayCache;
+use Aws3\LruArrayCache;
 
 /**
- * @covers Aws\LruArrayCache
+ * @covers Aws3\LruArrayCache
  */
 class LruArrayCacheTest extends \PHPUnit_Framework_TestCase
 {

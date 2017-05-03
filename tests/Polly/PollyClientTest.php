@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Polly;
 
-use Aws\Credentials\Credentials;
-use Aws\Polly\PollyClient;
+use Aws3\Credentials\Credentials;
+use Aws3\Polly\PollyClient;
 
 /**
- * @covers Aws\Polly\PollyClient
+ * @covers Aws3\Polly\PollyClient
  */
 class PollyClientTest extends \PHPUnit_Framework_TestCase
 {

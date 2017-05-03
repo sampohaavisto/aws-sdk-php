@@ -3,7 +3,7 @@ Configuration
 =============
 
 This guide describes client constructor options. These options can be provided
-in a client constructor or to the ``Aws\Sdk`` class.
+in a client constructor or to the ``Aws3\Sdk`` class.
 
 
 .. contents:: Configuration Options
@@ -16,7 +16,7 @@ constructor.
 
 .. code-block:: php
 
-    use Aws\S3\S3Client;
+    use Aws3\S3\S3Client;
 
     $options = [
         'region'            => 'us-west-2',
@@ -39,14 +39,14 @@ A PHP callable that accepts a type, service, and version argument, and returns
 an array of corresponding configuration data. The type value can be one of
 ``api``, ``waiter``, or ``paginator``.
 
-By default, the SDK will use an instance of ``Aws\Api\FileSystemApiProvider``
+By default, the SDK will use an instance of ``Aws3\Api\FileSystemApiProvider``
 that loads API files from the ``src/data`` folder of the SDK.
 
 
 credentials
 ~~~~~~~~~~~
 
-:Type: ``array|Aws\CacheInterface|Aws\Credentials\CredentialsInterface|bool|callable``
+:Type: ``array|Aws3\CacheInterface|Aws3\Credentials\CredentialsInterface|bool|callable``
 
 If you do not provide a ``credentials`` option, the SDK will attempt to load
 credentials from your environment in the following order:
@@ -61,7 +61,7 @@ pairs to use :ref:`hardcoded credentials <hardcoded_credentials>`.
 .. code-block:: php
 
     // Hardcoded credentials.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'     => 'latest',
         'region'      => 'us-west-2',
         'credentials' => [
@@ -70,14 +70,14 @@ pairs to use :ref:`hardcoded credentials <hardcoded_credentials>`.
         ]
     ]);
 
-Pass an ``Aws\Credentials\CredentialsInterface`` object to use a specific
+Pass an ``Aws3\Credentials\CredentialsInterface`` object to use a specific
 credentials instance.
 
 .. code-block:: php
 
-    $credentials = new Aws\Credentials\Credentials('key', 'secret');
+    $credentials = new Aws3\Credentials\Credentials('key', 'secret');
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'     => 'latest',
         'region'      => 'us-west-2',
         'credentials' => $credentials
@@ -87,7 +87,7 @@ Pass `false` to utilize null credentials and not sign requests.
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'     => 'latest',
         'region'      => 'us-west-2',
         'credentials' => false
@@ -98,24 +98,24 @@ create credentials using a function.
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
+    use Aws3\Credentials\CredentialProvider;
 
     // Only load credentials from environment variables.
     $provider = CredentialProvider::env();
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'     => 'latest',
         'region'      => 'us-west-2',
         'credentials' => $provider
     ]);
 
-Pass an instance of ``Aws\CacheInterface`` to cache the values returned by the
+Pass an instance of ``Aws3\CacheInterface`` to cache the values returned by the
 default provider chain across multiple processes.
 
 .. code-block:: php
 
-    use Aws\DoctrineCacheAdapter;
-    use Aws\S3\S3Client;
+    use Aws3\DoctrineCacheAdapter;
+    use Aws3\S3\S3Client;
     use Doctrine\Common\Cache\ApcuCache;
 
     $s3 = new S3Client([
@@ -146,7 +146,7 @@ Set to ``true`` to display debug information when sending requests.
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-west-2',
         'debug'   => true
@@ -186,7 +186,7 @@ auth_strings (array)
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-west-2',
         'debug'   => [
@@ -226,7 +226,7 @@ Set to ``true`` to gather transfer statistics on requests sent.
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-west-2',
         'stats'   => true
@@ -263,7 +263,7 @@ timer (bool)
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-west-2',
         'stats'   => [
@@ -296,7 +296,7 @@ Here's an example of connecting to Amazon DynamoDB Local:
 
 .. code-block:: php
 
-    $client = new Aws\DynamoDb\DynamoDbClient([
+    $client = new Aws3\DynamoDb\DynamoDbClient([
         'version'  => '2012-08-10',
         'region'   => 'us-east-1'
         'endpoint' => 'http://localhost:8000'
@@ -335,21 +335,21 @@ handler
 
 A handler that accepts a command object, request object and returns a promise
 (``GuzzleHttp\Promise\PromiseInterface``) that is fulfilled with an
-``Aws\ResultInterface`` object or rejected with an
-``Aws\Exception\AwsException``. A handler does not accept a next handler as it
+``Aws3\ResultInterface`` object or rejected with an
+``Aws3\Exception\AwsException``. A handler does not accept a next handler as it
 is terminal and expected to fulfill a command. If no handler is provided, a
 default Guzzle handler will be utilized.
 
-You can use the ``Aws\MockHandler`` to return mocked results or throw mock
+You can use the ``Aws3\MockHandler`` to return mocked results or throw mock
 exceptions. You enqueue results or exceptions, and the MockHandler will dequeue
 them in FIFO order.
 
 .. code-block:: php
 
-    use Aws\Result;
-    use Aws\MockHandler;
-    use Aws\DynamoDb\DynamoDbClient;
-    use Aws\CommandInterface;
+    use Aws3\Result;
+    use Aws3\MockHandler;
+    use Aws3\DynamoDb\DynamoDbClient;
+    use Aws3\CommandInterface;
     use Psr\Http\Message\RequestInterface;
 
     $mock = new MockHandler();
@@ -399,7 +399,7 @@ server. Use ``60`` to wait indefinitely (the default behavior).
 
 .. code-block:: php
 
-    use Aws\DynamoDb\DynamoDbClient;
+    use Aws3\DynamoDb\DynamoDbClient;
 
     // Timeout after attempting to connect for 5 seconds.
     $client = new DynamoDbClient([
@@ -446,7 +446,7 @@ responses. When not enabled, compressed response bodies may be inflated with a
 
     .. code-block:: php
 
-        use Aws\S3\S3Client;
+        use Aws3\S3\S3Client;
         use GuzzleHttp\Psr7\InflateStream;
 
         $client = new S3Client([
@@ -492,7 +492,7 @@ accepts the following arguments:
 
 .. code-block:: php
 
-    use Aws\S3\S3Client;
+    use Aws3\S3\S3Client;
 
     $client = new S3Client([
         'region'  => 'us-west-2',
@@ -537,7 +537,7 @@ You can connect to an AWS service through a proxy using the ``proxy`` option.
 
 .. code-block:: php
 
-    use Aws\DynamoDb\DynamoDbClient;
+    use Aws3\DynamoDb\DynamoDbClient;
 
     // Send requests through a single proxy.
     $client = new DynamoDbClient([
@@ -626,7 +626,7 @@ indefinitely (the default behavior).
 
 .. code-block:: php
 
-    use Aws\DynamoDb\DynamoDbClient;
+    use Aws3\DynamoDb\DynamoDbClient;
 
     // Timeout after 5 seconds.
     $client = new DynamoDbClient([
@@ -667,7 +667,7 @@ Much more detail on SSL certificates can be found on the
 
 .. code-block:: php
 
-    use Aws\DynamoDb\DynamoDbClient;
+    use Aws3\DynamoDb\DynamoDbClient;
 
     // Use a custom CA bundle.
     $client = new DynamoDbClient([
@@ -711,7 +711,7 @@ or rejected with an array of the following exception data:
 
 The SDK will automatically convert the given ``http_handler`` into a normal
 ``handler`` option by wrapping the provided ``http_handler`` with a
-``Aws\WrappedHttpHandler`` object.
+``Aws3\WrappedHttpHandler`` object.
 
 .. note::
 
@@ -731,7 +731,7 @@ the "credentials" key to be ignored.
 .. code-block:: php
 
     // Use the "production" profile from your credentials file.
-    $ec2 = new Aws\Ec2\Ec2Client([
+    $ec2 = new Aws3\Ec2\Ec2Client([
         'version' => '2014-10-01',
         'region'  => 'us-west-2',
         'profile' => 'production'
@@ -755,7 +755,7 @@ for a list of available regions.
 .. code-block:: php
 
     // Set the region to the EU (Frankfurt) region.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'region'  => 'eu-central-1',
         'version' => '2006-03-01'
     ]);
@@ -776,7 +776,7 @@ The following example disables retries for the Amazon DynamoDB client.
 .. code-block:: php
 
     // Disable retries by setting "retries" to 0
-    $client = new Aws\DynamoDb\DynamoDbClient([
+    $client = new Aws3\DynamoDb\DynamoDbClient([
         'version' => '2012-08-10',
         'region'  => 'us-west-2',
         'retries' => 0
@@ -796,7 +796,7 @@ to "http".
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => '2006-03-01',
         'region'  => 'us-west-2',
         'scheme'  => 'http'
@@ -813,7 +813,7 @@ service
 :Required: true
 
 Name of the service to utilize. This value will be supplied by default when
-using a client provided by the SDK (i.e., ``Aws\S3\S3Client``). This option
+using a client provided by the SDK (i.e., ``Aws3\S3\S3Client``). This option
 is useful when testing a service that has not yet been published in the SDK
 but you have available on disk.
 
@@ -824,12 +824,12 @@ signature_provider
 :Type: ``callable``
 
 A callable that accepts a signature version name (e.g., ``v4``), a
-service name, and region, and returns a ``Aws\Signature\SignatureInterface``
+service name, and region, and returns a ``Aws3\Signature\SignatureInterface``
 object or ``NULL`` if the provider is able to create a signer for the given
 parameters. This provider is used to create signers utilized by the client.
 
 There are various functions provided by the SDK in the
-``Aws\Signature\SignatureProvider`` class that can be used to create customized
+``Aws3\Signature\SignatureProvider`` class that can be used to create customized
 signature providers.
 
 
@@ -848,7 +848,7 @@ The following examples show how to configure an Amazon S3 client to use
 .. code-block:: php
 
     // Set a preferred signature version.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'           => '2006-03-01',
         'region'            => 'us-west-2',
         'signature_version' => 'v4'
@@ -885,7 +885,7 @@ difference is negligible.
 .. code-block:: php
 
     // Disable client-side validation.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'  => '2006-03-01',
         'region'   => 'eu-west-1',
         'validate' => false
@@ -902,7 +902,7 @@ constraints:
 .. code-block:: php
 
     // Validate only that required values are present.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version'  => '2006-03-01',
         'region'   => 'eu-west-1',
         'validate' => ['required' => true]
@@ -926,7 +926,7 @@ service. For example, when using Amazon S3, you can lock your API version to
 
 .. code-block:: php
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => '2006-03-01',
         'region'  => 'us-east-1'
     ]);
@@ -944,7 +944,7 @@ SDK for API models).
 .. code-block:: php
 
     // Use the latest version available.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-east-1'
     ]);

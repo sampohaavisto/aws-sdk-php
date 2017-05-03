@@ -2,7 +2,7 @@
 namespace Aws3;
 
 use Psr\Http\Message\RequestInterface;
-use Aws\Exception\AwsException;
+use Aws3\Exception\AwsException;
 
 /**
  * Represents a history container that is required when using the history

@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\S3\S3EndpointMiddleware;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\S3\S3EndpointMiddleware;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 

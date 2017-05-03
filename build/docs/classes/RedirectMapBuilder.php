@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Build\Docs;
 
-use Aws\Api\ApiProvider;
+use Aws3\Api\ApiProvider;
 
 /**
  * Builds redirect map file across services
@@ -34,7 +34,7 @@ class RedirectMapBuilder
             $ns = $data['namespace'];
             $version = $data['versions']['latest'];
             list($api, $docModel) = call_user_func(
-                "Aws\\{$ns}\\{$ns}Client::applyDocFilters",
+                "Aws3\\{$ns}\\{$ns}Client::applyDocFilters",
                 ApiProvider::resolve($this->apiProvider, 'api', $name, $version),
                 ApiProvider::resolve($this->apiProvider, 'docs', $name, $version)
             );

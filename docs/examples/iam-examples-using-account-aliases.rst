@@ -23,8 +23,8 @@ Create an Alias
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -48,8 +48,8 @@ List Account Aliases
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -70,8 +70,8 @@ Delete an Alias
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',

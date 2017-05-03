@@ -8,12 +8,12 @@ $conf = [
 ];
 
 // Ensure that a client can be created.
-$s3 = new Aws\S3\S3Client($conf);
+$s3 = new Aws3\S3\S3Client($conf);
 // Ensure that waiters can be found.
 $s3->getPaginator('ListObjects');
 
 // Legacy factory instantiation.
-Aws\DynamoDb\DynamoDbClient::factory($conf);
+Aws3\DynamoDb\DynamoDbClient::factory($conf);
 
 // JMESPath autoloader
 \JmesPath\search('foo', ['foo' => 'bar']);
@@ -24,7 +24,7 @@ $checks = [
     'GuzzleHttp\\Psr7\\stream_for',
     'GuzzleHttp\\Promise\\inspect',
     'JmesPath\\search',
-    'Aws\\dir_iterator',
+    'Aws3\\dir_iterator',
 ];
 
 foreach ($checks as $check) {
@@ -34,4 +34,4 @@ foreach ($checks as $check) {
     }
 }
 
-echo 'Version=' . Aws\Sdk::VERSION;
+echo 'Version=' . Aws3\Sdk::VERSION;

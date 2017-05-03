@@ -2,7 +2,7 @@
 
 namespace Aws3\Test\Integ;
 
-use Aws\S3\S3Client;
+use Aws3\S3\S3Client;
 use Behat\Behat\Hook\Scope\AfterFeatureScope;
 use Behat\Behat\Hook\Scope\BeforeFeatureScope;
 use Behat\Behat\Tester\Exception\PendingException;

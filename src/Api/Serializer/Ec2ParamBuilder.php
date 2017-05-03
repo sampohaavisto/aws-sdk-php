@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Api\Serializer;
 
-use Aws\Api\Shape;
-use Aws\Api\ListShape;
+use Aws3\Api\Shape;
+use Aws3\Api\ListShape;
 
 /**
  * @internal

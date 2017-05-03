@@ -24,8 +24,8 @@ List Server Certificates
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -46,8 +46,8 @@ Retrieve a Server Certificate
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -71,8 +71,8 @@ Update a Server Certificate
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -97,8 +97,8 @@ Delete a Server Certificate
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',

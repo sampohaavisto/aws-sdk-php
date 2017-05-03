@@ -23,8 +23,8 @@ Create a Rule
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatchEvents\CloudWatchEventsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatchEvents\CloudWatchEventsClient;
+    use Aws3\Exception\AwsException;
 
     $client = new CloudWatchEventsClient([
         'profile' => 'default',
@@ -50,8 +50,8 @@ Add Targets to a Rule
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatchEvents\CloudWatchEventsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatchEvents\CloudWatchEventsClient;
+    use Aws3\Exception\AwsException;
     
     $client = new CloudWatchEventsClient([
         'profile' => 'default',
@@ -80,8 +80,8 @@ Send Custom Events
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatchEvents\CloudWatchEventsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatchEvents\CloudWatchEventsClient;
+    use Aws3\Exception\AwsException;
 
     $client = new CloudWatchEventsClient([
         'profile' => 'default',

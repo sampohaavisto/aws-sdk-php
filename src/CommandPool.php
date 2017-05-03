@@ -53,7 +53,7 @@ class CommandPool implements PromisorInterface
             foreach ($commands as $key => $command) {
                 if (!($command instanceof CommandInterface)) {
                     throw new \InvalidArgumentException('Each value yielded by '
-                        . 'the iterator must be an Aws\CommandInterface.');
+                        . 'the iterator must be an Aws3\CommandInterface.');
                 }
                 if ($before) {
                     $before($command, $key);
@@ -82,7 +82,7 @@ class CommandPool implements PromisorInterface
      * @param array              $config   Configuration options.
      *
      * @return array
-     * @see \Aws\CommandPool::__construct for available configuration options.
+     * @see \Aws3\CommandPool::__construct for available configuration options.
      */
     public static function batch(
         AwsClientInterface $client,

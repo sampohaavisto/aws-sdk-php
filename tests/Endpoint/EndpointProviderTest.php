@@ -1,16 +1,16 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Endpoint\EndpointProvider;
-use Aws\Endpoint\PartitionEndpointProvider;
+use Aws3\Endpoint\EndpointProvider;
+use Aws3\Endpoint\PartitionEndpointProvider;
 
 /**
- * @covers Aws\Endpoint\EndpointProvider
+ * @covers Aws3\Endpoint\EndpointProvider
  */
 class EndpointProviderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Aws\Exception\UnresolvedEndpointException
+     * @expectedException \Aws3\Exception\UnresolvedEndpointException
      */
     public function testThrowsWhenUnresolved()
     {
@@ -18,7 +18,7 @@ class EndpointProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\UnresolvedEndpointException
+     * @expectedException \Aws3\Exception\UnresolvedEndpointException
      */
     public function testThrowsWhenNotArray()
     {
@@ -36,7 +36,7 @@ class EndpointProviderTest extends \PHPUnit_Framework_TestCase
         $p = EndpointProvider::patterns([
             '*/*' => ['endpoint' => 'foo.com']
         ]);
-        $this->assertInstanceOf('Aws\Endpoint\PatternEndpointProvider', $p);
+        $this->assertInstanceOf('Aws3\Endpoint\PatternEndpointProvider', $p);
         $result = EndpointProvider::resolve($p, []);
         $this->assertEquals('https://foo.com', $result['endpoint']);
     }

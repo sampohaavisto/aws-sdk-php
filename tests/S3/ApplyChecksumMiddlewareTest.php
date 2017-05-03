@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Middleware;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Middleware;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\S3\ApplyChecksumMiddleware
+ * @covers Aws3\S3\ApplyChecksumMiddleware
  */
 class ApplyChecksumMiddlewareTest extends \PHPUnit_Framework_TestCase
 {

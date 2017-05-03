@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\JsonCompiler;
+use Aws3\JsonCompiler;
 
 /**
- * @covers Aws\JsonCompiler
+ * @covers Aws3\JsonCompiler
  */
 class JsonCompilerTest extends \PHPUnit_Framework_TestCase
 {

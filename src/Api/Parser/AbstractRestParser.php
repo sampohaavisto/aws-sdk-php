@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Api\Parser;
 
-use Aws\Api\DateTimeResult;
-use Aws\Api\Shape;
-use Aws\Api\StructureShape;
-use Aws\Result;
-use Aws\CommandInterface;
+use Aws3\Api\DateTimeResult;
+use Aws3\Api\Shape;
+use Aws3\Api\StructureShape;
+use Aws3\Result;
+use Aws3\CommandInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**

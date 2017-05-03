@@ -1,9 +1,9 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Result;
-use Aws\S3\ObjectUploader;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Result;
+use Aws3\S3\ObjectUploader;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\FnStream;
 use Psr\Http\Message\StreamInterface;
@@ -20,7 +20,7 @@ class ObjectUploaderTest extends \PHPUnit_Framework_TestCase
         array $mockedResults,
         array $options
     ) {
-        /** @var \Aws\S3\S3Client $client */
+        /** @var \Aws3\S3\S3Client $client */
         $client = $this->getTestClient('S3');
         $this->addMockResults($client, $mockedResults);
         $result = (new ObjectUploader($client, 'bucket', 'key', $body, 'private', $options))
@@ -37,7 +37,7 @@ class ObjectUploaderTest extends \PHPUnit_Framework_TestCase
         array $mockedResults,
         array $options
     ) {
-        /** @var \Aws\S3\S3Client $client */
+        /** @var \Aws3\S3\S3Client $client */
         $client = $this->getTestClient('S3');
         $this->addMockResults($client, $mockedResults);
         $promise = (new ObjectUploader($client, 'bucket', 'key', $body, 'private', $options))

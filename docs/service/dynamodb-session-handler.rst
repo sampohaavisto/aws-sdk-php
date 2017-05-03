@@ -31,7 +31,7 @@ The first step is to instantiate and register the session handler.
 
 .. code-block:: php
 
-    use Aws\DynamoDb\SessionHandler;
+    use Aws3\DynamoDb\SessionHandler;
 
     $sessionHandler = SessionHandler::fromClient($dynamoDb, [
         'table_name' => 'sessions'

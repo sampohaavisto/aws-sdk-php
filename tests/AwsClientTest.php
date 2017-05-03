@@ -1,23 +1,23 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Api\ErrorParser\JsonRpcErrorParser;
-use Aws\AwsClient;
-use Aws\CommandInterface;
-use Aws\Credentials\Credentials;
-use Aws\Ec2\Ec2Client;
-use Aws\Ses\SesClient;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\S3\S3Client;
-use Aws\Signature\SignatureV4;
-use Aws\Sts\StsClient;
-use Aws\WrappedHttpHandler;
+use Aws3\Api\ErrorParser\JsonRpcErrorParser;
+use Aws3\AwsClient;
+use Aws3\CommandInterface;
+use Aws3\Credentials\Credentials;
+use Aws3\Ec2\Ec2Client;
+use Aws3\Ses\SesClient;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\S3\S3Client;
+use Aws3\Signature\SignatureV4;
+use Aws3\Sts\StsClient;
+use Aws3\WrappedHttpHandler;
 use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\AwsClient
+ * @covers Aws3\AwsClient
  */
 class AwsClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -77,13 +77,13 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertInstanceOf(
-            'Aws\CommandInterface',
+            'Aws3\CommandInterface',
             $client->getCommand('foo')
         );
     }
 
     /**
-     * @expectedException \Aws\S3\Exception\S3Exception
+     * @expectedException \Aws3\S3\Exception\S3Exception
      * @expectedExceptionMessage Error executing "foo" on "http://us-east-1.foo.amazonaws.com"; AWS HTTP error: Baz Bar!
      */
     public function testWrapsExceptions()
@@ -100,7 +100,7 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
             },
             $parser,
             $errorParser,
-            'Aws\S3\Exception\S3Exception'
+            'Aws3\S3\Exception\S3Exception'
         );
 
         $client = $this->createClient(
@@ -119,7 +119,7 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
         ]]]);
 
         $this->assertInstanceOf(
-            'Aws\CommandInterface',
+            'Aws3\CommandInterface',
             $client->getCommand('foo')
         );
     }
@@ -176,7 +176,7 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
         ]]);
 
         $this->assertInstanceOf(
-            'Aws\ResultPaginator',
+            'Aws3\ResultPaginator',
             $client->getPaginator('ListObjects', ['Bucket' => 'foobar'])
         );
     }
@@ -222,7 +222,7 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
             new Result(['@metadata' => ['statusCode' => '200']])
         ]));
         $waiter = $s3->getWaiter('BucketExists', ['Bucket' => 'foo']);
-        $this->assertInstanceOf('Aws\Waiter', $waiter);
+        $this->assertInstanceOf('Aws3\Waiter', $waiter);
         $promise = $waiter->promise();
         $promise->wait();
     }
@@ -233,7 +233,7 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
             'region'  => 'us-west-2',
             'version' => 'latest'
         ]);
-        $this->assertInstanceOf('Aws\Sts\StsClient', $client);
+        $this->assertInstanceOf('Aws3\Sts\StsClient', $client);
         $this->assertEquals('us-west-2', $client->getRegion());
     }
 
@@ -293,7 +293,7 @@ class AwsClientTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \RuntimeException
-     * @expectedExceptionMessage Instances of Aws\AwsClient cannot be serialized
+     * @expectedExceptionMessage Instances of Aws3\AwsClient cannot be serialized
      */
     public function testDoesNotPermitSerialization()
     {

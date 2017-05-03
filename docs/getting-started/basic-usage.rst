@@ -53,7 +53,7 @@ client's constructor.
     // Include the SDK using the Composer autoloader
     require 'vendor/autoload.php';
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-east-1'
     ]);
@@ -80,10 +80,10 @@ client.
 Using the Sdk class
 -------------------
 
-The ``Aws\Sdk`` class acts as a client factory and is used to manage shared
+The ``Aws3\Sdk`` class acts as a client factory and is used to manage shared
 configuration options across multiple clients. The same options that can be
 provided to a specific client constructor can also be supplied to the
-``Aws\Sdk`` class. These options are then applied to each client constructor.
+``Aws3\Sdk`` class. These options are then applied to each client constructor.
 
 .. code-block:: php
 
@@ -94,7 +94,7 @@ provided to a specific client constructor can also be supplied to the
     ];
 
     // Create an SDK class used to share configuration across clients.
-    $sdk = new Aws\Sdk($sharedConfig);
+    $sdk = new Aws3\Sdk($sharedConfig);
 
     // Create an Amazon S3 client using the shared configuration data.
     $client = $sdk->createS3();
@@ -105,7 +105,7 @@ same as the namespace of a service (e.g., "S3", "DynamoDb", etc.).
 
 .. code-block:: php
 
-    $sdk = new Aws\Sdk([
+    $sdk = new Aws3\Sdk([
         'region'   => 'us-west-2',
         'version'  => 'latest',
         'DynamoDb' => [
@@ -137,11 +137,11 @@ Executing service operations
 You can execute a service operation by calling the method of the same name on
 a client object. For example, to perform the Amazon S3 `PutObject operation
 <http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html>`_, you must
-call the ``Aws\S3\S3Client::putObject()`` method.
+call the ``Aws3\S3\S3Client::putObject()`` method.
 
 .. code-block:: php
 
-    // Use an Aws\Sdk class to create the S3Client object.
+    // Use an Aws3\Sdk class to create the S3Client object.
     $s3Client = $sdk->createS3();
 
     // Send a PutObject request and get the result object.
@@ -238,7 +238,7 @@ that is resolved or rejected when the operation completes.
 Working with Result objects
 ---------------------------
 
-Executing an successful operation will return an ``Aws\Result`` object. Instead
+Executing an successful operation will return an ``Aws3\Result`` object. Instead
 of returning the raw XML or JSON data of a service, the SDK coerces the response
 data into an associative array structure and normalizes some aspects of the data
 based on its knowledge of the specific service and the underlying response
@@ -248,7 +248,7 @@ You can access data from the result object like an associative PHP array.
 
 .. code-block:: php
 
-    // Use an Aws\Sdk class to create the S3Client object.
+    // Use an Aws3\Sdk class to create the S3Client object.
     $s3 = $sdk->createS3();
     $result = $s3->listBuckets();
 
@@ -288,16 +288,16 @@ For this reason, you should use ``try``/``catch`` blocks around your operations
 if you need to handle errors in your code. The SDK throws service-specific
 exceptions when an error occurs.
 
-In the following example, the ``Aws\S3\S3Client`` is used. If there is an
-error, the exception thrown will be of the type ``Aws\S3\Exception\S3Exception``.
+In the following example, the ``Aws3\S3\S3Client`` is used. If there is an
+error, the exception thrown will be of the type ``Aws3\S3\Exception\S3Exception``.
 All service specific exceptions thrown by the SDK extend from the
-``Aws\Exception\AwsException`` class. This class contains useful information
+``Aws3\Exception\AwsException`` class. This class contains useful information
 about the failure, including the request-id, error code, and error type.
 
 .. code-block:: php
 
-    use Aws\Exception\AwsException;
-    use Aws\S3\Exception\S3Exception;
+    use Aws3\Exception\AwsException;
+    use Aws3\S3\Exception\S3Exception;
 
     try {
         $s3Client->createBucket(['Bucket' => 'my-bucket']);
@@ -337,7 +337,7 @@ You can "unwrap" the promise and cause the exception to be thrown instead.
 
 .. code-block:: php
 
-    use Aws\S3\Exception\S3Exception;
+    use Aws3\S3\Exception\S3Exception;
 
     $promise = $s3Client->createBucketAsync(['Bucket' => 'my-bucket']);
 

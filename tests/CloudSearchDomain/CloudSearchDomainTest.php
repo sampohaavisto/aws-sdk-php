@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\CloudSearchDomain;
 
-use Aws\CloudSearchDomain\CloudSearchDomainClient;
+use Aws3\CloudSearchDomain\CloudSearchDomainClient;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\CloudSearchDomain\CloudSearchDomainClient
+ * @covers Aws3\CloudSearchDomain\CloudSearchDomainClient
  */
 class CloudSearchDomainTest extends \PHPUnit_Framework_TestCase
 {

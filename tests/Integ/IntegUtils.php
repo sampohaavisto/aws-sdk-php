@@ -5,7 +5,7 @@ trait IntegUtils
 {
     private static function getSdk(array $args = [])
     {
-        return new \Aws\Sdk($args + [
+        return new \Aws3\Sdk($args + [
             'region'  => 'us-east-1',
             'version' => 'latest',
             'ua_append' => 'PHPUnit/Integration'

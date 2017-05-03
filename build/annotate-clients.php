@@ -6,7 +6,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // parse out --class, --tag, and --all options
 // You can have multiple --class and --tag flags
-//  e.g. php annotate-clients.php --class=Aws\S3\S3Client --class=Aws\Swf\SwfClient
+//  e.g. php annotate-clients.php --class=Aws3\S3\S3Client --class=Aws3\Swf\SwfClient
 // Use --class to update the annotation on a class
 // Use --tag to update annotations on clients updated since a given git tag
 // Use --tag=latest to do so comparing against the last release
@@ -22,9 +22,9 @@ array_walk($options, function (&$value) {
 });
 
 function get_client_classes($namespace) {
-    $clients = ["Aws\\{$namespace}\\{$namespace}Client"];
-    if (class_exists("Aws\\{$namespace}\\{$namespace}MultiRegionClient")) {
-        $clients []= "Aws\\{$namespace}\\{$namespace}MultiRegionClient";
+    $clients = ["Aws3\\{$namespace}\\{$namespace}Client"];
+    if (class_exists("Aws3\\{$namespace}\\{$namespace}MultiRegionClient")) {
+        $clients []= "Aws3\\{$namespace}\\{$namespace}MultiRegionClient";
     }
 
     return $clients;
@@ -32,7 +32,7 @@ function get_client_classes($namespace) {
 
 if (isset($options['all'])) {
     // Get all client classes and mark them for update
-    $options['class'] = Aws\flatmap(Aws\manifest(), function (array $manifest) {
+    $options['class'] = Aws3\flatmap(Aws3\manifest(), function (array $manifest) {
         return get_client_classes($manifest['namespace']);
     });
 }
@@ -52,12 +52,12 @@ foreach ($options['tag'] as $tag) {
 
     // Find the client classes for each changed API service definition and mark
     // them for update.
-    $clientsWithChangedApis = Aws\flatmap($alteredApiFiles, function ($file) {
+    $clientsWithChangedApis = Aws3\flatmap($alteredApiFiles, function ($file) {
         $file = str_replace('src/data/', '', $file);
         $endpoint = substr($file, 0, strpos($file, '/'));
-        return get_client_classes(Aws\manifest($endpoint)['namespace']);
+        return get_client_classes(Aws3\manifest($endpoint)['namespace']);
     });
-    $options['class'] = \Aws\flatmap(
+    $options['class'] = \Aws3\flatmap(
         [$options['class'], $clientsWithChangedApis],
         function ($class) { return $class; }
     );

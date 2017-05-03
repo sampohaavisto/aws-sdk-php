@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\S3\MultipartUploader;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\S3\MultipartUploader;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * @covers Aws\S3\MultipartUploader
+ * @covers Aws3\S3\MultipartUploader
  */
 class MultipartUploaderTest extends \PHPUnit_Framework_TestCase
 {

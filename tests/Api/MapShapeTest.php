@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ShapeMap;
-use Aws\Api\MapShape;
+use Aws3\Api\ShapeMap;
+use Aws3\Api\MapShape;
 
 /**
- * @covers \Aws\Api\MapShape
+ * @covers \Aws3\Api\MapShape
  */
 class MapShapeTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class MapShapeTest extends \PHPUnit_Framework_TestCase
     {
         $s = new MapShape(['value' => ['type' => 'string']], new ShapeMap([]));
         $v = $s->getValue();
-        $this->assertInstanceOf('Aws\Api\Shape', $v);
+        $this->assertInstanceOf('Aws3\Api\Shape', $v);
         $this->assertEquals('string', $v->getType());
         $this->assertSame($v, $s->getValue());
     }
@@ -30,13 +30,13 @@ class MapShapeTest extends \PHPUnit_Framework_TestCase
     {
         $s = new MapShape(['key' => ['type' => 'string']], new ShapeMap([]));
         $k = $s->getKey();
-        $this->assertInstanceOf('Aws\Api\Shape', $k);
+        $this->assertInstanceOf('Aws3\Api\Shape', $k);
         $this->assertEquals('string', $k->getType());
     }
 
     public function testReturnsEmptyKey()
     {
         $s = new MapShape([], new ShapeMap([]));
-        $this->assertInstanceOf('Aws\Api\Shape', $s->getKey());
+        $this->assertInstanceOf('Aws3\Api\Shape', $s->getKey());
     }
 }

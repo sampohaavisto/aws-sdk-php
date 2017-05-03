@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ShapeMap;
-use Aws\Api\StructureShape;
+use Aws3\Api\ShapeMap;
+use Aws3\Api\StructureShape;
 
 /**
- * @covers \Aws\Api\StructureShape
+ * @covers \Aws3\Api\StructureShape
  */
 class StructureShapeTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,7 +22,7 @@ class StructureShapeTest extends \PHPUnit_Framework_TestCase
             'members' => ['foo' => ['type' => 'string']]
         ], new ShapeMap([]));
         $this->assertTrue($s->hasMember('foo'));
-        $this->assertInstanceOf('Aws\Api\Shape', $s->getMember('foo'));
+        $this->assertInstanceOf('Aws3\Api\Shape', $s->getMember('foo'));
         $this->assertEquals('string', $s->getMember('foo')->getType());
     }
 
@@ -36,8 +36,8 @@ class StructureShapeTest extends \PHPUnit_Framework_TestCase
         ], new ShapeMap([]));
         $members = $s->getMembers();
         $this->assertInternalType('array', $members);
-        $this->assertInstanceOf('Aws\Api\Shape', $members['foo']);
-        $this->assertInstanceOf('Aws\Api\Shape', $members['baz']);
+        $this->assertInstanceOf('Aws3\Api\Shape', $members['foo']);
+        $this->assertInstanceOf('Aws3\Api\Shape', $members['baz']);
         $this->assertEquals('string', $members['foo']->getType());
         $this->assertEquals('integer', $members['baz']->getType());
     }

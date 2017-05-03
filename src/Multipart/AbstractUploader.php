@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Multipart;
 
-use Aws\AwsClientInterface as Client;
+use Aws3\AwsClientInterface as Client;
 use GuzzleHttp\Psr7;
 use InvalidArgumentException as IAE;
 use Psr\Http\Message\StreamInterface as Stream;

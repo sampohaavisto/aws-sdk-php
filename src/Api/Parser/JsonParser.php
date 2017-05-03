@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Api\Parser;
 
-use Aws\Api\DateTimeResult;
-use Aws\Api\Shape;
+use Aws3\Api\DateTimeResult;
+use Aws3\Api\Shape;
 
 /**
  * @internal Implements standard JSON parsing.

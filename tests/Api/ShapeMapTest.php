@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ShapeMap;
+use Aws3\Api\ShapeMap;
 
 /**
- * @covers \Aws\Api\ShapeMap
+ * @covers \Aws3\Api\ShapeMap
  */
 class ShapeMapTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,7 +27,7 @@ class ShapeMapTest extends \PHPUnit_Framework_TestCase
     {
         $sm = new ShapeMap(['foo' => ['type' => 'string']]);
         $s = $sm->resolve(['shape' => 'foo']);
-        $this->assertInstanceOf('Aws\Api\Shape', $s);
+        $this->assertInstanceOf('Aws3\Api\Shape', $s);
         $this->assertArrayNotHasKey('shape', $s->toArray());
         $this->assertSame($s, $sm->resolve(['shape' => 'foo']));
     }

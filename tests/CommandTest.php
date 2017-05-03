@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\HandlerList;
+use Aws3\Command;
+use Aws3\HandlerList;
 
 /**
- * @covers Aws\Command
- * @covers Aws\HasDataTrait
+ * @covers Aws3\Command
+ * @covers Aws3\HasDataTrait
  */
 class CommandTest extends \PHPUnit_Framework_TestCase
 {
@@ -26,7 +26,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
     public function testHasDefaultHandlerList()
     {
         $c = new Command('foo');
-        $this->assertInstanceOf('Aws\HandlerList', $c->getHandlerList());
+        $this->assertInstanceOf('Aws3\HandlerList', $c->getHandlerList());
     }
 
     public function testHasSpecifricHandlerList()

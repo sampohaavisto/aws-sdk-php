@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Endpoint\EndpointProvider;
-use Aws\Endpoint\PatternEndpointProvider;
+use Aws3\Endpoint\EndpointProvider;
+use Aws3\Endpoint\PatternEndpointProvider;
 
 /**
- * @covers Aws\Endpoint\PatternEndpointProvider
+ * @covers Aws3\Endpoint\PatternEndpointProvider
  */
 class PatternEndpointProviderTest extends \PHPUnit_Framework_TestCase
 {

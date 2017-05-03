@@ -132,7 +132,7 @@ class ChangelogBuilder
         });
         $str = "";
         foreach ($changelog as $log) {
-            $str .= "* `Aws\\" . $log->category . "` - " . $log->description . "\n";
+            $str .= "* `Aws3\\" . $log->category . "` - " . $log->description . "\n";
         }
         return $str;
     }

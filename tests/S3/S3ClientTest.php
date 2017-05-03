@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Command;
-use Aws\Exception\AwsException;
-use Aws\Result;
-use Aws\S3\Exception\S3Exception;
-use Aws\S3\MultipartUploader;
-use Aws\S3\S3Client;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
+use Aws3\S3\Exception\S3Exception;
+use Aws3\S3\MultipartUploader;
+use Aws3\S3\S3Client;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise;
@@ -20,7 +20,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamInterface;
 
 /**
- * @covers Aws\S3\S3Client
+ * @covers Aws3\S3\S3Client
  */
 class S3ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -289,7 +289,7 @@ class S3ClientTest extends \PHPUnit_Framework_TestCase
         $command = $client->getCommand($command, $params);
 
         $text = "<LocationConstraint>{$target}</LocationConstraint>";
-        $body = (string) \Aws\serialize($command)->getBody();
+        $body = (string) \Aws3\serialize($command)->getBody();
         if ($contains) {
             $this->assertContains($text, $body);
         } else {
@@ -492,7 +492,7 @@ EOXML;
     }
 
     /**
-     * @expectedException \Aws\S3\Exception\S3Exception
+     * @expectedException \Aws3\S3\Exception\S3Exception
      * @expectedExceptionMessageRegExp /Your socket connection to the server/
      */
     public function testClientSocketTimeoutErrorsAreNotRetriedIndefinitely()
@@ -567,7 +567,7 @@ EOXML;
     }
 
     /**
-     * @expectedException \Aws\S3\Exception\S3Exception
+     * @expectedException \Aws3\S3\Exception\S3Exception
      * @expectedExceptionMessageRegExp /CompleteMultipartUpload/
      */
     public function testNetworkingErrorsAreNotRetriedOnNonIdempotentCommands()
@@ -831,7 +831,7 @@ EOXML;
     }
 
     /**
-     * @expectedException \Aws\Exception\AwsException
+     * @expectedException \Aws3\Exception\AwsException
      */
     public function testDetermineBucketRegionExposeException()
     {

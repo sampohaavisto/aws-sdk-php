@@ -1,26 +1,26 @@
 <?php
 namespace Aws3\Sts;
 
-use Aws\AwsClient;
-use Aws\Result;
-use Aws\Credentials\Credentials;
+use Aws3\AwsClient;
+use Aws3\Result;
+use Aws3\Credentials\Credentials;
 
 /**
  * This client is used to interact with the **AWS Security Token Service (AWS STS)**.
  *
- * @method \Aws\Result assumeRole(array $args = [])
+ * @method \Aws3\Result assumeRole(array $args = [])
  * @method \GuzzleHttp\Promise\Promise assumeRoleAsync(array $args = [])
- * @method \Aws\Result assumeRoleWithSAML(array $args = [])
+ * @method \Aws3\Result assumeRoleWithSAML(array $args = [])
  * @method \GuzzleHttp\Promise\Promise assumeRoleWithSAMLAsync(array $args = [])
- * @method \Aws\Result assumeRoleWithWebIdentity(array $args = [])
+ * @method \Aws3\Result assumeRoleWithWebIdentity(array $args = [])
  * @method \GuzzleHttp\Promise\Promise assumeRoleWithWebIdentityAsync(array $args = [])
- * @method \Aws\Result decodeAuthorizationMessage(array $args = [])
+ * @method \Aws3\Result decodeAuthorizationMessage(array $args = [])
  * @method \GuzzleHttp\Promise\Promise decodeAuthorizationMessageAsync(array $args = [])
- * @method \Aws\Result getCallerIdentity(array $args = [])
+ * @method \Aws3\Result getCallerIdentity(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getCallerIdentityAsync(array $args = [])
- * @method \Aws\Result getFederationToken(array $args = [])
+ * @method \Aws3\Result getFederationToken(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getFederationTokenAsync(array $args = [])
- * @method \Aws\Result getSessionToken(array $args = [])
+ * @method \Aws3\Result getSessionToken(array $args = [])
  * @method \GuzzleHttp\Promise\Promise getSessionTokenAsync(array $args = [])
  */
 class StsClient extends AwsClient

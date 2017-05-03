@@ -24,8 +24,8 @@ Get the CORS Configuration
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+    use Aws3\S3\S3Client;
+    use Aws3\Exception\AwsException;
 
     $bucketName = 'BUCKET_NAME';
     $client = new S3Client([
@@ -48,8 +48,8 @@ Set the CORS Configuration
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+    use Aws3\S3\S3Client;
+    use Aws3\Exception\AwsException;
 
     $bucketName = 'BUCKET_NAME';
     $client = new S3Client([

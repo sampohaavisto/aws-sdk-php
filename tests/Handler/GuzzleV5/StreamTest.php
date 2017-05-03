@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\Handler\GuzzleV5;
 
-use Aws\Handler\GuzzleV5\GuzzleStream as GuzzleStreamAdapter;
-use Aws\Handler\GuzzleV5\PsrStream as PsrStreamAdapter;
+use Aws3\Handler\GuzzleV5\GuzzleStream as GuzzleStreamAdapter;
+use Aws3\Handler\GuzzleV5\PsrStream as PsrStreamAdapter;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Stream\Stream as GuzzleStream;
 
 /**
- * @covers Aws\Handler\GuzzleV5\GuzzleStream
- * @covers Aws\Handler\GuzzleV5\PsrStream
+ * @covers Aws3\Handler\GuzzleV5\GuzzleStream
+ * @covers Aws3\Handler\GuzzleV5\PsrStream
  */
 class StreamTest extends \PHPUnit_Framework_TestCase
 {

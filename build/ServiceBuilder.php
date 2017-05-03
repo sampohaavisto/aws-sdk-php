@@ -55,7 +55,7 @@ class ServiceBuilder
 <?php
 namespace Aws3\\{$this->namespace};
 
-use Aws\\AwsClient;
+use Aws3\\AwsClient;
 
 /**
  * This client is used to interact with the **{$this->getFullName()}** service.
@@ -71,7 +71,7 @@ EOPHP;
 <?php
 namespace Aws3\\{$this->namespace}\\Exception;
 
-use Aws\\Exception\\AwsException;
+use Aws3\\Exception\\AwsException;
 
 /**
  * Represents an error interacting with the **{$this->getFullName()}** service.

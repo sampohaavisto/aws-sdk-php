@@ -70,7 +70,7 @@ class PartitionEndpointProvider
      */
     public static function defaultProvider()
     {
-        $data = \Aws\load_compiled_json(__DIR__ . '/../data/endpoints.json');
+        $data = \Aws3\load_compiled_json(__DIR__ . '/../data/endpoints.json');
 
         return new self($data['partitions']);
     }

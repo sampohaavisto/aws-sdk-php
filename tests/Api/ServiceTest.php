@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\Service;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Api\Service;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers \Aws\Api\Service
+ * @covers \Aws3\Api\Service
  */
 class ServiceTest extends \PHPUnit_Framework_TestCase
 {
@@ -73,7 +73,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
             function () { return []; }
         );
         $this->assertTrue($s->hasOperation('foo'));
-        $this->assertInstanceOf('Aws\Api\Operation', $s->getOperation('foo'));
+        $this->assertInstanceOf('Aws3\Api\Operation', $s->getOperation('foo'));
         $this->assertArrayHasKey('foo', $s->getOperations());
     }
 
@@ -123,10 +123,10 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
     public function errorParserProvider()
     {
         return [
-            ['json', 'Aws\Api\ErrorParser\JsonRpcErrorParser'],
-            ['rest-json', 'Aws\Api\ErrorParser\RestJsonErrorParser'],
-            ['query', 'Aws\Api\ErrorParser\XmlErrorParser'],
-            ['rest-xml', 'Aws\Api\ErrorParser\XmlErrorParser']
+            ['json', 'Aws3\Api\ErrorParser\JsonRpcErrorParser'],
+            ['rest-json', 'Aws3\Api\ErrorParser\RestJsonErrorParser'],
+            ['query', 'Aws3\Api\ErrorParser\XmlErrorParser'],
+            ['rest-xml', 'Aws3\Api\ErrorParser\XmlErrorParser']
         ];
     }
 
@@ -141,11 +141,11 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
     public function serializerDataProvider()
     {
         return [
-            ['json', 'Aws\Api\Serializer\JsonRpcSerializer'],
-            ['rest-json', 'Aws\Api\Serializer\RestJsonSerializer'],
-            ['rest-xml', 'Aws\Api\Serializer\RestXmlSerializer'],
-            ['query', 'Aws\Api\Serializer\QuerySerializer'],
-            ['ec2', 'Aws\Api\Serializer\QuerySerializer'],
+            ['json', 'Aws3\Api\Serializer\JsonRpcSerializer'],
+            ['rest-json', 'Aws3\Api\Serializer\RestJsonSerializer'],
+            ['rest-xml', 'Aws3\Api\Serializer\RestXmlSerializer'],
+            ['query', 'Aws3\Api\Serializer\QuerySerializer'],
+            ['ec2', 'Aws3\Api\Serializer\QuerySerializer'],
         ];
     }
 
@@ -160,11 +160,11 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
     public function parserDataProvider()
     {
         return [
-            ['json', 'Aws\Api\Parser\JsonRpcParser'],
-            ['rest-json', 'Aws\Api\Parser\RestJsonParser'],
-            ['rest-xml', 'Aws\Api\Parser\RestXmlParser'],
-            ['query', 'Aws\Api\Parser\XmlParser'],
-            ['ec2', 'Aws\Api\Parser\XmlParser'],
+            ['json', 'Aws3\Api\Parser\JsonRpcParser'],
+            ['rest-json', 'Aws3\Api\Parser\RestJsonParser'],
+            ['rest-xml', 'Aws3\Api\Parser\RestXmlParser'],
+            ['query', 'Aws3\Api\Parser\XmlParser'],
+            ['ec2', 'Aws3\Api\Parser\XmlParser'],
         ];
     }
 

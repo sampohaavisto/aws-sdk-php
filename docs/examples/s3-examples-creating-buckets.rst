@@ -21,8 +21,8 @@ List Buckets
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+    use Aws3\S3\S3Client;
+    use Aws3\Exception\AwsException;
 
     //Create a S3Client
     $s3Client = new S3Client([
@@ -41,8 +41,8 @@ Create a Bucket
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+    use Aws3\S3\S3Client;
+    use Aws3\Exception\AwsException;
 
     $BUCKET_NAME='<BUCKET-NAME>';
     //Create a S3Client
@@ -67,8 +67,8 @@ Put an Object in a Bucket
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+    use Aws3\S3\S3Client;
+    use Aws3\Exception\AwsException;
 
     $USAGE = "\n" .
         "To run this example, supply the name of an S3 bucket and a file to\n" .

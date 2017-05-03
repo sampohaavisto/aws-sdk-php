@@ -1,24 +1,24 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Api\Service;
-use Aws\ClientResolver;
-use Aws\CommandInterface;
-use Aws\Credentials\CredentialProvider;
-use Aws\Credentials\Credentials;
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\Endpoint\Partition;
-use Aws\LruArrayCache;
-use Aws\S3\S3Client;
-use Aws\HandlerList;
-use Aws\Sdk;
-use Aws\Result;
-use Aws\WrappedHttpHandler;
+use Aws3\Api\Service;
+use Aws3\ClientResolver;
+use Aws3\CommandInterface;
+use Aws3\Credentials\CredentialProvider;
+use Aws3\Credentials\Credentials;
+use Aws3\DynamoDb\DynamoDbClient;
+use Aws3\Endpoint\Partition;
+use Aws3\LruArrayCache;
+use Aws3\S3\S3Client;
+use Aws3\HandlerList;
+use Aws3\Sdk;
+use Aws3\Result;
+use Aws3\WrappedHttpHandler;
 use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\ClientResolver
+ * @covers Aws3\ClientResolver
  */
 class ClientResolverTest extends \PHPUnit_Framework_TestCase
 {
@@ -56,7 +56,7 @@ class ClientResolverTest extends \PHPUnit_Framework_TestCase
             'validate' => false
         ]);
         $command = $c->getCommand('CreateTable');
-        $handler = \Aws\constantly(new Result([]));
+        $handler = \Aws3\constantly(new Result([]));
         $command->getHandlerList()->setHandler($handler);
         $c->execute($command);
     }
@@ -73,7 +73,7 @@ class ClientResolverTest extends \PHPUnit_Framework_TestCase
             ]
         ]);
         $command = $c->getCommand('CreateTable');
-        $handler = \Aws\constantly(new Result([]));
+        $handler = \Aws3\constantly(new Result([]));
         $command->getHandlerList()->setHandler($handler);
         $c->execute($command);
     }
@@ -192,7 +192,7 @@ class ClientResolverTest extends \PHPUnit_Framework_TestCase
             'version' => 'latest'
         ], new HandlerList());
         $c = call_user_func($conf['credentials'])->wait();
-        $this->assertInstanceOf('Aws\Credentials\CredentialsInterface', $c);
+        $this->assertInstanceOf('Aws3\Credentials\CredentialsInterface', $c);
         $this->assertEquals('foo', $c->getAccessKeyId());
         $this->assertEquals('bar', $c->getSecretKey());
         putenv(CredentialProvider::ENV_KEY . "=$key");
@@ -253,7 +253,7 @@ class ClientResolverTest extends \PHPUnit_Framework_TestCase
             'version' => 'latest'
         ], new HandlerList());
         $creds = call_user_func($conf['credentials'])->wait();
-        $this->assertInstanceOf('Aws\Credentials\Credentials', $creds);
+        $this->assertInstanceOf('Aws3\Credentials\Credentials', $creds);
         $this->assertEquals('anonymous', $conf['config']['signature_version']);
     }
 

@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\Shape;
-use Aws\Api\ShapeMap;
+use Aws3\Api\Shape;
+use Aws3\Api\ShapeMap;
 
 /**
- * @covers \Aws\Api\Shape
- * @covers \Aws\Api\AbstractModel
+ * @covers \Aws3\Api\Shape
+ * @covers \Aws3\Api\AbstractModel
  */
 class ShapeTest extends \PHPUnit_Framework_TestCase
 {
@@ -42,7 +42,7 @@ class ShapeTest extends \PHPUnit_Framework_TestCase
         $s = new Shape(['foo' => ['type' => 'string']], new ShapeMap([]));
         $m = new \ReflectionMethod($s, 'shapeAt');
         $m->setAccessible(true);
-        $this->assertInstanceOf('Aws\Api\Shape', $m->invoke($s, 'foo'));
+        $this->assertInstanceOf('Aws3\Api\Shape', $m->invoke($s, 'foo'));
     }
 
     public function testReturnsNestedShapeReferences()
@@ -54,7 +54,7 @@ class ShapeTest extends \PHPUnit_Framework_TestCase
         $m = new \ReflectionMethod($s, 'shapeAt');
         $m->setAccessible(true);
         $result = $m->invoke($s, 'foo');
-        $this->assertInstanceOf('Aws\Api\Shape', $result);
+        $this->assertInstanceOf('Aws3\Api\Shape', $result);
         $this->assertEquals('string', $result->getType());
     }
 
@@ -64,7 +64,7 @@ class ShapeTest extends \PHPUnit_Framework_TestCase
             ['shape' => 'bar'],
             new ShapeMap(['bar' => ['type' => 'float']])
         );
-        $this->assertInstanceOf('Aws\Api\Shape', $s);
+        $this->assertInstanceOf('Aws3\Api\Shape', $s);
         $this->assertEquals('float', $s->getType());
     }
 

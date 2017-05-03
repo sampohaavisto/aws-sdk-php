@@ -1,15 +1,15 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Credentials\Credentials;
-use Aws\S3\PostObjectV4;
-use Aws\S3\S3Client;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Credentials\Credentials;
+use Aws3\S3\PostObjectV4;
+use Aws3\S3\S3Client;
+use Aws3\Test\UsesServiceTrait;
 
 require_once __DIR__ . '/sig_hack.php';
 
 /**
- * @covers Aws\S3\PostObject
+ * @covers Aws3\S3\PostObject
  */
 class PostObjectV4Test extends \PHPUnit_Framework_TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\CloudFront;
 
-use Aws\CloudFront\CloudFrontClient;
+use Aws3\CloudFront\CloudFrontClient;
 
 /**
- * @covers Aws\CloudFront\CloudFrontClient
+ * @covers Aws3\CloudFront\CloudFrontClient
  */
 class CloudFrontClientTest extends \PHPUnit_Framework_TestCase
 {

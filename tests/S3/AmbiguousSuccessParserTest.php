@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Api\ApiProvider;
-use Aws\CommandInterface;
-use Aws\S3\AmbiguousSuccessParser;
-use Aws\S3\Exception\S3Exception;
+use Aws3\Api\ApiProvider;
+use Aws3\CommandInterface;
+use Aws3\S3\AmbiguousSuccessParser;
+use Aws3\S3\Exception\S3Exception;
 use Psr\Http\Message\ResponseInterface;
 
 class AmbiguousSuccessParserTest extends \PHPUnit_Framework_TestCase
@@ -29,7 +29,7 @@ class AmbiguousSuccessParserTest extends \PHPUnit_Framework_TestCase
      * @dataProvider opsWithAmbiguousSuccessesProvider
      * @param string $operation
      *
-     * @expectedException \Aws\S3\Exception\S3Exception
+     * @expectedException \Aws3\S3\Exception\S3Exception
      * @expectedExceptionMessage Sorry!
      */
     public function testConvertsAmbiguousSuccessesToExceptions($operation)

@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Api\ErrorParser;
 
-use Aws\Api\Parser\PayloadParserTrait;
+use Aws3\Api\Parser\PayloadParserTrait;
 use Psr\Http\Message\ResponseInterface;
 
 /**

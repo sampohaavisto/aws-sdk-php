@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\WorkSpaces\Exception;
 
-use Aws\Exception\AwsException;
+use Aws3\Exception\AwsException;
 
 /**
  * Represents an error while interacting with Amazon WorkSpaces.

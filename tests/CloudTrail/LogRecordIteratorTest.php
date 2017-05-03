@@ -1,16 +1,16 @@
 <?php
 namespace Aws3\Test\CloudTrail;
 
-use Aws\Result;
-use Aws\S3\S3Client;
-use Aws\CloudTrail\CloudTrailClient;
-use Aws\CloudTrail\LogFileReader;
-use Aws\CloudTrail\LogRecordIterator;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Result;
+use Aws3\S3\S3Client;
+use Aws3\CloudTrail\CloudTrailClient;
+use Aws3\CloudTrail\LogFileReader;
+use Aws3\CloudTrail\LogRecordIterator;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\CloudTrail\LogRecordIterator
+ * @covers Aws3\CloudTrail\LogRecordIterator
  */
 class LogRecordIteratorTest extends \PHPUnit_Framework_TestCase
 {
@@ -40,7 +40,7 @@ class LogRecordIteratorTest extends \PHPUnit_Framework_TestCase
             ])
         ]);
         $records = LogRecordIterator::forTrail($s3, $cloudTrailClient);
-        $this->assertInstanceOf('Aws\CloudTrail\LogRecordIterator', $records);
+        $this->assertInstanceOf('Aws3\CloudTrail\LogRecordIterator', $records);
     }
 
     public function testFactoryCanCreateForBucket()
@@ -51,7 +51,7 @@ class LogRecordIteratorTest extends \PHPUnit_Framework_TestCase
             'version'     => 'latest'
         ]);
         $records = LogRecordIterator::forBucket($s3, 'test-bucket');
-        $this->assertInstanceOf('Aws\CloudTrail\LogRecordIterator', $records);
+        $this->assertInstanceOf('Aws3\CloudTrail\LogRecordIterator', $records);
     }
 
     public function testFactoryCanCreateForFile()
@@ -62,12 +62,12 @@ class LogRecordIteratorTest extends \PHPUnit_Framework_TestCase
             'version'     => 'latest'
         ]);
         $records = LogRecordIterator::forFile($s3, 'test-bucket', 'test-key');
-        $this->assertInstanceOf('Aws\CloudTrail\LogRecordIterator', $records);
+        $this->assertInstanceOf('Aws3\CloudTrail\LogRecordIterator', $records);
     }
 
     public function testIteratorBehavesCorrectlyBeforeRewind()
     {
-        $logFileReader = $this->getMockBuilder('Aws\CloudTrail\LogFileReader')
+        $logFileReader = $this->getMockBuilder('Aws3\CloudTrail\LogFileReader')
             ->disableOriginalConstructor()
             ->getMock();
         $logFileIterator = new \ArrayIterator;

@@ -76,7 +76,7 @@ The dependencies of the SDK have changed in this version.
   within that paradigm. See :doc:`promises` for more details.
 - The PHP implementation of `JMESPath <http://jmespath.org/>`_
   (``mtdowling/jmespath.php``) is used in the SDK to provide the data querying
-  ability of the ``Aws\Result::search()`` and ``Aws\ResultPaginator::search()``
+  ability of the ``Aws3\Result::search()`` and ``Aws3\ResultPaginator::search()``
   methods. See :doc:`jmespath` for more details.
 
 
@@ -123,7 +123,7 @@ with the ``new`` keyword.
 
 .. code-block:: php
 
-    use Aws\DynamoDb\DynamoDbClient;
+    use Aws3\DynamoDb\DynamoDbClient;
 
     // Version 2 style
     $client = DynamoDbClient::factory([
@@ -160,8 +160,8 @@ supported options.
 The SDK Object
 ^^^^^^^^^^^^^^
 
-Version 3 of the SDK introduces the ``Aws\Sdk`` object as a replacement to
-``Aws\Common\Aws``. The ``Sdk`` object acts as a client factory and is used
+Version 3 of the SDK introduces the ``Aws3\Sdk`` object as a replacement to
+``Aws3\Common\Aws``. The ``Sdk`` object acts as a client factory and is used
 to manage shared configuration options across multiple clients.
 
 While Version 2's ``Aws`` class worked like a service locator (i.e., it always
@@ -187,7 +187,7 @@ Version 2 this element was not present.
 
 .. code-block:: php
 
-    $client = new Aws\Rds\RdsClient([
+    $client = new Aws3\Rds\RdsClient([
         'region'  => 'us-west-1',
         'version' => '2014-09-01'
     ]);
@@ -290,7 +290,7 @@ output of the result (provided below in parenthesis):
 Enum classes have been removed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We have removed the ``Enum`` classes (e.g., ``Aws\S3\Enum\CannedAcl``) that
+We have removed the ``Enum`` classes (e.g., ``Aws3\S3\Enum\CannedAcl``) that
 existed in Version 2 of the SDK. Enums were concrete classes within the public
 API of the SDK that contained constants representing groups of valid parameter
 values. Since these enums are specific to API versions, can change over time,
@@ -306,7 +306,7 @@ Fine-grained Exception classes have been removed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We have removed the fine-grained exception classes that existed in the each of
-the services' namespaces (e.g., ``Aws\Rds\Exception\{SpecificError}Exception``)
+the services' namespaces (e.g., ``Aws3\Rds\Exception\{SpecificError}Exception``)
 for very similar reasons that we removed Enums. The exceptions thrown by
 service/operation are dependent on which API version is used (i.e., they can
 change from version to version). Also, the complete list of what exceptions can
@@ -314,7 +314,7 @@ be thrown by a given operation is not available, which made Version 2's
 fine-grained exception classes incomplete.
 
 You should handle errors by catching the root exception class for each service
-(e.g., ``Aws\Rds\Exception\RdsException``). You can use the ``getAwsErrorCode()``
+(e.g., ``Aws3\Rds\Exception\RdsException``). You can use the ``getAwsErrorCode()``
 method of the exception to check for specific error codes. This is functionally
 equivalent to catching different exception classes, but provides that function
 without adding bloat to the SDK.
@@ -327,7 +327,7 @@ In Version 2, there was an obscure feature inspired by Laravel that allowed you
 to call ``enableFacades()`` on the ``Aws`` class to enable static access to the
 various service clients. This feature goes against PHP best practices, and we
 stopped documenting it over a year ago. In Version 3, this feature is gone
-completely. You should retrieve your client objects from the ``Aws\Sdk`` object
+completely. You should retrieve your client objects from the ``Aws3\Sdk`` object
 and use them as object instances, not static classes.
 
 
@@ -395,16 +395,16 @@ even been removed.
     * The way you use the :doc:`S3 Multipart Uploader </service/s3-multipart-upload>`
       has changed. The Glacier Multipart Uploader has been changed in similar ways.
     * The way to create :doc:`S3 Presigned URLs </service/s3-presigned-url>` has changed.
-    * The ``Aws\S3\Sync`` namespace have been replaced by the ``Aws\S3\Transfer``
+    * The ``Aws3\S3\Sync`` namespace have been replaced by the ``Aws3\S3\Transfer``
       class. The ``S3Client::uploadDirectory()`` and ``S3Client::downloadBucket()``
       methods are still available, but have different options. See the docs for
       :doc:`/service/s3-transfer`.
-    * The ``Aws\S3\Model\ClearBucket`` and ``Aws\S3\Model\DeleteObjectsBatch``
-      have been replaced by ``Aws\S3\BatchDelete`` and ``S3Client::deleteMatchingObjects()``.
+    * The ``Aws3\S3\Model\ClearBucket`` and ``Aws3\S3\Model\DeleteObjectsBatch``
+      have been replaced by ``Aws3\S3\BatchDelete`` and ``S3Client::deleteMatchingObjects()``.
     * The options and behaviors for the :doc:`/service/dynamodb-session-handler`
       have changed slightly.
-    * The ``Aws\DynamoDb\Model\BatchRequest`` namespace has been replaced by
-      ``Aws\DynamoDb\WriteRequestBatch``. See the docs for
+    * The ``Aws3\DynamoDb\Model\BatchRequest`` namespace has been replaced by
+      ``Aws3\DynamoDb\WriteRequestBatch``. See the docs for
       `DynamoDB WriteRequestBatch <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.DynamoDb.WriteRequestBatch.html>`_.
 
 * Removed:
@@ -438,8 +438,8 @@ From Version 2 of the SDK
 
     require '/path/to/vendor/autoload.php';
 
-    use Aws\S3\S3Client;
-    use Aws\S3\Exception\S3Exception;
+    use Aws3\S3\S3Client;
+    use Aws3\S3\Exception\S3Exception;
 
     $s3 = S3Client::factory([
         'profile' => 'my-credential-profile',
@@ -473,8 +473,8 @@ Key differences:
 
     require '/path/to/vendor/autoload.php';
 
-    use Aws\S3\S3Client;
-    use Aws\S3\Exception\S3Exception;
+    use Aws3\S3\S3Client;
+    use Aws3\S3\Exception\S3Exception;
 
     $s3 = new S3Client([
         'profile' => 'my-credential-profile',
@@ -528,7 +528,7 @@ From Version 2 of the SDK
 
     require '/path/to/vendor/autoload.php';
 
-    use Aws\Common\Aws;
+    use Aws3\Common\Aws;
 
     $aws = Aws::factory('path/to/my/config.php');
 
@@ -543,7 +543,7 @@ From Version 3 of the SDK
 
 Key differences:
 
-- Use the ``Aws\Sdk`` class instead of ``Aws\Common\Aws``.
+- Use the ``Aws3\Sdk`` class instead of ``Aws3\Common\Aws``.
 - No configuration file. Use an array for configuration instead.
 - The ``'version'`` option is required during instantiation.
 - Use the ``create<Service>()`` methods instead of ``get('<service>')``.
@@ -554,7 +554,7 @@ Key differences:
 
     require '/path/to/vendor/autoload.php';
 
-    $sdk = new Aws\Sdk([
+    $sdk = new Aws3\Sdk([
         'profile' => 'my_profile',
         'region' => 'us-east-1',
         'version' => 'latest',

@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Multipart;
 
-use Aws\Multipart\UploadState;
+use Aws3\Multipart\UploadState;
 
 /**
- * @covers Aws\Multipart\UploadState
+ * @covers Aws3\Multipart\UploadState
  */
 class UploadStateTest extends \PHPUnit_Framework_TestCase
 {

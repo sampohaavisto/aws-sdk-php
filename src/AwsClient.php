@@ -1,10 +1,10 @@
 <?php
 namespace Aws3;
 
-use Aws\Api\ApiProvider;
-use Aws\Api\DocModel;
-use Aws\Api\Service;
-use Aws\Signature\SignatureProvider;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\DocModel;
+use Aws3\Api\Service;
+use Aws3\Signature\SignatureProvider;
 use GuzzleHttp\Psr7\Uri;
 
 /**
@@ -56,12 +56,12 @@ class AwsClient implements AwsClientInterface
      *   corresponding configuration data. The type value can be one of api,
      *   waiter, or paginator.
      * - credentials:
-     *   (Aws\Credentials\CredentialsInterface|array|bool|callable) Specifies
+     *   (Aws3\Credentials\CredentialsInterface|array|bool|callable) Specifies
      *   the credentials used to sign requests. Provide an
-     *   Aws\Credentials\CredentialsInterface object, an associative array of
+     *   Aws3\Credentials\CredentialsInterface object, an associative array of
      *   "key", "secret", and an optional "token" key, `false` to use null
      *   credentials, or a callable credentials provider used to create
-     *   credentials or return null. See Aws\Credentials\CredentialProvider for
+     *   credentials or return null. See Aws3\Credentials\CredentialProvider for
      *   a list of built-in credentials providers. If no credentials are
      *   provided, the SDK will attempt to load them from the environment.
      * - debug: (bool|array) Set to true to display debug information when
@@ -88,12 +88,12 @@ class AwsClient implements AwsClientInterface
      * - endpoint_provider: (callable) An optional PHP callable that
      *   accepts a hash of options including a "service" and "region" key and
      *   returns NULL or a hash of endpoint data, of which the "endpoint" key
-     *   is required. See Aws\Endpoint\EndpointProvider for a list of built-in
+     *   is required. See Aws3\Endpoint\EndpointProvider for a list of built-in
      *   providers.
      * - handler: (callable) A handler that accepts a command object,
      *   request object and returns a promise that is fulfilled with an
-     *   Aws\ResultInterface object or rejected with an
-     *   Aws\Exception\AwsException. A handler does not accept a next handler
+     *   Aws3\ResultInterface object or rejected with an
+     *   Aws3\Exception\AwsException. A handler does not accept a next handler
      *   as it is terminal and expected to fulfill a command. If no handler is
      *   provided, a default Guzzle handler will be utilized.
      * - http: (array, default=array(0)) Set to an array of SDK request
@@ -128,7 +128,7 @@ class AwsClient implements AwsClientInterface
      *   version name (e.g., "v4"), a service name, and region, and
      *   returns a SignatureInterface object or null. This provider is used to
      *   create signers utilized by the client. See
-     *   Aws\Signature\SignatureProvider for a list of built-in providers
+     *   Aws3\Signature\SignatureProvider for a list of built-in providers
      * - signature_version: (string) A string representing a custom
      *   signature version to use with a service (e.g., v4). Note that
      *   per/operation signature version MAY override this requested signature
@@ -252,14 +252,14 @@ class AwsClient implements AwsClientInterface
         $klass = get_class($this);
 
         if ($klass === __CLASS__) {
-            return ['', 'Aws\Exception\AwsException'];
+            return ['', 'Aws3\Exception\AwsException'];
         }
 
         $service = substr($klass, strrpos($klass, '\\') + 1, -6);
 
         return [
             strtolower($service),
-            "Aws\\{$service}\\Exception\\{$service}Exception"
+            "Aws3\\{$service}\\Exception\\{$service}Exception"
         ];
     }
 

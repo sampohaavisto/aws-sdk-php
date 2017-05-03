@@ -2,8 +2,8 @@
 
 namespace Aws3\Test\Integ;
 
-use Aws\AwsClient;
-use Aws\DynamoDb\Exception\DynamoDbException;
+use Aws3\AwsClient;
+use Aws3\DynamoDb\Exception\DynamoDbException;
 use Behat\Behat\Hook\Scope\AfterFeatureScope;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;

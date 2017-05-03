@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\Credentials;
 
-use Aws\Credentials\Credentials;
+use Aws3\Credentials\Credentials;
 
 /**
- * @covers Aws\Credentials\Credentials
+ * @covers Aws3\Credentials\Credentials
  */
 class CredentialsTest extends \PHPUnit_Framework_TestCase
 {

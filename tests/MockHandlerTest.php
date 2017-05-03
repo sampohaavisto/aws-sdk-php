@@ -1,23 +1,23 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\Exception\AwsException;
-use Aws\MockHandler;
-use Aws\Result;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\Exception\AwsException;
+use Aws3\MockHandler;
+use Aws3\Result;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Promise;
 
 /**
- * @covers Aws\MockHandler
+ * @covers Aws3\MockHandler
  */
 class MockHandlerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Expected an Aws\ResultInterface or Aws\Exception\AwsException
+     * @expectedExceptionMessage Expected an Aws3\ResultInterface or Aws3\Exception\AwsException
      */
     public function testValidatesEachResult()
     {
@@ -56,7 +56,7 @@ class MockHandlerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\AwsException
+     * @expectedException \Aws3\Exception\AwsException
      * @expectedExceptionMessage Error
      */
     public function testThrowsExceptionsFromQueue()

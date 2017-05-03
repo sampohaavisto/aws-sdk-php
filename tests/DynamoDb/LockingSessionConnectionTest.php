@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\DynamoDb;
 
-use Aws\DynamoDb\Exception\DynamoDbException;
-use Aws\DynamoDb\LockingSessionConnection;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\DynamoDb\Exception\DynamoDbException;
+use Aws3\DynamoDb\LockingSessionConnection;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\DynamoDb\LockingSessionConnection
+ * @covers Aws3\DynamoDb\LockingSessionConnection
  */
 class LockingSessionConnectionTest extends \PHPUnit_Framework_TestCase
 {

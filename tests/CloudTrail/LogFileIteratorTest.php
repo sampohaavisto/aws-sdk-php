@@ -1,16 +1,16 @@
 <?php
 namespace Aws3\Test\CloudTrail;
 
-use Aws\Api\Parser\RestXmlParser;
-use Aws\CloudTrail\CloudTrailClient;
-use Aws\CloudTrail\LogFileIterator;
-use Aws\Result;
-use Aws\S3\S3Client;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Api\Parser\RestXmlParser;
+use Aws3\CloudTrail\CloudTrailClient;
+use Aws3\CloudTrail\LogFileIterator;
+use Aws3\Result;
+use Aws3\S3\S3Client;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * @covers Aws\CloudTrail\LogFileIterator
+ * @covers Aws3\CloudTrail\LogFileIterator
  */
 class LogFileIteratorTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,7 +27,7 @@ class LogFileIteratorTest extends \PHPUnit_Framework_TestCase
         $json = '{"trailList":[{"IncludeGlobalServiceEvents":true,"Name":"Default","S3BucketName":"log-bucket"}]}';
         $this->addMockResults($cloudTrailClient, [new Result(json_decode($json, true))]);
         $files = LogFileIterator::forTrail($s3Client, $cloudTrailClient);
-        $this->assertInstanceOf('Aws\CloudTrail\LogFileIterator', $files);
+        $this->assertInstanceOf('Aws3\CloudTrail\LogFileIterator', $files);
     }
 
     public function testFactoryErrorsOnUnknownBucket()
@@ -49,7 +49,7 @@ class LogFileIteratorTest extends \PHPUnit_Framework_TestCase
     {
         $s3Client = $this->getMockS3Client();
         $files = new LogFileIterator($s3Client, 'test-bucket');
-        $this->assertInstanceOf('Aws\CloudTrail\LogFileIterator', $files);
+        $this->assertInstanceOf('Aws3\CloudTrail\LogFileIterator', $files);
     }
 
     public function testConstructorWorksWithDates()
@@ -59,7 +59,7 @@ class LogFileIteratorTest extends \PHPUnit_Framework_TestCase
             LogFileIterator::START_DATE => new \DateTime('2013-11-01'),
             LogFileIterator::END_DATE   => '2013-12-01',
         ]);
-        $this->assertInstanceOf('Aws\CloudTrail\LogFileIterator', $files);
+        $this->assertInstanceOf('Aws3\CloudTrail\LogFileIterator', $files);
     }
 
     /**

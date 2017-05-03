@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\S3;
 
-use Aws\Credentials\CredentialsInterface;
+use Aws3\Credentials\CredentialsInterface;
 use GuzzleHttp\Psr7\Uri;
 
 /**

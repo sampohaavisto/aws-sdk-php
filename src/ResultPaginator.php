@@ -50,7 +50,7 @@ class ResultPaginator implements \Iterator
     /**
      * Runs a paginator asynchronously and uses a callback to handle results.
      *
-     * The callback should have the signature: function (Aws\Result $result).
+     * The callback should have the signature: function (Aws3\Result $result).
      * A non-null return value from the callback will be yielded by the
      * promise. This means that you can return promises from the callback that
      * will need to be resolved before continuing iteration over the remaining

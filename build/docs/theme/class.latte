@@ -277,7 +277,7 @@
 
         {var $isAwsClient = false}
         {foreach $class->parentClasses as $parent}
-            {if $parent->name === 'Aws\AwsClient'}
+            {if $parent->name === 'Aws3\AwsClient'}
                 {var $isAwsClient = true}
             {/if}
         {/foreach}

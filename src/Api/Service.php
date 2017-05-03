@@ -1,9 +1,9 @@
 <?php
 namespace Aws3\Api;
 
-use Aws\Api\Serializer\QuerySerializer;
-use Aws\Api\Serializer\Ec2ParamBuilder;
-use Aws\Api\Parser\QueryParser;
+use Aws3\Api\Serializer\QuerySerializer;
+use Aws3\Api\Serializer\Ec2ParamBuilder;
+use Aws3\Api\Parser\QueryParser;
 
 /**
  * Represents a web service API model.
@@ -77,10 +77,10 @@ class Service extends AbstractModel
     public static function createSerializer(Service $api, $endpoint)
     {
         static $mapping = [
-            'json'      => 'Aws\Api\Serializer\JsonRpcSerializer',
-            'query'     => 'Aws\Api\Serializer\QuerySerializer',
-            'rest-json' => 'Aws\Api\Serializer\RestJsonSerializer',
-            'rest-xml'  => 'Aws\Api\Serializer\RestXmlSerializer'
+            'json'      => 'Aws3\Api\Serializer\JsonRpcSerializer',
+            'query'     => 'Aws3\Api\Serializer\QuerySerializer',
+            'rest-json' => 'Aws3\Api\Serializer\RestJsonSerializer',
+            'rest-xml'  => 'Aws3\Api\Serializer\RestXmlSerializer'
         ];
 
         $proto = $api->getProtocol();
@@ -107,11 +107,11 @@ class Service extends AbstractModel
     public static function createErrorParser($protocol)
     {
         static $mapping = [
-            'json'      => 'Aws\Api\ErrorParser\JsonRpcErrorParser',
-            'query'     => 'Aws\Api\ErrorParser\XmlErrorParser',
-            'rest-json' => 'Aws\Api\ErrorParser\RestJsonErrorParser',
-            'rest-xml'  => 'Aws\Api\ErrorParser\XmlErrorParser',
-            'ec2'       => 'Aws\Api\ErrorParser\XmlErrorParser'
+            'json'      => 'Aws3\Api\ErrorParser\JsonRpcErrorParser',
+            'query'     => 'Aws3\Api\ErrorParser\XmlErrorParser',
+            'rest-json' => 'Aws3\Api\ErrorParser\RestJsonErrorParser',
+            'rest-xml'  => 'Aws3\Api\ErrorParser\XmlErrorParser',
+            'ec2'       => 'Aws3\Api\ErrorParser\XmlErrorParser'
         ];
 
         if (isset($mapping[$protocol])) {
@@ -131,10 +131,10 @@ class Service extends AbstractModel
     public static function createParser(Service $api)
     {
         static $mapping = [
-            'json'      => 'Aws\Api\Parser\JsonRpcParser',
-            'query'     => 'Aws\Api\Parser\QueryParser',
-            'rest-json' => 'Aws\Api\Parser\RestJsonParser',
-            'rest-xml'  => 'Aws\Api\Parser\RestXmlParser'
+            'json'      => 'Aws3\Api\Parser\JsonRpcParser',
+            'query'     => 'Aws3\Api\Parser\QueryParser',
+            'rest-json' => 'Aws3\Api\Parser\RestJsonParser',
+            'rest-xml'  => 'Aws3\Api\Parser\RestXmlParser'
         ];
 
         $proto = $api->getProtocol();

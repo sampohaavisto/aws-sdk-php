@@ -1,20 +1,20 @@
 <?php
 namespace Aws3\Test\Signature;
 
-use Aws\Signature\SignatureProvider;
+use Aws3\Signature\SignatureProvider;
 
 /**
- * @covers Aws\Signature\SignatureProvider
+ * @covers Aws3\Signature\SignatureProvider
  */
 class SignatureProviderTest extends \PHPUnit_Framework_TestCase
 {
     public function versionProvider()
     {
         return [
-            ['v4', 'Aws\Signature\SignatureV4', 'foo'],
-            ['v4', 'Aws\Signature\S3SignatureV4', 's3'],
-            ['v4-unsigned-body', 'Aws\Signature\SignatureV4', 'foo'],
-            ['anonymous', 'Aws\Signature\AnonymousSignature', 's3'],
+            ['v4', 'Aws3\Signature\SignatureV4', 'foo'],
+            ['v4', 'Aws3\Signature\S3SignatureV4', 's3'],
+            ['v4-unsigned-body', 'Aws3\Signature\SignatureV4', 'foo'],
+            ['anonymous', 'Aws3\Signature\AnonymousSignature', 's3'],
         ];
     }
 
@@ -40,7 +40,7 @@ class SignatureProviderTest extends \PHPUnit_Framework_TestCase
     public function testResolvesSignaturesSuccessfully()
     {
         $this->assertInstanceOf(
-            'Aws\Signature\SignatureInterface',
+            'Aws3\Signature\SignatureInterface',
             SignatureProvider::resolve(
                 SignatureProvider::version(),
                 'v4',
@@ -51,7 +51,7 @@ class SignatureProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Exception\UnresolvedSignatureException
+     * @expectedException \Aws3\Exception\UnresolvedSignatureException
      */
     public function testResolvesSignaturesWithException()
     {

@@ -39,8 +39,8 @@ Handler
 JMESPath
     `JMESPath <http://jmespath.org/>`_ is a query language for JSON-like data.
     The AWS SDK for PHP uses JMESPath expressions to query PHP data structures.
-    JMESPath expressions can be used directly on ``Aws\Result`` and
-    ``Aws\ResultPaginator`` objects via the ``search($expression)`` method.
+    JMESPath expressions can be used directly on ``Aws3\Result`` and
+    ``Aws3\ResultPaginator`` objects via the ``search($expression)`` method.
 
 Middleware
     .. include:: _snippets/middleware-description.txt
@@ -79,7 +79,7 @@ Region
 
 SDK
     The term "SDK" can refer to the AWS SDK for PHP library as a whole, but also
-    refers to the ``Aws\Sdk`` class `(docs)
+    refers to the ``Aws3\Sdk`` class `(docs)
     <http://docs.aws.amazon.com/aws-sdk-php/v3/api/Aws/Sdk.html>`_, which acts
     as a factory for the client objects for each **service**. The ``Sdk`` class
     also let's you provide a set of :doc:`global configuration values

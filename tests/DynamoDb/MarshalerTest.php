@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test\DynamoDb;
 
-use Aws\DynamoDb\Marshaler;
-use Aws\DynamoDb\BinaryValue;
-use Aws\DynamoDb\NumberValue;
-use Aws\DynamoDb\SetValue;
+use Aws3\DynamoDb\Marshaler;
+use Aws3\DynamoDb\BinaryValue;
+use Aws3\DynamoDb\NumberValue;
+use Aws3\DynamoDb\SetValue;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\DynamoDb\Marshaler
+ * @covers Aws3\DynamoDb\Marshaler
  */
 class MarshalerTest extends \PHPUnit_Framework_TestCase
 {
@@ -337,13 +337,13 @@ JSON;
             'foo' => ['NS' => ['99999999999999999999', '9']],
             'bar' => ['N' => '99999999999999999999.99999999999999999999'],
         ]);
-        $this->assertInstanceOf('Aws\DynamoDb\NumberValue', $result['bar']);
+        $this->assertInstanceOf('Aws3\DynamoDb\NumberValue', $result['bar']);
         $this->assertEquals('99999999999999999999', (string) iterator_to_array($result['foo'])[0]);
         $this->assertEquals('99999999999999999999.99999999999999999999', (string) $result['bar']);
     }
 
     /**
-     * @covers Aws\DynamoDb\NumberValue
+     * @covers Aws3\DynamoDb\NumberValue
      */
     public function testNumberValueCanBeFormattedAndSerialized()
     {
@@ -353,7 +353,7 @@ JSON;
     }
 
     /**
-     * @covers Aws\DynamoDb\BinaryValue
+     * @covers Aws3\DynamoDb\BinaryValue
      */
     public function testBinaryValueCanBeFormattedAndSerialized()
     {
@@ -367,7 +367,7 @@ JSON;
     }
 
     /**
-     * @covers Aws\DynamoDb\SetValue
+     * @covers Aws3\DynamoDb\SetValue
      */
     public function testSetValueCanBeFormattedAndSerialized()
     {

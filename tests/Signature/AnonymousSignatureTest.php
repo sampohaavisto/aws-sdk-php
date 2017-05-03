@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Signature;
 
-use Aws\Credentials\Credentials;
-use Aws\Signature\AnonymousSignature;
+use Aws3\Credentials\Credentials;
+use Aws3\Signature\AnonymousSignature;
 use GuzzleHttp\Psr7\Request;
 
 /**
- * @covers Aws\Signature\AnonymousSignature
+ * @covers Aws3\Signature\AnonymousSignature
  */
 class AnonymousTest extends \PHPUnit_Framework_TestCase
 {

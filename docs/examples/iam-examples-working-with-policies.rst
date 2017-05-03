@@ -24,8 +24,8 @@ Create a Policy
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -72,8 +72,8 @@ Attach a Policy to a Role
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -113,8 +113,8 @@ Attach a Policy to a User
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',
@@ -154,8 +154,8 @@ Detach a User Policy
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Iam\IamClient;
+    use Aws3\Exception\AwsException;
 
     $client = new IamClient([
         'profile' => 'default',

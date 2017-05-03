@@ -2,7 +2,7 @@
 
 require __DIR__ . '/ChangelogBuilder.php';
 
-use Aws\Build\Changelog\ChangelogBuilder;
+use Aws3\Build\Changelog\ChangelogBuilder;
 
 $params = [];
 

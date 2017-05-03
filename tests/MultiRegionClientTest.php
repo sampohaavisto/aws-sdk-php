@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Api\Service;
-use Aws\AwsClient;
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\HandlerList;
-use Aws\MultiRegionClient;
-use Aws\Result;
+use Aws3\Api\Service;
+use Aws3\AwsClient;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\HandlerList;
+use Aws3\MultiRegionClient;
+use Aws3\Result;
 use GuzzleHttp\Promise\FulfilledPromise;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\RequestInterface;

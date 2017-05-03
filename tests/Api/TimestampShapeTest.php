@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\TimestampShape;
-use Aws\Api\ShapeMap;
+use Aws3\Api\TimestampShape;
+use Aws3\Api\ShapeMap;
 
 /**
- * @covers \Aws\Api\TimestampShape
+ * @covers \Aws3\Api\TimestampShape
  */
 class TimestampShapeTest extends \PHPUnit_Framework_TestCase
 {

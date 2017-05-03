@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Ecs\Exception;
 
-use Aws\Exception\AwsException;
+use Aws3\Exception\AwsException;
 
 /**
  * Amazon ECS exception.

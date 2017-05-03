@@ -3,7 +3,7 @@ Handlers and Middleware
 =======================
 
 The primary mechanism for extending the SDK is through **handlers** and
-**middleware**. Each SDK client class owns an ``Aws\HandlerList`` instance that
+**middleware**. Each SDK client class owns an ``Aws3\HandlerList`` instance that
 is accessible through the ``getHandlerList()`` method of a client. You can
 retrieve the ``HandlerList`` of a client and modify it to add or remove client
 behavior.
@@ -18,8 +18,8 @@ Here's a handler that returns the same mock result for each call:
 
 .. code-block:: php
 
-    use Aws\CommandInterface;
-    use Aws\Result;
+    use Aws3\CommandInterface;
+    use Aws3\Result;
     use Psr\Http\Message\RequestInterface;
     use GuzzleHttp\Promise;
 
@@ -34,14 +34,14 @@ option in the constructor of a client:
 .. code-block:: php
 
     // Set the handler of the client in the constructor.
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'region'  => 'us-east-1',
         'version' => '2006-03-01',
         'handler' => $myHandler
     ]);
 
 You can also change the handler of a client after it is constructed using the
-``setHandler`` method of an ``Aws\ClientInterface``:
+``setHandler`` method of an ``Aws3\ClientInterface``:
 
 .. code-block:: php
 
@@ -53,16 +53,16 @@ Mock Handler
 ~~~~~~~~~~~~
 
 We recommend using the ``MockHandler`` when writing tests that use the SDK.
-You can use the ``Aws\MockHandler`` to return mocked results or throw mock
+You can use the ``Aws3\MockHandler`` to return mocked results or throw mock
 exceptions. You enqueue results or exceptions, and the MockHandler will dequeue
 them in FIFO order.
 
 .. code-block:: php
 
-    use Aws\Result;
-    use Aws\MockHandler;
-    use Aws\DynamoDb\DynamoDbClient;
-    use Aws\CommandInterface;
+    use Aws3\Result;
+    use Aws3\MockHandler;
+    use Aws3\DynamoDb\DynamoDbClient;
+    use Aws3\CommandInterface;
     use Psr\Http\Message\RequestInterface;
 
     $mock = new MockHandler();
@@ -100,7 +100,7 @@ following form:
 
 .. code-block:: php
 
-    use Aws\CommandInterface;
+    use Aws3\CommandInterface;
     use Psr\Http\Message\RequestInterface;
 
     $middleware = function () {
@@ -131,7 +131,7 @@ returning the promise back up the stack of middlewares.
 HandlerList
 ~~~~~~~~~~~
 
-The SDK uses an ``Aws\HandlerList`` to manage the middlewares and handlers used
+The SDK uses an ``Aws3\HandlerList`` to manage the middlewares and handlers used
 when executing a command. Each SDK client owns a ``HandlerList``, and this
 ``HandlerList`` is cloned and added to each command that is created by a
 client. You can attach a middleware and default handler to use for each command
@@ -162,7 +162,7 @@ init
 
     .. code-block:: php
 
-        use Aws\Middleware;
+        use Aws3\Middleware;
 
         $middleware = Middleware::tap(function ($cmd, $req) {
             // observe the step
@@ -186,7 +186,7 @@ validate
 
     .. code-block:: php
 
-        use Aws\Middleware;
+        use Aws3\Middleware;
 
         $middleware = Middleware::tap(function ($cmd, $req) {
             // observe the step
@@ -209,7 +209,7 @@ build
 
     .. code-block:: php
 
-        use Aws\Middleware;
+        use Aws3\Middleware;
 
         $middleware = Middleware::tap(function ($cmd, $req) {
             // observe the step
@@ -235,7 +235,7 @@ sign
 
     .. code-block:: php
 
-        use Aws\Middleware;
+        use Aws3\Middleware;
 
         $middleware = Middleware::tap(function ($cmd, $req) {
             // observe the step
@@ -259,16 +259,16 @@ of a client or to observe the execution of a command.
 mapCommand
 ^^^^^^^^^^
 
-The ``Aws\Middleware::mapCommand`` middleware is useful when you need to modify
+The ``Aws3\Middleware::mapCommand`` middleware is useful when you need to modify
 a command before the command is serialized as an HTTP request. For example,
 ``mapCommand`` could be used to perform validation or add default parameters.
 The ``mapCommand`` function accepts a callable that accepts an
-``Aws\CommandInterface`` object and returns an ``Aws\CommandInterface`` object.
+``Aws3\CommandInterface`` object and returns an ``Aws3\CommandInterface`` object.
 
 .. code-block:: php
 
-    use Aws\Middleware;
-    use Aws\CommandInterface;
+    use Aws3\Middleware;
+    use Aws3\CommandInterface;
 
     // Here we've omitted the require Bucket parameter. We'll add it in the
     // custom middleware.
@@ -290,7 +290,7 @@ The ``mapCommand`` function accepts a callable that accepts an
 mapRequest
 ^^^^^^^^^^
 
-The ``Aws\Middleware::mapRequest`` middleware is useful when you need to modify
+The ``Aws3\Middleware::mapRequest`` middleware is useful when you need to modify
 a request after it has been serialized but before it is sent. For example, this
 can be used to add custom HTTP headers to a request. The ``mapRequest``
 function accepts a callable that accepts a ``Psr\Http\Message\RequestInterface``
@@ -298,7 +298,7 @@ argument and returns a ``Psr\Http\Message\RequestInterface`` object.
 
 .. code-block:: php
 
-    use Aws\Middleware;
+    use Aws3\Middleware;
     use Psr\Http\Message\RequestInterface;
 
     // Create a command so that we can access the handler list.
@@ -328,15 +328,15 @@ Now when the command is executed, it will be sent with the custom header.
 mapResult
 ^^^^^^^^^
 
-The ``Aws\Middleware::mapResult`` middleware is useful when you need to modify
+The ``Aws3\Middleware::mapResult`` middleware is useful when you need to modify
 the result of a command execution. The ``mapResult`` function accepts a
-callable that accepts an ``Aws\ResultInterface`` argument and returns an
-``Aws\ResultInterface`` object.
+callable that accepts an ``Aws3\ResultInterface`` argument and returns an
+``Aws3\ResultInterface`` object.
 
 .. code-block:: php
 
-    use Aws\Middleware;
-    use Aws\ResultInterface;
+    use Aws3\Middleware;
+    use Aws3\ResultInterface;
 
     $command = $s3Client->getCommand('HeadObject', [
         'Key'    => 'test',
@@ -365,10 +365,10 @@ history of a web browser.
 
 .. code-block:: php
 
-    use Aws\History;
-    use Aws\Middleware;
+    use Aws3\History;
+    use Aws3\Middleware;
 
-    $ddb = new Aws\DynamoDb\DynamoDbClient([
+    $ddb = new Aws3\DynamoDb\DynamoDbClient([
         'version' => 'latest',
         'region'  => 'us-west-2'
     ]);
@@ -379,7 +379,7 @@ history of a web browser.
     // Add the history middleware that uses the history container.
     $ddb->getHandlerList()->appendSign(Middleware::history($history));
 
-An ``Aws\History`` history container will store 10 entries by default before
+An ``Aws3\History`` history container will store 10 entries by default before
 purging entries. The number of entries can be customized by passing in the
 number of entries to persist to the constructor.
 
@@ -408,7 +408,7 @@ a the history middleware.
         var_dump($entry['exception']);
     }
 
-    // You can get the last Aws\CommandInterface that was executed. This method
+    // You can get the last Aws3\CommandInterface that was executed. This method
     // will throw if no commands have been executed.
     $command = $history->getLastCommand();
 
@@ -416,7 +416,7 @@ a the history middleware.
     // if no requests have been serialized.
     $request = $history->getLastRequest();
 
-    // You can get the last return value (an Aws\ResultInterface or Exception).
+    // You can get the last return value (an Aws3\ResultInterface or Exception).
     // The method will throw if no value has been returned for the last
     // executed operation (e.g., an async request has not completed).
     $result = $history->getLastReturn();
@@ -430,14 +430,14 @@ tap
 
 The ``tap`` middleware is used as an observer. This middleware can be used to
 invoke functions when sending commands through the chain of middlewares. The
-``tap`` function accepts a callable that accepts the ``Aws\CommandInterface``
+``tap`` function accepts a callable that accepts the ``Aws3\CommandInterface``
 and an optional ``Psr\Http\Message\RequestInterface`` that is being executed.
 
 .. code-block:: php
 
-    use Aws\Middleware;
+    use Aws3\Middleware;
 
-    $s3 = new Aws\S3\S3Client([
+    $s3 = new Aws3\S3\S3Client([
         'region'  => 'us-east-1',
         'version' => '2006-03-01'
     ]);
@@ -458,10 +458,10 @@ and an optional ``Psr\Http\Message\RequestInterface`` that is being executed.
 Creating Custom handlers
 ------------------------
 
-A handler is simply a function that accepts an ``Aws\CommandInterface`` object
+A handler is simply a function that accepts an ``Aws3\CommandInterface`` object
 and ``Psr\Http\Message\RequestInterface`` object and returns a
 ``GuzzleHttp\Promise\PromiseInterface`` that is fulfilled with an
-``Aws\ResultInterface`` or rejected with an ``Aws\Exception\AwsException``.
+``Aws3\ResultInterface`` or rejected with an ``Aws3\Exception\AwsException``.
 
 While the SDK has several ``@http`` options, a handler only needs to know how
 to use the following options:
@@ -486,7 +486,7 @@ the option or it MUST return a rejected promise.
 
 In addition to handling specific ``@http`` options, a handler MUST add a
 ``User-Agent`` header that takes the following form, where "3.X" can be
-replaced with ``Aws\Sdk::VERSION`` and "HandlerSpecificData/version ..."
+replaced with ``Aws3\Sdk::VERSION`` and "HandlerSpecificData/version ..."
 should be replaced with your handler specific User-Agent string.
 
 ``User-Agent: aws-sdk-php/3.X HandlerSpecificData/version ...``

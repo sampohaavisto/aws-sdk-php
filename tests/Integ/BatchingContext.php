@@ -2,11 +2,11 @@
 
 namespace Aws3\Test\Integ;
 
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\DynamoDb\WriteRequestBatch;
-use Aws\Exception\AwsException;
-use Aws\Result;
-use Aws\Sqs\SqsClient;
+use Aws3\DynamoDb\DynamoDbClient;
+use Aws3\DynamoDb\WriteRequestBatch;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
+use Aws3\Sqs\SqsClient;
 use Behat\Behat\Hook\Scope\AfterFeatureScope;
 use Behat\Behat\Hook\Scope\BeforeFeatureScope;
 use Behat\Behat\Tester\Exception\PendingException;

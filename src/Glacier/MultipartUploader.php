@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Glacier;
 
-use Aws\CommandInterface;
-use Aws\HashingStream;
-use Aws\Multipart\AbstractUploader;
-use Aws\Multipart\UploadState;
-use Aws\PhpHash;
-use Aws\ResultInterface;
+use Aws3\CommandInterface;
+use Aws3\HashingStream;
+use Aws3\Multipart\AbstractUploader;
+use Aws3\Multipart\UploadState;
+use Aws3\PhpHash;
+use Aws3\ResultInterface;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\StreamInterface as Stream;
 
@@ -89,19 +89,19 @@ class MultipartUploader extends AbstractUploader
      * - archive_description: (string) Description of the archive.
      * - before_complete: (callable) Callback to invoke before the
      *   `CompleteMultipartUpload` operation. The callback should have a
-     *   function signature like `function (Aws\Command $command) {...}`.
+     *   function signature like `function (Aws3\Command $command) {...}`.
      * - before_initiate: (callable) Callback to invoke before the
      *   `InitiateMultipartUpload` operation. The callback should have a
-     *   function signature like `function (Aws\Command $command) {...}`.
+     *   function signature like `function (Aws3\Command $command) {...}`.
      * - before_upload: (callable) Callback to invoke before any
      *   `UploadMultipartPart` operations. The callback should have a function
-     *   signature like `function (Aws\Command $command) {...}`.
+     *   signature like `function (Aws3\Command $command) {...}`.
      * - concurrency: (int, default=int(3)) Maximum number of concurrent
      *   `UploadMultipartPart` operations allowed during the multipart upload.
      * - part_size: (int, default=int(1048576)) Part size, in bytes, to use when
      *   doing a multipart upload. This must between 1 MB and 4 GB, and must be
      *   a power of 2 (in megabytes).
-     * - state: (Aws\Multipart\UploadState) An object that represents the state
+     * - state: (Aws3\Multipart\UploadState) An object that represents the state
      *   of the multipart upload and that is used to resume a previous upload.
      *   When this options is provided, the `account_id`, `key`, and `part_size`
      *   options are ignored.

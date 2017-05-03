@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Api\ErrorParser\JsonRpcErrorParser;
-use Aws\Api\ErrorParser\RestJsonErrorParser;
-use Aws\Api\ErrorParser\XmlErrorParser;
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\Exception\AwsException;
-use Aws\Result;
-use Aws\WrappedHttpHandler;
+use Aws3\Api\ErrorParser\JsonRpcErrorParser;
+use Aws3\Api\ErrorParser\RestJsonErrorParser;
+use Aws3\Api\ErrorParser\XmlErrorParser;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\Exception\AwsException;
+use Aws3\Result;
+use Aws3\WrappedHttpHandler;
 use GuzzleHttp\Promise\RejectedPromise;
 use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\Psr7\Request;
@@ -16,7 +16,7 @@ use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @covers Aws\WrappedHttpHandler
+ * @covers Aws3\WrappedHttpHandler
  */
 class WrappedHttpHandlerTest extends \PHPUnit_Framework_TestCase
 {

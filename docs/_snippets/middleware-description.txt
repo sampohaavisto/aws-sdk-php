@@ -1,6 +1,6 @@
 Middleware are a special type of high level function that that augment the
 behavior of transferring a command and delegate to a "next" handler. Middleware
-functions accept an ``Aws\CommandInterface`` and a
+functions accept an ``Aws3\CommandInterface`` and a
 ``Psr\Http\Message\RequestInterface`` and return a promise that is fulfilled
-with an ``Aws\ResultInterface`` or rejected with an
-``Aws\Exception\AwsException`` reason.
+with an ``Aws3\ResultInterface`` or rejected with an
+``Aws3\Exception\AwsException`` reason.

@@ -1,13 +1,13 @@
 <?php
 namespace Aws3;
 
-use Aws\Api\Service;
+use Aws3\Api\Service;
 use GuzzleHttp\Promise\Promise;
 
 /**
  * A trait providing generic functionality for interacting with Amazon Web
  * Services. This is meant to be used in classes implementing
- * \Aws\AwsClientInterface
+ * \Aws3\AwsClientInterface
  */
 trait AwsClientTrait
 {

@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\Api\Parser;
 
-use Aws\CommandInterface;
-use Aws\Exception\AwsException;
+use Aws3\CommandInterface;
+use Aws3\Exception\AwsException;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Psr7;
 

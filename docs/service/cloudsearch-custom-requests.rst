@@ -16,8 +16,8 @@ you would need to sign and execute your request as follows:
 
 .. code-block:: php
 
-    use Aws\Credentials\CredentialProvider;
-    use Aws\Signature\SignatureV4;
+    use Aws3\Credentials\CredentialProvider;
+    use Aws3\Signature\SignatureV4;
     use GuzzleHttp\Client;
     use GuzzleHttp\Psr7\Request;
 

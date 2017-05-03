@@ -1,9 +1,9 @@
 <?php
 namespace Aws3\Build\Docs;
 
-use Aws\Api\Service as Api;
-use Aws\Api\DocModel;
-use Aws\Sdk;
+use Aws3\Api\Service as Api;
+use Aws3\Api\DocModel;
+use Aws3\Sdk;
 
 /**
  * Serves as a DTO for information about a service required to build various
@@ -68,13 +68,13 @@ class Service
         $this->slug = $this->name . '-' . $this->version;
         $this->uid = $api->getUid();
         $this->clientName = $this->namespace . 'Client';
-        $this->client = 'Aws\\' . $this->namespace . '\\' . $this->clientName;
+        $this->client = 'Aws3\\' . $this->namespace . '\\' . $this->clientName;
         $this->clientLink = 'class-Aws.' . $this->namespace . '.' . $this->namespace . 'Client.html';
         $this->namespaceLink = 'namespace-Aws.' . $this->namespace . '.html';
         $this->serviceLink = 'api-' . $this->slug . '.html';
         $this->shortTitle = $api->getMetadata('serviceAbbreviation');
         $this->title = $api->getServiceFullName();
-        $this->fullNamespace = 'Aws\\' . $this->namespace;
+        $this->fullNamespace = 'Aws3\\' . $this->namespace;
         $this->fullTitle = $this->title . ' (' . $this->version . ')';
     }
 
@@ -86,7 +86,7 @@ class Service
             // Get the namespaces from the directories.
             foreach (glob(__DIR__ . '/../../../src/*') as $dir) {
                 $base = basename($dir);
-                if (class_exists("Aws\\{$base}\\{$base}Client")) {
+                if (class_exists("Aws3\\{$base}\\{$base}Client")) {
                     $namespaces[Sdk::getEndpointPrefix($base)] = $base;
                 }
             }

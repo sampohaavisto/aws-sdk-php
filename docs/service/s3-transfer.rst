@@ -9,14 +9,14 @@ an Amazon S3 bucket and download entire buckets to a local directory.
 Uploading a local directory to S3
 ---------------------------------
 
-The ``Aws\S3\Transfer`` object is used to perform transfers. The following
+The ``Aws3\S3\Transfer`` object is used to perform transfers. The following
 example shows how to recursively upload a local directory of files to an
 Amazon S3 bucket.
 
 .. code-block:: php
 
     // Create an S3 client
-    $client = new \Aws\S3\S3Client([
+    $client = new \Aws3\S3\S3Client([
         'region'  => 'us-west-2',
         'version' => '2006-03-01',
     ]);
@@ -28,7 +28,7 @@ Amazon S3 bucket.
     $dest = 's3://bucket';
 
     // Create a transfer object.
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
+    $manager = new \Aws3\S3\Transfer($client, $source, $dest);
 
     // Perform the transfer synchronously.
     $manager->transfer();
@@ -48,7 +48,7 @@ local files on disk to the ``bucket`` bucket and stores the files under the
 
     $source = '/path/to/source/files';
     $dest = 's3://bucket/foo';
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
+    $manager = new \Aws3\S3\Transfer($client, $source, $dest);
     $manager->transfer();
 
 
@@ -68,7 +68,7 @@ directory.
     // Where the files will be transferred to
     $dest = '/path/to/destination/dir';
 
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
+    $manager = new \Aws3\S3\Transfer($client, $source, $dest);
     $manager->transfer();
 
 .. note::
@@ -84,7 +84,7 @@ only files stored under the "/foo" key prefix of the given bucket.
 
     $source = 's3://bucket/foo';
     $dest = '/path/to/destination/dir';
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
+    $manager = new \Aws3\S3\Transfer($client, $source, $dest);
     $manager->transfer();
 
 
@@ -94,7 +94,7 @@ Configuration
 The ``Transfer`` object constructor accepts the following arguments:
 
 ``$client``
-    The ``Aws\ClientInterface`` object to use for performing the transfers.
+    The ``Aws3\ClientInterface`` object to use for performing the transfers.
 
 ``$source``
     (string|``\Iterator``) The source data being transferred. This can point
@@ -132,7 +132,7 @@ Transfer Options
 
 ``before``
     (callable) A callback to invoke before each transfer. The callback should
-    have a function signature like ``function (Aws\Command $command) {...}``.
+    have a function signature like ``function (Aws3\Command $command) {...}``.
     The provided command will be either a ``GetObject``, ``PutObject``,
     ``CreateMultipartUpload``, ``UploadPart``, or ``CompleteMultipartUpload``
     command.
@@ -165,7 +165,7 @@ object.
 
     $source = '/path/to/source/files';
     $dest = 's3://bucket';
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
+    $manager = new \Aws3\S3\Transfer($client, $source, $dest);
 
     // Initiate the transfer and get a promise.
     $promise = $manager->promise();
@@ -179,7 +179,7 @@ The promise will be rejected if any of the files fail to transfer. You can
 handle the failed transfer asynchronously using the ``otherwise`` method of the
 promise. The ``otherwise`` function accepts a callback to invoke when an error
 occurs. The callback accepts the ``$reason`` for the rejection, which will
-typically be an instance of ``Aws\Exception\AwsException`` (though a value of
+typically be an instance of ``Aws3\Exception\AwsException`` (though a value of
 **any** type may be delivered to the callback).
 
 .. code-block:: php
@@ -201,7 +201,7 @@ a callback passed to its constructor.
 .. code-block:: php
 
     $uploader = new Transfer($s3Client, $source, $dest, [
-        'before' => function (\Aws\Command $command) {
+        'before' => function (\Aws3\Command $command) {
             // Commands can vary for multipart uploads, so check which command
             // is being processed
             if (in_array($command->getName(), ['PutObject', 'CreateMultipartUpload'])) {

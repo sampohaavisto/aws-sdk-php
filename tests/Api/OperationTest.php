@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api;
 
-use Aws\Api\ShapeMap;
-use Aws\Api\Operation;
+use Aws3\Api\ShapeMap;
+use Aws3\Api\Operation;
 
 /**
- * @covers \Aws\Api\Operation
+ * @covers \Aws3\Api\Operation
  */
 class OperationTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,8 +19,8 @@ class OperationTest extends \PHPUnit_Framework_TestCase
     public function testReturnsEmptyShapes()
     {
         $o = new Operation([], new ShapeMap([]));
-        $this->assertInstanceOf('Aws\Api\Shape', $o->getInput());
-        $this->assertInstanceOf('Aws\Api\Shape', $o->getOutput());
+        $this->assertInstanceOf('Aws3\Api\Shape', $o->getInput());
+        $this->assertInstanceOf('Aws3\Api\Shape', $o->getOutput());
         $this->assertInternalType('array', $o->getErrors());
     }
 
@@ -32,7 +32,7 @@ class OperationTest extends \PHPUnit_Framework_TestCase
             'i' => ['type' => 'structure']
         ]));
         $i = $o->getInput();
-        $this->assertInstanceOf('Aws\Api\Shape', $i);
+        $this->assertInstanceOf('Aws3\Api\Shape', $i);
         $this->assertEquals('structure', $i->getType());
         $this->assertSame($i, $o->getInput());
     }
@@ -45,7 +45,7 @@ class OperationTest extends \PHPUnit_Framework_TestCase
             'os' => ['type' => 'structure']
         ]));
         $os = $o->getOutput();
-        $this->assertInstanceOf('Aws\Api\Shape', $os);
+        $this->assertInstanceOf('Aws3\Api\Shape', $os);
         $this->assertEquals('structure', $os->getType());
         $this->assertSame($os, $o->getOutput());
     }
@@ -60,8 +60,8 @@ class OperationTest extends \PHPUnit_Framework_TestCase
         ]));
         $e = $o->getErrors();
         $this->assertInternalType('array', $e);
-        $this->assertInstanceOf('Aws\Api\Shape', $e[0]);
-        $this->assertInstanceOf('Aws\Api\Shape', $e[1]);
+        $this->assertInstanceOf('Aws3\Api\Shape', $e[0]);
+        $this->assertInstanceOf('Aws3\Api\Shape', $e[1]);
         $this->assertEquals('structure', $e[0]->getType());
         $this->assertEquals('list', $e[1]->getType());
     }

@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\Sqs;
 
-use Aws\Middleware;
-use Aws\Result;
-use Aws\Sqs\SqsClient;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Middleware;
+use Aws3\Result;
+use Aws3\Sqs\SqsClient;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\Sqs\SqsClient
+ * @covers Aws3\Sqs\SqsClient
  */
 class SqsClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -36,7 +36,7 @@ class SqsClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Aws\Sqs\Exception\SqsException
+     * @expectedException \Aws3\Sqs\Exception\SqsException
      * @expectedExceptionMessage MD5 mismatch. Expected foo, found ddc35f88fa71b6ef142ae61f35364653
      */
     public function testValidatesMd5OfBody()

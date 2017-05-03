@@ -1,6 +1,6 @@
 <?php
 
-use Aws\Api\ApiProvider;
+use Aws3\Api\ApiProvider;
 
 class ClientAnnotator
 {
@@ -30,7 +30,7 @@ class ClientAnnotator
             $this->reflection,
             $this->getMethodAnnotations(),
             $this->getDefaultDocComment(),
-            '/^\* @method (\\\\Aws\\\\Result|\\\\GuzzleHttp\\\\Promise\\\\Promise) /'
+            '/^\* @method (\\\\Aws3\\\\Result|\\\\GuzzleHttp\\\\Promise\\\\Promise) /'
         );
 
         return $updater->update();
@@ -42,7 +42,7 @@ class ClientAnnotator
 
         foreach ($this->getMethods() as $command => $apiVersions) {
             $commandMethods = [
-                $command => '\\Aws\\Result',
+                $command => '\\Aws3\\Result',
                 "{$command}Async" => '\\GuzzleHttp\\Promise\\Promise',
             ];
             foreach ($commandMethods as $method => $returnType) {
@@ -118,7 +118,7 @@ class ClientAnnotator
                 preg_replace('/(MultiRegion)?Client$/', '', $this->reflection->getShortName())
             );
 
-            $this->endpoint = Aws\manifest($service)['endpoint'];
+            $this->endpoint = Aws3\manifest($service)['endpoint'];
         }
 
         return $this->endpoint;

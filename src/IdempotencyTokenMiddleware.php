@@ -1,7 +1,7 @@
 <?php
 namespace Aws3;
 
-use Aws\Api\Service;
+use Aws3\Api\Service;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -30,7 +30,7 @@ class IdempotencyTokenMiddleware
      * You may also supply a custom bytes generator as an optional second
      * parameter.
      *
-     * @param \Aws\Api\Service $service
+     * @param \Aws3\Api\Service $service
      * @param callable|null $bytesGenerator
      *
      * @return callable

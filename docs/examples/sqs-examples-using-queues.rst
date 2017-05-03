@@ -24,8 +24,8 @@ Return a List of Queues
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
 
     $client = new SqsClient([
         'profile' => 'default',
@@ -48,8 +48,8 @@ Create a Queue
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
 
     $queueName = "SQS_QUEUE_NAME";
     $client = new SqsClient([
@@ -77,8 +77,8 @@ Return the URL of a Queue
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
 
     $queueName = "SQS_QUEUE_NAME";
     $client = new SqsClient([
@@ -102,8 +102,8 @@ Delete a Queue
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
     
     $queueUrl = "SQS_QUEUE_URL";
     $client = new SqsClient([

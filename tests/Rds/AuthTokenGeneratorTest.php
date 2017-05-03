@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Rds;
 
-use Aws\Credentials\Credentials;
-use Aws\Rds\AuthTokenGenerator;
+use Aws3\Credentials\Credentials;
+use Aws3\Rds\AuthTokenGenerator;
 use GuzzleHttp\Promise;
 
 /**
- * @covers Aws\Rds\AuthTokenGenerator
+ * @covers Aws3\Rds\AuthTokenGenerator
  */
 class AuthTokenGeneratorTest extends \PHPUnit_Framework_TestCase
 {

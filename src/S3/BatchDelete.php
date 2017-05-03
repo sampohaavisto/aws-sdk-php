@@ -1,8 +1,8 @@
 <?php
 namespace Aws3\S3;
 
-use Aws\AwsClientInterface;
-use Aws\S3\Exception\DeleteMultipleObjectsException;
+use Aws3\AwsClientInterface;
+use Aws3\S3\Exception\DeleteMultipleObjectsException;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromisorInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -12,13 +12,13 @@ use GuzzleHttp\Promise\PromiseInterface;
  * iterator that yields keys. Deletes are made using the DeleteObjects API
  * operation.
  *
- *     $s3 = new Aws\S3\Client([
+ *     $s3 = new Aws3\S3\Client([
  *         'region' => 'us-west-2',
  *         'version' => 'latest'
  *     ]);
  *
  *     $listObjectsParams = ['Bucket' => 'foo', 'Prefix' => 'starts/with/'];
- *     $delete = Aws\S3\BatchDelete::fromListObjects($s3, $listObjectsParams);
+ *     $delete = Aws3\S3\BatchDelete::fromListObjects($s3, $listObjectsParams);
  *     // Asynchronously delete
  *     $promise = $delete->promise();
  *     // Force synchronous completion

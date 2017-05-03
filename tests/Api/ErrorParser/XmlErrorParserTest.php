@@ -1,11 +1,11 @@
 <?php
 namespace Aws3\Test\Api\ErrorParser;
 
-use Aws\Api\ErrorParser\XmlErrorParser;
+use Aws3\Api\ErrorParser\XmlErrorParser;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\Api\ErrorParser\XmlErrorParser
+ * @covers Aws3\Api\ErrorParser\XmlErrorParser
  */
 class XmlErrorParserTest extends \PHPUnit_Framework_TestCase
 {

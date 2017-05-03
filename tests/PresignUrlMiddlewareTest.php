@@ -1,15 +1,15 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\CommandInterface;
-use Aws\Ec2\Ec2Client;
-use Aws\Rds\RdsClient;
-use Aws\Result;
-use Aws\Test\UsesServiceTrait;
+use Aws3\CommandInterface;
+use Aws3\Ec2\Ec2Client;
+use Aws3\Rds\RdsClient;
+use Aws3\Result;
+use Aws3\Test\UsesServiceTrait;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\PresignUrlMiddleware
+ * @covers Aws3\PresignUrlMiddleware
  */
 class PresignUrlMiddlewareTest extends \PHPUnit_Framework_TestCase
 {

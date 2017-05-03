@@ -17,7 +17,7 @@ if (empty($options['namespace']) || empty($options['model'])) {
     );
 }
 
-$options['model'] = \Aws\load_compiled_json($options['model']);
+$options['model'] = \Aws3\load_compiled_json($options['model']);
 
 $options += [
     'clientPath' => dirname(__DIR__)

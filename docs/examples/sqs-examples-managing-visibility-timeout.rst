@@ -21,8 +21,8 @@ Change the Visibility Timeout of Multiple Messages
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+    use Aws3\Sqs\SqsClient;
+    use Aws3\Exception\AwsException;
     
     $queueUrl = "QUEUE_URL";
     $client = new SqsClient([

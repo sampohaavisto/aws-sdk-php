@@ -23,8 +23,8 @@ List Metrics
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
 
     $client = new CloudWatchClient([
         'profile' => 'default',
@@ -45,8 +45,8 @@ Retrieve Alarms for a Metric
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
     
     $client = new CloudWatchClient([
         'profile' => 'default',
@@ -72,8 +72,8 @@ Get Metric Statistics
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
 
     $client = new CloudWatchClient([
         'profile' => 'default',

@@ -23,8 +23,8 @@ process as easy as possible.
 
 .. code-block:: php
 
-    use Aws\S3\MultipartUploader;
-    use Aws\Exception\MultipartUploadException;
+    use Aws3\S3\MultipartUploader;
+    use Aws3\Exception\MultipartUploadException;
 
     $uploader = new MultipartUploader($s3Client, '/path/to/large/file.zip', [
         'bucket' => 'your-bucket',
@@ -57,15 +57,15 @@ callbacks passed to its constructor.
     $uploader = new MultipartUploader($s3Client, $source, [
         'bucket' => 'your-bucket',
         'key'    => 'my-file.zip',
-        'before_initiate' => function (\Aws\Command $command) {
+        'before_initiate' => function (\Aws3\Command $command) {
             // $command is a CreateMultipartUpload operation
             $command['CacheControl'] = 'max-age=3600';
         },
-        'before_upload' => function (\Aws\Command $command) {
+        'before_upload' => function (\Aws3\Command $command) {
            // $command is an UploadPart operation
            $command['RequestPayer'] = 'requester';
         },
-        'before_complete' => function (\Aws\Command $command) {
+        'before_complete' => function (\Aws3\Command $command) {
            // $command is a CompleteMultipartUpload operation
            $command['RequestPayer'] = 'requester';
         },
@@ -174,8 +174,8 @@ Configuration
 The ``MultipartUploader`` object constructor accepts the following arguments:
 
 ``$client``
-    The ``Aws\ClientInterface`` object to use for performing the transfers.
-    This should be an instance of ``Aws\S3\S3Client``.
+    The ``Aws3\ClientInterface`` object to use for performing the transfers.
+    This should be an instance of ``Aws3\S3\S3Client``.
 
 ``$source``
     The source data being uploaded. This can be a path or URL to a (e.g.,
@@ -193,15 +193,15 @@ The following configuration options are valid:
 **before_complete**
     (``callable``) Callback to invoke before the ``CompleteMultipartUpload``
     operation. The callback should have a function signature like
-    ``function (Aws\Command $command) {...}``.
+    ``function (Aws3\Command $command) {...}``.
 **before_initiate**
     (``callable``) Callback to invoke before the ``CreateMultipartUpload``
     operation. The callback should have a function signature like
-    ``function (Aws\Command $command) {...}``.
+    ``function (Aws3\Command $command) {...}``.
 **before_upload**
     (``callable``) Callback to invoke before any ``UploadPart`` operations. The
     callback should have a function signature like
-    ``function (Aws\Command $command) {...}``.
+    ``function (Aws3\Command $command) {...}``.
 **bucket**
     (``string``, *required*) Name of the bucket to which the object is being uploaded.
 **concurrency**
@@ -213,7 +213,7 @@ The following configuration options are valid:
     (``int``, *default*: ``int(5242880)``) Part size, in bytes, to use when doing a
     multipart upload. This must between 5 MB and 5 GB, inclusive.
 **state**
-    (``Aws\Multipart\UploadState``) An object that represents the state of the
+    (``Aws3\Multipart\UploadState``) An object that represents the state of the
     multipart upload and that is used to resume a previous upload. When this
     option is provided, the ``bucket``, ``key``, and ``part_size`` options
     are ignored.
@@ -227,8 +227,8 @@ to the ``MultipartUploader`` but is designed for copying objects between 5GB and
 
 .. code-block:: php
 
-    use Aws\S3\MultipartCopy;
-    use Aws\Exception\MultipartUploadException;
+    use Aws3\S3\MultipartCopy;
+    use Aws3\Exception\MultipartUploadException;
 
     $copier = new MultipartCopy($s3Client, '/bucket/key?versionId=foo', [
         'bucket' => 'your-bucket',

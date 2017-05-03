@@ -1,15 +1,15 @@
 <?php
 namespace Aws3\Test\Glacier;
 
-use Aws\Exception\CouldNotCreateChecksumException;
-use Aws\Glacier\GlacierClient;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Exception\CouldNotCreateChecksumException;
+use Aws3\Glacier\GlacierClient;
+use Aws3\Test\UsesServiceTrait;
 use GuzzleHttp\Psr7\NoSeekStream;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7;
 
 /**
- * @covers Aws\Glacier\GlacierClient
+ * @covers Aws3\Glacier\GlacierClient
  */
 class GlacierClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -26,7 +26,7 @@ class GlacierClientTest extends \PHPUnit_Framework_TestCase
             'vaultName'  => 'foo',
             'sourceFile' => __DIR__ . '/test-content.txt',
         ]);
-        $request = \Aws\serialize($command);
+        $request = \Aws3\serialize($command);
 
         // Added default accountId and the API version header.
         $this->assertEquals('-', $command['accountId']);

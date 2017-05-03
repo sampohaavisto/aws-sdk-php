@@ -31,11 +31,11 @@ default provider chain or any any form of credentials described in
 .. code-block:: php
 
     // Pull credentials from the default provider chain
-    $provider = Aws\Credentials\CredentialProvider::defaultProvider();
+    $provider = Aws3\Credentials\CredentialProvider::defaultProvider();
     $credentials = call_user_func($provider)->wait();
 
     // Create a signer with the service's signing name and region
-    $signer = new Aws\Signature\SignatureV4('es', 'us-west-2');
+    $signer = new Aws3\Signature\SignatureV4('es', 'us-west-2');
 
     // Sign your request
     $signedRequest = $signer->signRequest($psr7Request, $credentials);

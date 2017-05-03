@@ -1,10 +1,10 @@
 <?php
 namespace Aws3\Test\S3\Exception;
 
-use Aws\S3\Exception\DeleteMultipleObjectsException;
+use Aws3\S3\Exception\DeleteMultipleObjectsException;
 
 /**
- * @covers Aws\S3\Exception\DeleteMultipleObjectsException
+ * @covers Aws3\S3\Exception\DeleteMultipleObjectsException
  */
 class DeleteMultipleObjectsExceptionTest extends \PHPUnit_Framework_TestCase
 {

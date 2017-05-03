@@ -1,14 +1,14 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\HandlerList;
-use Aws\Middleware;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\HandlerList;
+use Aws3\Middleware;
 use GuzzleHttp\Psr7\Request;
 
 /**
- * @covers Aws\HandlerList
+ * @covers Aws3\HandlerList
  */
 class HandlerListTest extends \PHPUnit_Framework_TestCase
 {
@@ -135,9 +135,9 @@ class HandlerListTest extends \PHPUnit_Framework_TestCase
         $lines = explode("\n", (string) $list);
         $this->assertCount(6, $lines);
         $this->assertContains('0) Step: init, Name: foo, Function: callable(', $lines[0]);
-        $this->assertEquals("1) Step: init, Name: bar, Function: callable(['Aws\\Test\\HandlerListTest', 'bar'])", $lines[1]);
-        $this->assertEquals('2) Step: validate, Function: callable(Aws\Test\HandlerListTest::foo)', $lines[2]);
-        $this->assertEquals("3) Step: sign, Name: baz, Function: callable(['Aws\\Middleware', 'tap'])", $lines[3]);
+        $this->assertEquals("1) Step: init, Name: bar, Function: callable(['Aws3\\Test\\HandlerListTest', 'bar'])", $lines[1]);
+        $this->assertEquals('2) Step: validate, Function: callable(Aws3\Test\HandlerListTest::foo)', $lines[2]);
+        $this->assertEquals("3) Step: sign, Name: baz, Function: callable(['Aws3\\Middleware', 'tap'])", $lines[3]);
         $this->assertContains('4) Handler: callable(', $lines[4]);
     }
 

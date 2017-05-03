@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Api\Parser;
 
-use Aws\Api\Operation;
-use Aws\Api\Parser\JsonParser;
-use Aws\Api\Parser\JsonRpcParser;
-use Aws\Api\Service;
-use Aws\Api\Shape;
-use Aws\CommandInterface;
+use Aws3\Api\Operation;
+use Aws3\Api\Parser\JsonParser;
+use Aws3\Api\Parser\JsonRpcParser;
+use Aws3\Api\Service;
+use Aws3\Api\Shape;
+use Aws3\CommandInterface;
 use GuzzleHttp\Psr7\Response;
 
 class JsonRpcParserTest extends \PHPUnit_Framework_TestCase

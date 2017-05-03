@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Api\Parser;
 
-use Aws\Api\Parser\Exception\ParserException;
+use Aws3\Api\Parser\Exception\ParserException;
 
 trait PayloadParserTrait
 {

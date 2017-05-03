@@ -1,13 +1,13 @@
 <?php
 namespace Aws3\Test\S3;
 
-use Aws\Credentials\Credentials;
-use Aws\S3\PostObject;
-use Aws\S3\S3Client;
-use Aws\Test\UsesServiceTrait;
+use Aws3\Credentials\Credentials;
+use Aws3\S3\PostObject;
+use Aws3\S3\S3Client;
+use Aws3\Test\UsesServiceTrait;
 
 /**
- * @covers Aws\S3\PostObject
+ * @covers Aws3\S3\PostObject
  */
 class PostObjectTest extends \PHPUnit_Framework_TestCase
 {

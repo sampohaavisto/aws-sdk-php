@@ -1,18 +1,18 @@
 <?php
 namespace Aws3\Test;
 
-use Aws\Command;
-use Aws\Exception\AwsException;
-use Aws\HandlerList;
-use Aws\Result;
-use Aws\TraceMiddleware;
+use Aws3\Command;
+use Aws3\Exception\AwsException;
+use Aws3\HandlerList;
+use Aws3\Result;
+use Aws3\TraceMiddleware;
 use GuzzleHttp\Promise\RejectedPromise;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Promise;
 
 /**
- * @covers Aws\TraceMiddleware
+ * @covers Aws3\TraceMiddleware
  */
 class TraceMiddlewareTest extends \PHPUnit_Framework_TestCase
 {

@@ -22,10 +22,10 @@ parameter.
 .. code-block:: php
 
     // Create a multi-region S3 client
-    $s3Client = (new \Aws\Sdk)->createMultiRegionS3(['version' => 'latest']);
+    $s3Client = (new \Aws3\Sdk)->createMultiRegionS3(['version' => 'latest']);
 
     // You can also use the client constructor
-    $s3Client = new \Aws\S3\S3MultiRegionClient([
+    $s3Client = new \Aws3\S3\S3MultiRegionClient([
         'version' => 'latest',
         // Any region specified while creating the client will be used as the
         // default region
@@ -46,7 +46,7 @@ parameter.
 
     When using the multi-region S3 client, you will not encounter any permanent
     redirect exceptions. A standard S3 client will throw an instance of
-    ``Aws\S3\Exception\PermanentRedirectException`` when a command is sent to
+    ``Aws3\S3\Exception\PermanentRedirectException`` when a command is sent to
     the wrong region; a multi-region client will instead redispatch the command
     to the correct region.
 
@@ -56,16 +56,16 @@ Bucket Region Cache
 Amazon S3 multi-region clients maintain an internal cache of the regions in
 which given buckets reside. By default, each client has its own in-memory cache.
 To share a cache between clients or processes, supply an instance of
-``Aws\CacheInterface`` as the ``bucket_region_cache`` option to your
+``Aws3\CacheInterface`` as the ``bucket_region_cache`` option to your
 multi-region client.
 
 .. code-block:: php
 
-    use Aws\DoctrineCacheAdapter;
-    use Aws\Sdk;
+    use Aws3\DoctrineCacheAdapter;
+    use Aws3\Sdk;
     use Doctrine\Common\Cache\ApcuCache;
 
-    $sdk = new Aws\Sdk([
+    $sdk = new Aws3\Sdk([
         'version' => 'latest',
         'region' => 'us-west-2',
         'S3' => [

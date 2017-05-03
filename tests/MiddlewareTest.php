@@ -2,26 +2,26 @@
 namespace Aws3\Test;
 
 use Aws;
-use Aws\Api\ApiProvider;
-use Aws\Api\Service;
-use Aws\Command;
-use Aws\CommandInterface;
-use Aws\Credentials\Credentials;
-use Aws\Credentials\CredentialProvider;
-use Aws\Exception\AwsException;
-use Aws\HandlerList;
-use Aws\Middleware;
-use Aws\MockHandler;
-use Aws\Result;
-use Aws\ResultInterface;
-use Aws\Signature\SignatureV4;
+use Aws3\Api\ApiProvider;
+use Aws3\Api\Service;
+use Aws3\Command;
+use Aws3\CommandInterface;
+use Aws3\Credentials\Credentials;
+use Aws3\Credentials\CredentialProvider;
+use Aws3\Exception\AwsException;
+use Aws3\HandlerList;
+use Aws3\Middleware;
+use Aws3\MockHandler;
+use Aws3\Result;
+use Aws3\ResultInterface;
+use Aws3\Signature\SignatureV4;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Promise;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers Aws\Middleware
+ * @covers Aws3\Middleware
  */
 class MiddlewareTest extends \PHPUnit_Framework_TestCase
 {
@@ -41,7 +41,7 @@ class MiddlewareTest extends \PHPUnit_Framework_TestCase
         $handler(new Command('foo'), new Request('GET', 'http://exmaple.com'));
         Promise\queue()->run();
         $this->assertCount(2, $called);
-        $this->assertInstanceOf('Aws\CommandInterface', $called[0]);
+        $this->assertInstanceOf('Aws3\CommandInterface', $called[0]);
         $this->assertInstanceOf('Psr\Http\Message\RequestInterface', $called[1]);
     }
 
@@ -100,7 +100,7 @@ class MiddlewareTest extends \PHPUnit_Framework_TestCase
         $list->setHandler($mock);
         $creds = CredentialProvider::fromCredentials(new Credentials('foo', 'bar'));
         $signature = new SignatureV4('a', 'b');
-        $list->appendSign(Middleware::signer($creds, Aws\constantly($signature)));
+        $list->appendSign(Middleware::signer($creds, Aws3\constantly($signature)));
         $handler = $list->resolve();
         $handler(new Command('foo'), new Request('GET', 'http://exmaple.com'));
         Promise\queue()->run();
@@ -190,7 +190,7 @@ class MiddlewareTest extends \PHPUnit_Framework_TestCase
 
     public function testAppliesHistory()
     {
-        $h = new Aws\History();
+        $h = new Aws3\History();
         $mock = new MockHandler([new Result()]);
         $list = new HandlerList($mock);
         $list->appendSign(Middleware::history($h));
@@ -204,7 +204,7 @@ class MiddlewareTest extends \PHPUnit_Framework_TestCase
 
     public function testCanSetContentTypeOfCommandsWithPayloads()
     {
-        $h = new Aws\History();
+        $h = new Aws3\History();
         $list = new HandlerList();
         $list->setHandler(new MockHandler([new Result()]));
         $list->appendBuild(Middleware::contentType(['Foo']));

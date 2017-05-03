@@ -22,8 +22,8 @@ Enable Alarm Actions
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
 
     $alarmName = "<ALARM_NAME>";
     $client = new CloudWatchClient([
@@ -47,8 +47,8 @@ Disable Alarm Actions
 .. code-block:: php
 
     require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+    use Aws3\CloudWatch\CloudWatchClient;
+    use Aws3\Exception\AwsException;
 
     $alarmName = "<ALARM_NAME>";
     $client = new CloudWatchClient([

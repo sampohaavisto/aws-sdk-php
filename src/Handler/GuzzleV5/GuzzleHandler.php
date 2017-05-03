@@ -1,7 +1,7 @@
 <?php
 namespace Aws3\Handler\GuzzleV5;
 
-use Aws\Sdk;
+use Aws3\Sdk;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

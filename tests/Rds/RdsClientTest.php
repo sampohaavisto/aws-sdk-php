@@ -1,12 +1,12 @@
 <?php
 namespace Aws3\Test\Rds;
 
-use Aws\Rds\RdsClient;
-use Aws\MockHandler;
-use Aws\Result;
+use Aws3\Rds\RdsClient;
+use Aws3\MockHandler;
+use Aws3\Result;
 
 /**
- * @covers Aws\Rds\RdsClient
+ * @covers Aws3\Rds\RdsClient
  */
 class Ec2ClientTest extends \PHPUnit_Framework_TestCase
 {

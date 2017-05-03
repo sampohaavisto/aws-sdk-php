@@ -27,7 +27,7 @@ create a ``CloudFrontClient`` object.
 
     <?php
 
-    $cloudFront = new Aws\CloudFront\CloudFrontClient([
+    $cloudFront = new Aws3\CloudFront\CloudFrontClient([
         'region'  => 'us-west-2',
         'version' => '2014-11-06'
     ]);
@@ -130,7 +130,7 @@ difference being the method called (``getSignedCookie`` instead of ``getSignedUr
 
     <?php
 
-    $cloudFront = new Aws\CloudFront\CloudFrontClient([
+    $cloudFront = new Aws3\CloudFront\CloudFrontClient([
         'region'  => 'us-west-2',
         'version' => '2014-11-06'
     ]);
