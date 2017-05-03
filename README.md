@@ -1,3 +1,5 @@
+# Don't use this source, [the official sdk is here](https://github.com/aws/aws-sdk-php)
+
 # AWS SDK for PHP - Version 3
 
 [![@awsforphp on Twitter](http://img.shields.io/badge/twitter-%40awsforphp-blue.svg?style=flat)](https://twitter.com/awsforphp)
